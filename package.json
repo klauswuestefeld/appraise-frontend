@@ -1,0 +1,62 @@
+{
+  "name": "appraise-web",
+  "version": "1.0.2",
+  "repository": "https://github.com/Helabs/appraise-web",
+  "author": "HE:labs",
+  "license": "ISC",
+  "keywords": [],
+  "engines": {
+    "node": "8.5.0",
+    "yarn": "1.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon -w server.js server.js",
+    "build": "next build",
+    "heroku-postbuild": "yarn build",
+    "lint:css": "stylelint './components/**/*.js'",
+    "lint:js": "eslint ./**/ --ignore-path .gitignore",
+    "lint": "yarn run lint:css && yarn run lint:js",
+    "start": "NODE_ENV=production node server -p $PORT",
+    "test": "echo \"Running tests\"  && jest"
+  },
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "next": "beta",
+    "react": "^15.6.1",
+    "react-beautiful-dnd": "^2.5.0",
+    "react-dom": "^15.6.1",
+    "react-simple-dropdown": "^3.0.0",
+    "styled-components": "^2.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-styled-components": "^1.1.7",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.4.1",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^20.0.4",
+    "jest-fetch-mock": "^1.2.1",
+    "jest-styled-components": "^4.3.0",
+    "nodemon": "^1.12.1",
+    "path-match": "^1.2.4",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.7.4",
+    "prettier-standard": "^7.0.3",
+    "react-test-renderer": "^15.6.1",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-processor-styled-components": "^0.2.1"
+  }
+}

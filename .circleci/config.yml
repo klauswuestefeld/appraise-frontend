@@ -1,0 +1,56 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.2.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v2-dependencies-node_modules
+
+      - run:
+          name: Clone repo for mirroring
+          command: |
+            cd $HOME && git clone --mirror $CIRCLE_REPOSITORY_URL ${CIRCLE_PROJECT_REPONAME}_mirror
+
+      - run:
+          name: install heroku
+          command: bash .circleci/setup-heroku-stg.sh
+
+      - run:
+          name: install dependencies
+          command: yarn
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v2-dependencies-node_modules
+
+      - run:
+          name: run eslint and stylelint
+          command: yarn lint
+
+      - run:
+          name: run tests
+          command: yarn test
+
+      - add_ssh_keys:
+          fingerprints:
+            - "2c:20:d8:93:a9:9c:f6:19:39:76:58:05:d2:36:08:ae"
+
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git remote add heroku https://git.heroku.com/appraise-web-staging.git
+              git push heroku master -ff
+            fi
+            if [ "${CIRCLE_BRANCH}" == "production" ]; then
+              git remote add heroku https://git.heroku.com/appraise-web.git
+              git push heroku master -ff
+            fi
