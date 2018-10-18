@@ -23,7 +23,8 @@ export default class AuthService {
     window.localStorage.setItem('session', JSON.stringify(session))
     get('api/team-profiles', null, this.getToken())
       .then(response => {
-        if (response['is-admin'] === false && response.admin !== null) {
+       console.log(response.message);
+        if (response.message['is-admin'] === false && response.message.admin !== null) {
           Router.push('/appraisals')
         } else {
           session.isAdmin = true

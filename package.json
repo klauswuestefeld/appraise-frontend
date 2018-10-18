@@ -1,13 +1,13 @@
 {
   "name": "appraise-web",
-  "version": "1.0.2",
+  "version": "1.10.1",
   "repository": "https://github.com/Helabs/appraise-web",
   "author": "HE:labs",
   "license": "ISC",
   "keywords": [],
   "engines": {
-    "node": "8.5.0",
-    "yarn": "1.0.2"
+    "node": "8.10.0",
+    "yarn": "1.10.1"
   },
   "scripts": {
     "dev": "nodemon -w server.js server.js",
