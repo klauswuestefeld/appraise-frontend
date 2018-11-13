@@ -24,12 +24,12 @@ function permissao(ev) {
 }
 
 function pegar(ev) {
-   ev.dataTransfer.setData("carro", ev.target.id);
+   ev.dataTransfer.setData("drag-element-id", ev.target.id);
 }
 
 function drop(ev) {
     ev.preventDefault();
-   var data = ev.dataTransfer.getData("carro");
+   var data = ev.dataTransfer.getData("drag-element-id");
     ev.target.appendChild(document.getElementById("drag1"));
 }
 </script>
