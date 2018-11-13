@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { get } from '../utils/api'
 import AuthService from '../components/common/AuthService'
 import Layout from '../components/base/layout/layout'
+import DeleteA from '../components/DeleteAppraisals/'
 import SetMembers from '../components/setMembers/'
 import withAuth from '../components/common/withAuth'
 
