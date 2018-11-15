@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {
+    width: 800px;
+    height: 400px;
+    padding: 10px;
+    border: 5px solid yellow;
+    background-color: white; 
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 20%;
+    border-radius: 6px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+<script>
+function permissao(ev) {
+    ev.preventDefault();
+    console.log('permissao '+ev);
+}
+
+function pegar(ev) {
+    ev.dataTransfer.setData("banana", ev.target.id);
+    console.log("" + (ev.target.id === null) +(ev.target.id === '') );
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("banana");
+    console.log(data);
+    console.log(document.getElementById(data));
+    console.log('drop '+ ev);
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<div id='bla' class="card" draggable="true" ondragstart="pegar(event)">
+  <img src="img_avatar.png" alt="Avatar" width="36" height="69">
+  <div class="container" width="36" height="69">
+    <h4><b>John Doe</b></h4> 
+    <p>Architect</p> 
+  </div>
+</div>
+    <div id='blab' class="card" draggable="true" ondragstart="pegar(event)">
+  <img src="img_avatar.png" alt="Avatar" width="36" height="69">
+  <div class="container" width="36" height="69">
+    <h4><b>John </b></h4> 
+    <p>Artist</p> 
+  </div>
+</div>
+<div id="div1" ondrop="drop(event)" ondragover="permissao(event)"></div>
+
+</body>
+</html>
