@@ -112,7 +112,67 @@ function drop(ev) {
     }else{
        	document.getElementById("div1").appendChild(document.getElementById(data));
     }
+}</script>
+
+<script type="text/javascript">
+//Total máximo de campos que você permitirá criar em seu site:
+var totalCampos = 10;
+
+//Não altere os valores abaixo, pois são variáveis controle;
+var iLoop = 1;
+var iCount = 0;
+var linhaAtual;
+
+
+function AddCampos() {
+var hidden1 = document.getElementById("hidden1");
+var hidden2 = document.getElementById("hidden2");
+
+//Executar apenas se houver possibilidade de inserção de novos campos:
+if (iCount < totalCampos) {
+
+//Limpar hidden1, para atualizar a lista dos campos que ainda estão vazios:
+hidden2.value = "";
+
+//Atualizando a lista dos campos que estão ocultos.
+//Essa lista ficará armazenada temporiariamente em hidden2;
+for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
+        if (document.getElementById("div"+iLoop).style.display == "none") {
+                if (hidden2.value == "") {
+                        hidden2.value = "div"+iLoop;
+                }else{
+                        hidden2.value += ",div"+iLoop;
+                }
+        }
 }
+//Quebrando a lista que foi armazenada em hidden2 em array:
+linhasOcultas = hidden2.value.split(",");
+
+
+        if (linhasOcultas.length > 0) {
+                //Tornar visível o primeiro elemento de linhasOcultas:
+                document.getElementById(linhasOcultas[0]).style.display = "block"; iCount++;
+                
+                //Acrescentando o índice zero a hidden1:
+                if (hidden1.value == "") {
+                        hidden1.value = linhasOcultas[0];
+                }else{
+                        hidden1.value += ","+linhasOcultas[0];
+                }
+                
+                /*Retirar a opção acima da lista de itens ocultos: <-------- OPCIONAL!!!
+                if (hidden2.value.indexOf(","+linhasOcultas[0]) != -1) {
+                        hidden2.value = hidden2.value.replace(linhasOcultas[0]+",","");
+                }else if (hidden2.indexOf(linhasOcultas[0]+",") == 0) {
+                        hidden2.value = hidden2.value.replace(linhasOcultas[0]+",","");
+                }else{
+                        hidden2.value = "";
+                }
+                */
+        }
+}
+}
+
 </script>
 
 </head>
@@ -123,7 +183,9 @@ function drop(ev) {
 <a class="active" href="#home">Appraisals</a>
  <a href="#news">Admin</a>
 </ul>
-<br><br>
+<br><br><br>
+
+<input type="button" value="Adicionar nivel" onclick="AddCampos()" style="">
 <div id="div1" class="lacuna" ondrop="drop(event)" ondragover="permissao(event)">
     <div id='ret1' class="card" draggable="true" ondragover="return false" ondragstart="pegar(event)">
     <p class="forte"><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 1 </strong><p class="fraco">20%</p></p> 
@@ -135,10 +197,15 @@ function drop(ev) {
     <p><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 3</strong><p 		class="fraco">20%</p></p> 
 	</div>
 </div>
-<div id="div2" class="lacuna" ondrop="drop(event)" ondragover="permissao(event)"></div>
-<div id="div3" class="lacuna"ondrop="drop(event)" ondragover="permissao(event)"></div>
-<div id="div4" class="lacuna"ondrop="drop(event)" ondragover="permissao(event)"></div>
 
+<script type="text/javascript">
+//Escrevendo o código-fonte HTML e ocultando os campos criados:
+for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
+        document.write("<div id='div"+iLoop+"' class='lacuna' ondrop='drop(event)' ondragover='permissao(event)'style='display:none'></div>");
+	document.write("<span id='linha"+iLoop+"' style='display:none'>Arquivo "+iLoop+": <input type='text' id='arq"+iLoop+"' name='arq"+iLoop+"'></span>");
+}
+</script>
+<input type="hidden" name="hidden2" id="hidden2">
 </body>
 <footer>
 	<p>Appraise </p>
