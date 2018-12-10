@@ -1,0 +1,99 @@
+body{
+  background-color: #E6E6FA;
+}
+.lacuna {
+    width: calc(100% - 100px);
+    height: 100px;
+    padding: auto;
+    background-color: white;
+    border-radius: 6px;
+    margin: 30px auto auto auto;
+	border-style: dashed;
+	border-width: 2px;
+	border-color: gray;
+}
+
+.addlacuna {
+    width: calc(100% - 100px);
+    height: 100px;
+    padding: auto;
+    background-color: white;
+	opacity: 0.5;
+    border-radius: 6px;
+    margin: 30px auto auto auto;
+	border-style: dashed;
+	border-width: 2px;
+	border-color: gray;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 200px;
+    border-radius: 6px;
+    background-color: white; 
+    float: left;
+    padding-bottom:10px;
+    margin: 11px;
+    text-align: left;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.circulo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    float: left;
+    margin: 0px 10px ;
+}
+
+   .fraco{
+    font-size: 15px;
+    line-height: 0.1;
+   }
+
+	.forte{
+	font-size: 15px;
+}
+
+footer {
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: coral;
+    height:50px;
+    border-top: 5px solid blue
+    padding: 20px 15px;
+    width: 100%;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+ a.active {
+    color: black;
+    border-bottom: 3px solid coral;
+}

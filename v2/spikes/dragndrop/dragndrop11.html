@@ -2,111 +2,20 @@
 <html>
 <head>
 <title>Appraise</title>
-<style>
-body{
-  background-color: #E6E6FA;
-}
-.lacuna {
-    width: calc(100% - 100px);
-    height: 100px;
-    padding: auto;
-    background-color: white;
-    border-radius: 6px;
-    margin: 30px auto auto auto;
-	border-style: dashed;
-	border-width: 2px;
-	border-color: gray;
-}
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 200px;
-    border-radius: 6px;
-    background-color: white; 
-    float: left;
-    padding-bottom:10px;
-    margin: 11px;
-    text-align: left;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.circulo {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    float: left;
-    margin: 0px 10px ;
-}
-
-   .fraco{
-    font-size: 15px;
-    line-height: 0.1;
-   }
-
-	.forte{
-	font-size: 15px;
-}
-
-footer {
-    position: fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background-color: coral;
-    height:50px;
-    border-top: 5px solid blue
-    padding: 20px 15px;
-    width: 100%;
-}
-
-ul {
-    text-align: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-}
-
-a {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-
- a.active {
-    color: black;
-    border-bottom: 3px solid coral;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="estilo.css">
 <script>
 function permissao(ev) {
     ev.preventDefault();
- //   console.log('permissao '+ev);
 }
 
 function pegar(ev) {
     ev.dataTransfer.setData("banana", ev.target.id);
-  //  console.log("" + (ev.target.id === null) +(ev.target.id === '') );
 }
 
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("banana");
- //   console.log(data);
-//    console.log(document.getElementById(data));
- //   console.log('drop '+ ev);
+
      if(ev.target.id == "div1" || ev.target.id == "div2" || ev.target.id == "div3" || ev.target.id == "div4"){
       ev.target.appendChild(document.getElementById(data));
     }else{
@@ -115,8 +24,7 @@ function drop(ev) {
 }</script>
 
 <script type="text/javascript">
-//Total máximo de campos que você permitirá criar em seu site:
-var totalCampos = 10;
+var totalCampos = 3;
 
 //Não altere os valores abaixo, pois são variáveis controle;
 var iLoop = 1;
@@ -159,16 +67,6 @@ linhasOcultas = hidden2.value.split(",");
                 }else{
                         hidden1.value += ","+linhasOcultas[0];
                 }
-                
-                /*Retirar a opção acima da lista de itens ocultos: <-------- OPCIONAL!!!
-                if (hidden2.value.indexOf(","+linhasOcultas[0]) != -1) {
-                        hidden2.value = hidden2.value.replace(linhasOcultas[0]+",","");
-                }else if (hidden2.indexOf(linhasOcultas[0]+",") == 0) {
-                        hidden2.value = hidden2.value.replace(linhasOcultas[0]+",","");
-                }else{
-                        hidden2.value = "";
-                }
-                */
         }
 }
 }
@@ -202,9 +100,11 @@ linhasOcultas = hidden2.value.split(",");
 //Escrevendo o código-fonte HTML e ocultando os campos criados:
 for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
         document.write("<div id='div"+iLoop+"' class='lacuna' ondrop='drop(event)' ondragover='permissao(event)'style='display:none'></div>");
-	document.write("<span id='linha"+iLoop+"' style='display:none'>Arquivo "+iLoop+": <input type='text' id='arq"+iLoop+"' name='arq"+iLoop+"'></span>");
 }
 </script>
+<div id="adddiv" class="addlacuna" ondrop="drop(event)" ondragover="permissao(event)">
+
+
 <input type="hidden" name="hidden2" id="hidden2">
 </body>
 <footer>
