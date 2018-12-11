@@ -14,7 +14,7 @@ body{
 	border-color: gray;
 }
 
-.addlacuna {
+#adddiv {
     width: calc(100% - 100px);
     height: 100px;
     padding: auto;
@@ -51,13 +51,13 @@ body{
     margin: 0px 10px ;
 }
 
-   .fraco{
+.fraco{
     font-size: 15px;
     line-height: 0.1;
    }
 
-	.forte{
-	font-size: 15px;
+.forte{
+  font-size: 15px;
 }
 
 footer {

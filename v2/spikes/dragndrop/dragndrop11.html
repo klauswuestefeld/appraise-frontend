@@ -24,7 +24,7 @@ function drop(ev) {
 }</script>
 
 <script type="text/javascript">
-var totalCampos = 3;
+var totalCampos = 7;
 
 //Não altere os valores abaixo, pois são variáveis controle;
 var iLoop = 1;
@@ -33,13 +33,12 @@ var linhaAtual;
 
 
 function AddCampos() {
-var hidden1 = document.getElementById("hidden1");
 var hidden2 = document.getElementById("hidden2");
 
 //Executar apenas se houver possibilidade de inserção de novos campos:
 if (iCount < totalCampos) {
 
-//Limpar hidden1, para atualizar a lista dos campos que ainda estão vazios:
+//Limpar hidden2, para atualizar a lista dos campos que ainda estão vazios:
 hidden2.value = "";
 
 //Atualizando a lista dos campos que estão ocultos.
@@ -61,14 +60,12 @@ linhasOcultas = hidden2.value.split(",");
                 //Tornar visível o primeiro elemento de linhasOcultas:
                 document.getElementById(linhasOcultas[0]).style.display = "block"; iCount++;
                 
-                //Acrescentando o índice zero a hidden1:
-                if (hidden1.value == "") {
-                        hidden1.value = linhasOcultas[0];
-                }else{
-                        hidden1.value += ","+linhasOcultas[0];
-                }
         }
 }
+}
+
+function RmvCampos() {
+       document.getElementById("div"+iCount).style.display = "none";  iCount--;      
 }
 
 </script>
@@ -84,7 +81,8 @@ linhasOcultas = hidden2.value.split(",");
 <br><br><br>
 
 <input type="button" value="Adicionar nivel" onclick="AddCampos()" style="">
-<div id="div1" class="lacuna" ondrop="drop(event)" ondragover="permissao(event)">
+<input type="button" value="Remover nivel" onclick="RmvCampos()">
+<div id="divi" class="lacuna" ondrop="drop(event)" ondragover="permissao(event)">
     <div id='ret1' class="card" draggable="true" ondragover="return false" ondragstart="pegar(event)">
     <p class="forte"><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 1 </strong><p class="fraco">20%</p></p> 
 	</div>
@@ -102,8 +100,8 @@ for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
         document.write("<div id='div"+iLoop+"' class='lacuna' ondrop='drop(event)' ondragover='permissao(event)'style='display:none'></div>");
 }
 </script>
-<div id="adddiv" class="addlacuna" ondrop="drop(event)" ondragover="permissao(event)">
-
+<div id="adddiv" ondrop="drop(event)" ondragover="permissao(event)"></div>
+<br><br><br><br>
 
 <input type="hidden" name="hidden2" id="hidden2">
 </body>
