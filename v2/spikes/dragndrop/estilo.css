@@ -3,8 +3,9 @@ body{
 }
 .lacuna {
     width: calc(100% - 100px);
+    overflow: auto;
     height: 100px;
-    padding: auto;
+    padding: initial;
     background-color: white;
     border-radius: 6px;
     margin: 30px auto auto auto;
@@ -65,9 +66,7 @@ footer {
     left:0;
     right:0;
     background-color: coral;
-    height:50px;
-    border-top: 5px solid blue
-    padding: 20px 15px;
+    height: auto;
     width: 100%;
 }
 
