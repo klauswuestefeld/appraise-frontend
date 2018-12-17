@@ -7,17 +7,35 @@
 
         <title>Percival</title>
         <meta name="description" content="Percival">
-        <link rel="icon" type="image/png" sizes="192x192" href="../src/runtime/images/files/logo-icon192.png">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+        <script src="src/main/Percy.js"></script>
+        <script src="src/main/Auth.js"></script>
+        <script src="src/main/Launcher.js"></script>
 
     </head>
 
     <body>
 
-        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+        <div id="header">
 
-        <script src="../src/main/Percy.js"></script>
-        <script src="../src/main/Auth.js"></script>
-        <script src="../src/main/Launcher.js"></script>
+        </div>
+
+        <div id="login">
+           <button onclick="Percy.loginClicked();" id="google-login">
+              Login with Google
+           </button>
+        </div>
+
+        <div id="logged">
+          Logged in
+        </div>
+
+        <div id="footer">
+
+        </div>
 
     </body>
 

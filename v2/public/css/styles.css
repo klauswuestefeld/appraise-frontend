@@ -1,0 +1,16 @@
+
+#login {
+  display: none;
+}
+#login.show {
+  display: initial;
+}
+
+
+#logged {
+  display: none;
+}
+#logged.show {
+  display: initial;
+}
+

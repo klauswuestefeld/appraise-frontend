@@ -19,10 +19,11 @@ Percy.initAuth = function() {
 
             if (signedIn) {
                 backendAuth(Percy.auth2.currentUser.get().getAuthResponse().id_token);
-                Percy.auth2.signOut();
+                var logged = document.getElementById("logged");
+                logged.classList.add("show");
             } else {
-                console.log("Abrindo SignIn...");
-                Percy.auth2.signIn();
+                var login = document.getElementById("login");
+                login.classList.add("show");
             }
 
         });
@@ -45,3 +46,24 @@ Percy.initAuth = function() {
     }
 
 };
+
+Percy.loginClicked = function () {
+    Percy.auth2.signIn();
+};
+
+
+
+Percy.authenticator = {
+
+  login: function() {
+      this.user = 1;
+  },
+
+  user: 0
+
+};
+
+
+
+
+
