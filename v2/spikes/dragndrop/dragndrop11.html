@@ -4,69 +4,69 @@
 <title>Percival</title>
 <link rel="stylesheet" type="text/css" href="estilo.css">
 <script>
-function permissao(ev) {
-    ev.preventDefault();
-}
-
-function pegar(ev) {
-    ev.dataTransfer.setData("banana", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("banana");
-
-     if(ev.target.id == "div1" || ev.target.id == "div2" || ev.target.id == "div3" || ev.target.id == "div4"){
-      ev.target.appendChild(document.getElementById(data));
-    }else{
-       	document.getElementById("div1").appendChild(document.getElementById(data));
+    function permissao(ev) {
+        ev.preventDefault();
     }
-}</script>
+
+    function pegar(ev) {
+        ev.dataTransfer.setData("banana", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("banana");
+
+        if(ev.target.id == "div1" || ev.target.id == "div2" || ev.target.id == "div3" || ev.target.id == "div4"){
+            ev.target.appendChild(document.getElementById(data));
+        } else {
+            document.getElementById("div1").appendChild(document.getElementById(data));
+        }
+    }
+</script>
 
 <script type="text/javascript">
-var totalCampos = 7;
+    var totalCampos = 7;
 
-//Não altere os valores abaixo, pois são variáveis controle;
-var iLoop = 1;
-var iCount = 0;
-var linhaAtual;
+    //Não altere os valores abaixo, pois são variáveis controle;
+    var iLoop = 1;
+    var iCount = 0;
+    var linhaAtual;
 
 
-function AddCampos() {
-var hidden2 = document.getElementById("hidden2");
+    function AddCampos() {
+        var hidden2 = document.getElementById("hidden2");
 
-//Executar apenas se houver possibilidade de inserção de novos campos:
-if (iCount < totalCampos) {
+        //Executar apenas se houver possibilidade de inserção de novos campos:
+        if (iCount < totalCampos) {
 
-//Limpar hidden2, para atualizar a lista dos campos que ainda estão vazios:
-hidden2.value = "";
+            //Limpar hidden2, para atualizar a lista dos campos que ainda estão vazios:
+            hidden2.value = "";
 
-//Atualizando a lista dos campos que estão ocultos.
-//Essa lista ficará armazenada temporiariamente em hidden2;
-for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
-        if (document.getElementById("div"+iLoop).style.display == "none") {
-                if (hidden2.value == "") {
+            //Atualizando a lista dos campos que estão ocultos.
+            //Essa lista ficará armazenada temporiariamente em hidden2;
+            for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
+                if (document.getElementById("div"+iLoop).style.display == "none") {
+                    if (hidden2.value == "") {
                         hidden2.value = "div"+iLoop;
-                }else{
+                    } else {
                         hidden2.value += ",div"+iLoop;
+                    }
                 }
-        }
-}
-//Quebrando a lista que foi armazenada em hidden2 em array:
-linhasOcultas = hidden2.value.split(",");
+            }
 
+            //Quebrando a lista que foi armazenada em hidden2 em array:
+            linhasOcultas = hidden2.value.split(",");
 
-        if (linhasOcultas.length > 0) {
+            if (linhasOcultas.length > 0) {
                 //Tornar visível o primeiro elemento de linhasOcultas:
                 document.getElementById(linhasOcultas[0]).style.display = "block"; iCount++;
-
+            }
         }
-}
-}
+    }
 
-function RmvCampos() {
-       document.getElementById("div"+iCount).style.display = "none";  iCount--;
-}
+    function RmvCampos() {
+        document.getElementById("div"+iCount).style.display = "none";  iCount--;
+    }
 
     var cards = [
       {name: 'John',  certainty:  20, picture: 'img1.png', level:  0},
@@ -80,7 +80,6 @@ function RmvCampos() {
 </script>
 
 </head>
-<!-- Draggable serve para arrastar, pois em alguns browsers a função não ocorre por default-->
 
 <body>
 <ul>
