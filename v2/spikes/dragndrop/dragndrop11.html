@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Appraise</title>
+<title>Percival</title>
 <link rel="stylesheet" type="text/css" href="estilo.css">
 <script>
 function permissao(ev) {
@@ -59,13 +59,13 @@ linhasOcultas = hidden2.value.split(",");
         if (linhasOcultas.length > 0) {
                 //Tornar visível o primeiro elemento de linhasOcultas:
                 document.getElementById(linhasOcultas[0]).style.display = "block"; iCount++;
-                
+
         }
 }
 }
 
 function RmvCampos() {
-       document.getElementById("div"+iCount).style.display = "none";  iCount--;      
+       document.getElementById("div"+iCount).style.display = "none";  iCount--;
 }
 
 </script>
@@ -84,13 +84,13 @@ function RmvCampos() {
 <input type="button" value="Remover nivel" onclick="RmvCampos()">
 <div id="divi" class="lacuna" ondrop="drop(event)" ondragover="permissao(event)">
     <div id='ret1' class="card" draggable="true" ondragover="return false" ondragstart="pegar(event)">
-    <p class="forte"><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 1 </strong><p class="fraco">20%</p></p> 
+    <p class="forte"><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 1 </strong><p class="fraco">20%</p></p>
 	</div>
     <div id='ret2' class="card" draggable="true" ondragover="return false" ondragstart="pegar(event)">
-    <p><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 2</strong><p 		class="fraco">20%</p></p> 
+    <p><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 2</strong><p 		class="fraco">20%</p></p>
 	</div>
     <div id='ret3' class="card" draggable="true" ondragover="return false" ondragstart="pegar(event)">
-    <p><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 3</strong><p 		class="fraco">20%</p></p> 
+    <p><img class="circulo" src="img_avatar.png" alt="Avatar"><strong> John 3</strong><p 		class="fraco">20%</p></p>
 	</div>
 </div>
 
@@ -106,6 +106,6 @@ for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
 <input type="hidden" name="hidden2" id="hidden2">
 </body>
 <footer>
-	<p>Appraise </p>
+	<p>Percival </p>
 </footer>
 </html>

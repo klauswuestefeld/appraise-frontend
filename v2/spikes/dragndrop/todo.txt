@@ -1,0 +1,6 @@
+cards = [
+  {nome: 'John',  certeza:  20, foto: 'img.png', level:  0},
+  {nome: 'Peter', certeza:  80, foto: 'img.png', level:  1},
+  {nome: 'André', certeza:  40, foto: 'img.png', level: -3},
+  {nome: 'Maria', certeza: 100, foto: 'img.png', level:  5}
+]
