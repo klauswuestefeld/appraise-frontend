@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
 
-    <head lang="en">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Percival">
 
-        <meta charset="UTF-8">
+    <title>Percival - Fair Salaries</title>
 
-        <title>Percival</title>
-        <meta name="description" content="Percival">
-        <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
-        <script src="src/main/Percy.js"></script>
-        <script src="src/main/Auth.js"></script>
-        <script src="src/main/Launcher.js"></script>
+    <script src="src/main/Percy.js"></script>
+    <script src="src/main/Auth.js"></script>
+    <script src="src/main/Launcher.js"></script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div id="header">
-             <button onclick="Percy.logoutClicked();" id="logout">
-                 Logout
-             </button>
-        </div>
+    <div id="header">
+        <button id="logout" onclick="Percy.logoutClicked();">
+            Logout
+        </button>
+    </div>
 
-        <div id="login">
-           <button onclick="Percy.loginClicked();" id="google-login">
-              Login with Google
-           </button>
-        </div>
+    <div id="login">
+        <button onclick="Percy.loginClicked();" id="google-login">
+            Login with Google
+        </button>
+    </div>
 
-        <div id="logged">
-          Logged in
-        </div>
+    <div id="logged">
+        Logged in
+    </div>
 
-        <div id="footer">
+    <div id="footer">
 
-        </div>
+    </div>
 
-    </body>
+</body>
 
 </html>
