@@ -3,7 +3,7 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="description" content="Percival">
+    <meta name="description" content="Percival, Appraise, fair salaries, peer set salaries.">
 
     <title>Percival - Fair Salaries</title>
 
@@ -14,30 +14,46 @@
     <script src="src/main/Percy.js"></script>
     <script src="src/main/Auth.js"></script>
     <script src="src/main/Launcher.js"></script>
-
 </head>
 
 <body>
+   
+    <div id="cabecalho"> 
 
-    <div id="header">
-        <button id="logout" onclick="Percy.logoutClicked();">
-            Logout
+      <button id="logo">
+        Percival        
+      </button>  
+   
+      <div id="menu">
+
+        <button class="tab"> 
+          Appraisals        
         </button>
-    </div>
+     
+        <button class="tab selected-tab">
+          Admin        
+        </button>
 
-    <div id="login">
+      </div>
+
+      <div id="session">
+        <button id="login">
+          FAZER LOGIN        
+        </button>
+      </div>
+        
+  </div>
+    
+  <footer>
+    Copyright 2019 Klaus Wuestefeld
+  </footer>
+
+<!--    <div id="login">
         <button onclick="Percy.loginClicked();" id="google-login">
             Login with Google
         </button>
     </div>
-
-    <div id="logged">
-        Logged in
-    </div>
-
-    <div id="footer">
-
-    </div>
+-->
 
 </body>
 

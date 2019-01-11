@@ -1,4 +1,4 @@
-
+/*Limpar as formatações do CSS */
 body {
   font-family: sans-serif;
   font-weight: normal;
@@ -30,38 +30,96 @@ body {
 }
 
 
-#header {
+
+:root {
+  --percival-blue: #486ece;
+  --percival-dark: rgb(40,40,40);
+}
+
+
+#cabecalho {
+
+  border-top-color: var(--percival-blue); 
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-bottom-color: lightgray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+    
+
+  display: flex;
+  justify-content: space-between;
+
+  height: 75px;                         /*height= altura*/
+  background: white;                    /* background=Fundo rgb=vermelho, verde, azul max 255*/
+}
+
+#logo {    
+  font-size: 14px;                        
+  color: var(--percival-dark);           
+  border: 1px solid var(--percival-dark);  
+  padding: 0px 50px;
+}
+
+#menu {
+  display: flex;
+}
+
+
+.tab {
+ 
+  font-size: 14px;                     
+  color: var(--percival-dark);           
+  padding: 0px 20px;
+}
+
+
+.selected-tab {
+  border-top-color: transparent;
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-bottom-color: var(--percival-blue);
+  border-bottom-style: solid;
+  border-bottom-width: 4px;  
+}
+
+
+#session {
+  margin-right: 20px;
+
   display: flex;
   align-items: center;
-  height: 72px;
-  background: #6596eb;
 }
-#logout {
-  margin-left: auto;
-  margin-right: 20px;
-  height: 32px;
+
+
+#login {    
+  font-size: 14px;                        /* tamanho da fonte*/
+  color: var(--percival-dark);            /* cor da fonte (branco)*/
+  border: 1px solid var(--percival-dark);  /* borda (branca)*/
+  padding: 10px 5px;
+}
+
+
+/**** Footer */
+
+:root {
+  --footer-height: 70px;
+}
+
+
+html { height: 100%; }
+body { min-height: 100%; padding:0; margin:0; position:relative; }
+body::after { content: ""; display:block; height: var(--footer-height); }
+footer { 
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
+  height: var(--footer-height);
+
   font-size: 14px;
   color: white;
-  border: 1px solid white;
-  padding: 0 5px;
+  background: var(--percival-dark);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
-
-#login {
-  display: none;
-}
-#login.show {
-  display: initial;
-}
-
-
-#logged {
-  display: none;
-  font-size: 16px;
-  line-height: 20px;
-}
-#logged.show {
-  display: initial;
-}
-
-
-
