@@ -14,6 +14,7 @@
     <script src="src/main/Percy.js"></script>
     <script src="src/main/Auth.js"></script>
     <script src="src/main/Launcher.js"></script>
+	<script src="src/main/swtclass.js"></script>
 </head>
 
 <body>
@@ -26,11 +27,11 @@
    
       <div id="menu">
 
-        <button class="tab"> 
+        <button id="bar1" onclick="switch1()" class="tab selected-tab"> 
           Appraisals        
         </button>
      
-        <button class="tab selected-tab">
+        <button id="bar2" onclick="switch2()" class="tab">
           Admin        
         </button>
 
