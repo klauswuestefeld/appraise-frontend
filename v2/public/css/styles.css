@@ -74,7 +74,7 @@ body {
 }
 
 
-.selected-tab {
+.selected {
   border-top-color: transparent;
   border-top-style: solid;
   border-top-width: 4px;
@@ -121,5 +121,5 @@ footer {
   background: var(--percival-dark);
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 20px;
 }
