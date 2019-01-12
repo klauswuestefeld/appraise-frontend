@@ -9,19 +9,13 @@ class1 = document.getElementById('tst').className;
 }*/
 
 function switch1(){
-	class1 = document.getElementById('appraisals-tab').className; 
-	if(class1 == 'tab'){
        document.getElementById('appraisals-tab').className = 'tab selected';
        document.getElementById('admin-tab').className = 'tab';
-   }
 };
 
 function switch2(){
-	class2 = document.getElementById('admin-tab').className; 
-	if(class2 == 'tab'){
        document.getElementById('admin-tab').className = 'tab selected';
        document.getElementById('appraisals-tab').className = 'tab';
-   }
 };
 
 /*document.getElementById.onclick = function() {swtclass()};*/
