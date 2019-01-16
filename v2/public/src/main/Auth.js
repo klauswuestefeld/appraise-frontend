@@ -7,7 +7,7 @@ Percy.initAuth = function() {
         });
 
         // auth2.attachClickHandler(
-        //     element,
+        //     element, //GOOGLE LOGIN BUTTON < < < < < < < < <
         //     {},
         //     onGoogleLoginSuccess,
         //     onGoogleLoginError
