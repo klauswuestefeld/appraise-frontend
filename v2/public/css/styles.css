@@ -37,22 +37,36 @@ body {
 }
 
 
-#cabecalho {
-
-  border-top-color: var(--percival-blue); 
-  border-top-style: solid;
-  border-top-width: 3px;
-  border-bottom-color: lightgray;
+#cenarios {
+  height: 40px;
+  background: #F0F0F0;
+  border-bottom-color: gray;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-    
-
-  display: flex;
-  justify-content: space-between;
-
-  height: 75px;                         /*height= altura*/
-  background: white;                    /* background=Fundo rgb=vermelho, verde, azul max 255*/
 }
+
+.cenario {
+  height: 20px;
+  color: grey;
+  font-size: 9px;
+}
+
+#cabecalho {
+
+   border-top-color: var(--percival-blue);
+   border-top-style: solid;
+   border-top-width: 3px;
+   border-bottom-color: lightgray;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+
+
+   display: flex;
+   justify-content: space-between;
+
+   height: 75px;                         /*height= altura*/
+   background: white;                    /* background=Fundo rgb=vermelho, verde, azul max 255*/
+ }
 
 #logo {    
   font-size: 14px;                        
