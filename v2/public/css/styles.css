@@ -46,9 +46,11 @@ body {
 }
 
 .cenario {
-  height: 20px;
+  height: 40px;
   color: grey;
-  font-size: 9px;
+  font-size: 30px;
+  margin-right: 20px;
+  margin-top: 5px;
 }
 
 #cabecalho {
@@ -87,7 +89,6 @@ body {
   padding: 0px 20px;
 }
 
-
 .selected {
   border-top-color: transparent;
   border-top-style: solid;
@@ -100,7 +101,6 @@ body {
 
 #session {
   margin-right: 20px;
-
   display: flex;
   align-items: center;
 }
