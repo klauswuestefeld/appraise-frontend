@@ -29,7 +29,14 @@ body {
   box-sizing: inherit;
 }
 
-
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  float: left;
+  margin: 0px 10px ;
+}
 
 :root {
   --percival-blue: #486ece;
