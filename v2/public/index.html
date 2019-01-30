@@ -43,7 +43,7 @@
 
       <div id="session">
         <img src="https://www.lance.com.br/files/article_main/uploads/2018/02/02/5a74752bac28f.jpeg" alt="usuario" class="circle">
-        <button id="login" onclick="Percy.loginClicked();">
+        <button id="logado">
           Usuário logado
         </button>
       </div>
@@ -62,14 +62,25 @@
 //  Nivel abaixo com 8 cards, um deles sendo arrastado
 //  Nivel abaixo com 3 cards, nivel destino do arrastado
 //  Nivel novo abaixo
- </div>
- <div id="conLog">
-  
-
- </div>
- <div id="conAdm">
-    <textarea></textarea>
- </div>
+    <div class="new"></div>
+    <div class="normal"></div>
+    <div id="yourLevel" class="normal">
+      <div id='ret1' class="card">
+          <img class="circle" src="https://www.lance.com.br/files/article_main/uploads/2018/02/02/5a74752bac28f.jpeg"alt="Avatar"><strong> Lucho </strong>
+      </div>
+    </div>
+    <div class="new"></div>
+  </div>
+  <div id="conLog">
+    <button id="login" onclick="Percy.loginClicked();">
+      Fazer login
+    </button>
+  </div>
+  <div id="conAdm">
+    <h6>Team Members</h6>
+    <textarea placeholder="Add new people!"></textarea>
+    <button id="saveButton">Save</button>
+  </div>
 </body>
   <footer>
     Copyright 2019 Klaus Wuestefeld
