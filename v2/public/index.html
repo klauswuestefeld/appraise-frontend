@@ -62,37 +62,34 @@
 //  Nivel abaixo com 8 cards, um deles sendo arrastado
 //  Nivel abaixo com 3 cards, nivel destino do arrastado
 //  Nivel novo abaixo
-    <div class="new"></div>
-    <div class="normal"></div>
+    <div class="new"><p class="textoComum">ADD NEW LEVEL</p></div>
+    <div class="normal"><p class="textoComum">1</p></div>
     <div id="yourLevel" class="normal">
+      <p class="textoComum">YOUR LEVEL</p>
       <div id='ret1' class="card">
           <img class="circle" src="https://www.lance.com.br/files/article_main/uploads/2018/02/02/5a74752bac28f.jpeg"alt="Avatar"><strong> Lucho </strong>
       </div>
     </div>
-    <div class="new"></div>
+    <div class="new"><p class="textoComum">ADD NEW LEVEL</p></div>
   </div>
   <div id="conLog">
+    <p class="textoComum">Get a magic login link in your email</p>
+    <input class="mailMagic" type="text" value="you@mail.com">
+    <input class="sendMagic" type="submit" value="Send">
+    <p class="textoComum"> or </p>
     <button id="login" onclick="Percy.loginClicked();">
       Fazer login
     </button>
   </div>
   <div id="conAdm">
     <h6>Team Members</h6>
+    <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
+    <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton">Save</button>
   </div>
 </body>
   <footer>
     Copyright 2019 Klaus Wuestefeld
   </footer>
-
-<!--    <div id="login">
-        <button onclick="Percy.loginClicked();" id="google-login">
-            Login with Google
-        </button>
-    </div>
--->
-
-</body>
-
 </html>
