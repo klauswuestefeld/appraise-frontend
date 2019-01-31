@@ -149,3 +149,30 @@ h6{
   color: var(--percival-dark);
   padding: 10px 5px;    
 }
+
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  font-size: 10px;                        
+  color: var(--percival-dark); 
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+}
+
+.dropdown-content a {
+  color: black;
+  display: block;
+}
+
+.show {display: block;}
