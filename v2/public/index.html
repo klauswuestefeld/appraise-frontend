@@ -17,6 +17,8 @@
     <script src="src/main/Launcher.js"></script>
     <script src="src/main/Swtclass.js"></script>
     <script src="src/main/Transition.js"></script>
+    <script src="src/main/DisabledButton.js"></script>
+    <script src="src/main/Levels.js"></script>
 </head>
 
 <body>
@@ -78,7 +80,7 @@
   </div>
   <div id="conLog">
     <p class="textoComum">Get a magic login link in your email</p>
-    <input class="mailMagic" type="text" value="you@mail.com">
+    <input class="mailMagic" type="text" placeholder="you@mail.com">
     <input class="sendMagic" type="submit" value="Send">
     <p class="textoComum"> or </p>
     <button id="login" onclick="Percy.loginClicked();">
@@ -90,35 +92,35 @@
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton">Save</button>
+    <button id="saveButton1" class="saveButton">Save</button>
   </div>
     <div id="conDisabled">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea placeholder="Add new people!"></textarea>
+    <textarea id="caixaTexto" placeholder="Add new people!"></textarea>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton">Save</button>
+    <button id="saveButton2" class="saveButton">Save</button>
   </div>
     <div id="conRed">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p class="textoComum">Texto vermelho</p>
+    <p id="redText" class="textoComum">Texto vermelho</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton">Save</button>
+    <button id="saveButton3" class="saveButton">Save</button>
   </div>
   <div id="conGreen">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p class="textoComum">Texto verde</p>
+    <p id="greenText" class="textoComum">Texto verde</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton">Save</button>
+    <button id="saveButton4" class="saveButton">Save</button>
   </div>
   <div id="conMagicLog">
     <p class="textoComum">A magic link has been sent to
-      <strong>mnfbgf</strong>
-      Use it to log in to AppRaise from any device.
+      <strong>bla@mail.com</strong>
+      Use it to log in to Percival from any device.
       If you did not receive the email after a few minutes, please let us know. Look in your spam folder too.</p>
   </div>
   </div>
