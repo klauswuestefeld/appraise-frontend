@@ -1,4 +1,4 @@
- /*Limpar as formatações do CSS */
+ /**** Limpar as formatações do CSS */
 body {
   font-family: sans-serif;
   font-weight: normal;
@@ -29,6 +29,10 @@ body {
   box-sizing: inherit;
 }
 
+
+/**** Scenario Control */
+.force-display-none {display: none !important;}
+
 #cenarios {
   height: 40px;
   background: #F0F0F0;
@@ -40,10 +44,11 @@ body {
 .cenario {
   height: 40px;
   color: grey;
-  font-size: 28px;
+  font-size: 14px;
   margin-right: 20px;
   margin-top: 5px;
 }
+
 
 .normal {
   width: calc(100% - 100px);
