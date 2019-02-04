@@ -8,8 +8,10 @@ window.addEventListener("load", function() {
      document.getElementById("scnMagicLog").onclick = function() {magicLogScreen()};
 });
 
-function logScreen(){
-	document.getElementById("session").style.display = "none";
+function logScreen() {
+    setDisplay({
+       "session": false
+    });
 	document.getElementById("menu").style.display = "none";
 	document.getElementById("conLog").style.display = "block";
 	document.getElementById("conAdm").style.display = "none";
@@ -20,8 +22,12 @@ function logScreen(){
 	document.getElementById("conMagicLog").style.display = "none";
 }
 
-function admScreen(){
-	document.getElementById("session").style.display = "flex";
+function admScreen() {
+    setDisplay({
+       "session": true
+    });
+
+	document.getElementById("session").classList.remove('force-display-none');
 	document.getElementById("menu").style.display = "flex";
 	document.getElementById("conAdm").style.display = "block";
 	document.getElementById("conLog").style.display = "none";
@@ -91,4 +97,14 @@ function magicLogScreen(){
 	document.getElementById("conRed").style.display = "none";
 	document.getElementById("conGreen").style.display = "none";
 	document.getElementById("conMagicLog").style.display = "block";
+}
+
+function setDisplay(displaysById){
+    for (id in displaysById) {
+        if (displaysById[id]) {
+ 	        document.getElementById(id).classList.remove('force-display-none');
+        } else {
+            document.getElementById(id).classList.add('force-display-none');
+        }
+    }
 }
