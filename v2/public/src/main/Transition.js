@@ -10,93 +10,101 @@ window.addEventListener("load", function() {
 
 function logScreen() {
     setDisplay({
-       "session": false
+       "session": false,
+       "menu": false,
+       "conLog": true,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": false,
+       "conRed": false,
+       "conGreen": false,
+       "conMagicLog": false
     });
-	document.getElementById("menu").style.display = "none";
-	document.getElementById("conLog").style.display = "block";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "none";
 }
 
 function admScreen() {
     setDisplay({
-       "session": true
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": true,
+       "conApp": false,
+       "conDisabled": false,
+       "conRed": false,
+       "conGreen": false,
+       "conMagicLog": false
     });
-
-	document.getElementById("session").classList.remove('force-display-none');
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conAdm").style.display = "block";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "none";
 }
 
 
 function appScreen(){
-	document.getElementById("session").style.display = "flex";
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conApp").style.display = "block";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "none";
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp":true,
+       "conDisabled": false,
+       "conRed": false,
+       "conGreen": false,
+       "conMagicLog": false
+    });
 }
 
 function disabledScreen(){
-	document.getElementById("session").style.display = "flex";
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conDisabled").style.display = "block";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "none";
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": true,
+       "conRed": false,
+       "conGreen": false,
+       "conMagicLog": false
+    });
 }
 
 function redScreen(){
-	document.getElementById("session").style.display = "flex";
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "block";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "none";
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": false,
+       "conRed": true,
+       "conGreen": false,
+       "conMagicLog": false
+    });
 }
 
 function greenScreen(){
-	document.getElementById("session").style.display = "flex";
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "block";
-	document.getElementById("conMagicLog").style.display = "none";
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": false,
+       "conRed": false,
+       "conGreen": true,
+       "conMagicLog": false
+    });
 }
 
 function magicLogScreen(){
-	document.getElementById("session").style.display = "flex";
-	document.getElementById("menu").style.display = "flex";
-	document.getElementById("conApp").style.display = "none";
-	document.getElementById("conAdm").style.display = "none";
-	document.getElementById("conLog").style.display = "none";
-	document.getElementById("conDisabled").style.display = "none";
-	document.getElementById("conRed").style.display = "none";
-	document.getElementById("conGreen").style.display = "none";
-	document.getElementById("conMagicLog").style.display = "block";
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": false,
+       "conRed": false,
+       "conGreen": false,
+       "conMagicLog": true
+    });
 }
 
 function setDisplay(displaysById){
