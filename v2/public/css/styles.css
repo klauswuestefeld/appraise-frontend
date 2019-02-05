@@ -25,8 +25,8 @@
    display: flex;
    justify-content: space-between;
 
-   height: 75px;                         /*height= altura*/
-   background: white;                    /* background=Fundo rgb=vermelho, verde, azul max 255*/
+   height: 75px;                         
+   background: white;                    
  }
 
 #logo {    

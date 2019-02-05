@@ -28,14 +28,14 @@
         <button id="scnAdm" class="cenario">admin</button>
         <button id="scnApp" class="cenario">appraisals</button>
         <button id="scnAdmDisabled" class="cenario">admin-disabled</button>
-        <button id="scnAdmRed" class="cenario">admin-msg-red</button>
-        <button id="scnAdmGreen" class="cenario">admin-msg-green</button>
+        <button id="scnAdmRed" class="cenario">admin-msg-wrong</button>
+        <button id="scnAdmGreen" class="cenario">admin-msg-ok</button>
         <button id="scnMagicLog" class="cenario">magic login</button>
     </div>
 
     <div id="cabecalho">
       <button id="logo">
-        Percival
+       <img class="logoPercival" src="static/logo.jpeg"alt="Percival">
       </button>
 
       <div id="menu">
@@ -49,9 +49,9 @@
       </div>
 
       <div id="session">
-        <img src="https://www.lance.com.br/files/article_main/uploads/2018/02/02/5a74752bac28f.jpeg" alt="usuario" class="circle">
+        <img src="static/usuariologado.jpeg" alt="usuario" class="circle">
         <button id="logado" class="dropbtn">
-          Usuário logado
+          José Ivaldo
         </button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#home" class="textoComum">Logout</a>
@@ -77,7 +77,7 @@
     <div id="yourLevel" class="normal">
       <p class="textoComum">YOUR LEVEL</p>
       <div id='ret1' class="card">
-          <img class="circle" src="https://www.lance.com.br/files/article_main/uploads/2018/02/02/5a74752bac28f.jpeg"alt="Avatar"><strong> Lucho </strong>
+          <img class="circle" src="static/usuariologado.jpeg"alt="Avatar"><strong> José Ivaldo </strong>
       </div>
     </div>
     <div class="new"><p class="textoComum">ADD NEW LEVEL</p></div>
@@ -94,7 +94,8 @@
   <div id="conAdm">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea placeholder="Add new people!"></textarea>
+    <textarea placeholder="johndoe@acme.com <tab> John Doe 
+      marydoe@acme.com <tab> Mary Doe"></textarea>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton1" class="saveButton">Save</button>
   </div>
@@ -109,7 +110,7 @@
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p id="redText" class="textoComum">Texto vermelho</p>
+    <p id="redText" class="textoComum">Texto erro</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton3" class="saveButton">Save</button>
   </div>
@@ -117,7 +118,7 @@
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p id="greenText" class="textoComum">Texto verde</p>
+    <p id="greenText" class="textoComum">Texto ok</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton4" class="saveButton">Save</button>
   </div>

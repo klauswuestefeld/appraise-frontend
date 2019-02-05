@@ -2,12 +2,12 @@ window.addEventListener("load", function() {
      document.getElementById("saveButton2").onclick = function() {disableSave()};
      document.getElementById("saveButton3").onclick = function() {redSave()};
      document.getElementById("saveButton4").onclick = function() {greenSave()};
-     document.getElementById("redText").style.display="none";
-     document.getElementById("greenText").style.display="none";
+     //document.getElementById("redText").style.display="none";
+     //document.getElementById("greenText").style.display="none";
 });
 
 
-function disableSave(){
+/*function disableSave(){
 	var texto = document.getElementById("caixaTexto");	
 	if(texto.value.length == 0)	{
 			alert("O campo deve ser preenchido");					
@@ -23,4 +23,4 @@ function redSave(){
 function greenSave(){
  	var botaoVerde = document.getElementById("greenText");
  	botaoVerde.style.display="inline";
-}
+}*/

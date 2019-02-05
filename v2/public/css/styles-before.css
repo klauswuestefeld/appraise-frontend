@@ -83,7 +83,7 @@ body {
 }
 
 textarea {
-  width:300px;
+  width:400px;
   height:200px;
   border-style: solid; 
   margin:100px;
@@ -181,3 +181,9 @@ h6{
 }
 
 .show {display: block;}
+
+
+.logoPercival{
+  height: 70px;
+  width: 150px; 
+}
