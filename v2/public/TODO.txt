@@ -1,13 +1,34 @@
-  OK Ordenar cenarios
-Menu
-  OK Fazer selecao de abas parar de funcionar
-Session
-  OK Imagem de exemplo com fundo escuro p vermos o circulo
-  OK Triangulozinho p baixo
-  OK Cenario novo para drop down aberta
-  OK Fazer todos os botoes pararem de funcionar (só os de cenario funcionando)
 Login
-  OK Botao com imagem
+  Logotipo Google arrumar no FF
+
+Ordenar scenarios
+  Drop down logo depois do login
+  Appraisals depois do admin
+CSS Before
+  Ordenar classes agrupando por cenario
+index.html
+  Traduzir p ingles
+  nomes extensos
+  camelCase -> snake-case
+  Eliminar repetiçoẽs, se houver
+
+Appraisals
+  scenario "Vazio"
+    1 Nivel Novo Acima
+    Meu Nivel c 1 Card
+    1 Nivel Novo Abaixo
+
+  scenario "Cheio"
+    Nivel novo acima
+    Nivel acima com 1 card
+    Nivel acima vazio
+    Meu Nivel com 30 cards
+    Nivel abaixo com 8 cards, um deles sendo arrastado
+    Nivel abaixo com 3 cards, nivel destino do arrastado
+    Nivel novo abaixo
+
+
 Admin
-  Quebra de linha no placeholder
-  OK Classes diferentes no texto ok e texto erro
+  Quebra de linha no placeholder - fazer com JS
+Menu
+  Fazer selecao de abas funcionar de acordo com os scenarios
