@@ -1,4 +1,4 @@
-function change(el) {
+/*function change(el) {
 if (el == 'appraisals-tab'){
    document.getElementById('appraisals-tab').classList.add('selected');
    document.getElementById('admin-tab').classList.remove('selected');

@@ -25,12 +25,13 @@
 <body>
     <div id="cenarios">
         <button id="scnLog" class="cenario">login</button>
-        <button id="scnAdm" class="cenario">admin</button>
-        <button id="scnApp" class="cenario">appraisals</button>
-        <button id="scnAdmDisabled" class="cenario">admin-disabled</button>
-        <button id="scnAdmRed" class="cenario">admin-msg-wrong</button>
-        <button id="scnAdmGreen" class="cenario">admin-msg-ok</button>
         <button id="scnMagicLog" class="cenario">magic login</button>
+        <button id="scnApp" class="cenario">appraisals</button>
+        <button id="scnAdm" class="cenario">admin</button>
+        <button id="scnAdmDisabled" class="cenario">admin-disabled</button>
+        <button id="scnAdmWrong" class="cenario">admin-msg-wrong</button>
+        <button id="scnAdmOk" class="cenario">admin-msg-ok</button>
+        <button id="scnDropdown" class="cenario">dropdown</button>
     </div>
 
     <div id="cabecalho">
@@ -51,7 +52,7 @@
       <div id="session">
         <img src="static/usuariologado.jpeg" alt="usuario" class="circle">
         <button id="logado" class="dropbtn">
-          José Ivaldo
+          José Ivaldo 
         </button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#home" class="textoComum">Logout</a>
@@ -96,6 +97,7 @@
     <input class="sendMagic" type="submit" value="Send">
     <p class="textoComum"> or </p>
     <button id="login" onclick="Percy.loginClicked();">
+      <img class="googleLogo" src="static/googleLogo.png"alt="Avatar">
       Fazer login
     </button>
   </div>
@@ -113,19 +115,19 @@
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton2" class="saveButton">Save</button>
   </div>
-    <div id="conRed">
+    <div id="conWrong">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p id="redText" class="textoComum">Texto erro</p>
+    <p id="redText" class="wrongText">Texto erro</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton3" class="saveButton">Save</button>
   </div>
-  <div id="conGreen">
+  <div id="conOk">
     <h6>Team Members</h6>
     <p class="textoComum">Email &lt;tab&gt; Name</p>
     <textarea placeholder="Add new people!"></textarea>
-    <p id="greenText" class="textoComum">Texto ok</p>
+    <p id="greenText" class="okText">Texto ok</p>
     <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
     <button id="saveButton4" class="saveButton">Save</button>
   </div>

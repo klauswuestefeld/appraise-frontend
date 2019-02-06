@@ -1,13 +1,13 @@
-Ordenar cenarios
+  OK Ordenar cenarios
 Menu
-  Fazer selecao de abas parar de funcionar
+  OK Fazer selecao de abas parar de funcionar
 Session
-  Imagem de exemplo com fundo escuro p vermos o circulo
-  Trangulozinho p baixo
-  Cenario novo para drop down aberta
-Fazer todos os botoes pararem de funcionar (só os de cenario funcionando)
+  OK Imagem de exemplo com fundo escuro p vermos o circulo
+  OK Triangulozinho p baixo
+  OK Cenario novo para drop down aberta
+  OK Fazer todos os botoes pararem de funcionar (só os de cenario funcionando)
 Login
-  Botao com imagem
+  OK Botao com imagem
 Admin
   Quebra de linha no placeholder
-  Classes diferentes no texto ok e texto erro
+  OK Classes diferentes no texto ok e texto erro

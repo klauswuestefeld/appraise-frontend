@@ -3,9 +3,10 @@ window.addEventListener("load", function() {
      document.getElementById("scnAdm").onclick = function() {admScreen()};
      document.getElementById("scnApp").onclick = function() {appScreen()};
      document.getElementById("scnAdmDisabled").onclick = function() {disabledScreen()};
-     document.getElementById("scnAdmRed").onclick = function() {redScreen()};
-     document.getElementById("scnAdmGreen").onclick = function() {greenScreen()};
+     document.getElementById("scnAdmWrong").onclick = function() {wrongScreen()};
+     document.getElementById("scnAdmOk").onclick = function() {okScreen()};
      document.getElementById("scnMagicLog").onclick = function() {magicLogScreen()};
+     document.getElementById("scnDropdown").onclick = function() {dropdownScreen()};
 });
 
 function logScreen() {
@@ -16,8 +17,8 @@ function logScreen() {
        "conAdm": false,
        "conApp": false,
        "conDisabled": false,
-       "conRed": false,
-       "conGreen": false,
+       "conWrong": false,
+       "conOk": false,
        "conMagicLog": false
     });
 }
@@ -30,8 +31,8 @@ function admScreen() {
        "conAdm": true,
        "conApp": false,
        "conDisabled": false,
-       "conRed": false,
-       "conGreen": false,
+       "conWrong": false,
+       "conOk": false,
        "conMagicLog": false
     });
 }
@@ -45,8 +46,8 @@ function appScreen(){
        "conAdm": false,
        "conApp":true,
        "conDisabled": false,
-       "conRed": false,
-       "conGreen": false,
+       "conWrong": false,
+       "conOk": false,
        "conMagicLog": false
     });
 }
@@ -59,13 +60,13 @@ function disabledScreen(){
        "conAdm": false,
        "conApp": false,
        "conDisabled": true,
-       "conRed": false,
-       "conGreen": false,
+       "conWrong": false,
+       "conOk": false,
        "conMagicLog": false
     });
 }
 
-function redScreen(){
+function wrongScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
@@ -73,13 +74,13 @@ function redScreen(){
        "conAdm": false,
        "conApp": false,
        "conDisabled": false,
-       "conRed": true,
-       "conGreen": false,
+       "conWrong": true,
+       "conOk": false,
        "conMagicLog": false
     });
 }
 
-function greenScreen(){
+function okScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
@@ -87,8 +88,8 @@ function greenScreen(){
        "conAdm": false,
        "conApp": false,
        "conDisabled": false,
-       "conRed": false,
-       "conGreen": true,
+       "conWrong": false,
+       "conOk": true,
        "conMagicLog": false
     });
 }
@@ -101,10 +102,25 @@ function magicLogScreen(){
        "conAdm": false,
        "conApp": false,
        "conDisabled": false,
-       "conRed": false,
-       "conGreen": false,
+       "conWrong": false,
+       "conOk": false,
        "conMagicLog": true
     });
+}
+
+function dropdownScreen() {
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "conLog": false,
+       "conAdm": false,
+       "conApp": false,
+       "conDisabled": false,
+       "conWrong": false,
+       "conOk": false,
+       "conMagicLog": false
+    });
+  document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function setDisplay(displaysById){
