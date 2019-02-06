@@ -22,7 +22,7 @@ Percy.initAuth = function() {
                 var logged = document.getElementById("logged");
                 logged.classList.add("show");
             } else {
-                var login = document.getElementById("login");
+                var login = document.getElementById("login-button");
                 login.classList.add("show");
             }
 

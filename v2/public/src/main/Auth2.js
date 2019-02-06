@@ -35,7 +35,7 @@ Percy.loginClicked = function () {
     } else {
         console.log("NOT SIGNED IN.");
         Percy.auth2.signIn();
-//        var login = document.getElementById("login");
+//        var login = document.getElementById("login-button");
 //        login.classList.add("show");
     }
 

@@ -2,144 +2,122 @@
 <html>
 
 <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="description" content="Percival, Appraise, fair salaries, peer set salaries.">
+  <meta charset="UTF-8">
+  <meta name="description" content="Percival, Appraise, fair salaries, peer set salaries.">
 
-    <title>Percival - Fair Salaries!</title>
+  <title>Percival - Fair Salaries!</title>
 
-    <link rel="stylesheet" href="css/styles-before.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles-before.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
-    <script src="src/main/Percy.js"></script>
-    <script src="src/main/Auth2.js"></script>
-    <script src="src/main/Launcher.js"></script>
-    <script src="src/main/Swtclass.js"></script>
-    <script src="src/main/Transition.js"></script>
-    <script src="src/main/DisabledButton.js"></script>
-    <script src="src/main/Levels.js"></script>
-    <script src="src/main/Dropdown.js"></script>
+  <script src="src/main/Percy.js"></script>
+  <script src="src/main/Auth2.js"></script>
+  <script src="src/main/Launcher.js"></script>
+  <script src="src/main/Swtclass.js"></script>
+  <script src="src/main/Transition.js"></script>
+  <script src="src/main/DisabledButton.js"></script>
+  <script src="src/main/Levels.js"></script>
+  <script src="src/main/Dropdown.js"></script>
 </head>
 
 <body>
-    <div id="cenarios">
-        <button id="scnLog" class="cenario">login</button>
-        <button id="scnMagicLog" class="cenario">magic login</button>
-        <button id="scnApp" class="cenario">appraisals</button>
-        <button id="scnAdm" class="cenario">admin</button>
-        <button id="scnAdmDisabled" class="cenario">admin-disabled</button>
-        <button id="scnAdmWrong" class="cenario">admin-msg-wrong</button>
-        <button id="scnAdmOk" class="cenario">admin-msg-ok</button>
-        <button id="scnDropdown" class="cenario">dropdown</button>
-    </div>
+<div id="scenarios">
+  <button id="scenario-login" class="scenario">login</button>
+  <button id="scenario-magic-login" class="scenario">magic login</button>
+  <button id="scenario-appraisals-vazio" class="scenario">appraisals-empty</button>
+  <button id="scenario-admin-vazio" class="scenario">admin-empty</button>
+  <button id="scenario-admin-filled" class="scenario">admin-filled</button>
+  <button id="scenario-admin-error" class="scenario">admin-error</button>
+  <button id="scenario-admin-ok" class="scenario">admin-msg-ok</button>
+  <button id="scenario-dropdown" class="scenario">dropdown</button>
+</div>
+<div id="header">
+  <button id="logo">
+    <img class="logoPercival" src="static/logo.jpeg" alt="Percival">
+  </button>
 
-    <div id="cabecalho">
-      <button id="logo">
-       <img class="logoPercival" src="static/logo.jpeg"alt="Percival">
-      </button>
-
-      <div id="menu">
-        <button id="appraisals-tab" class="tab selected">
-          Appraisals
-        </button>
-
-        <button id="admin-tab" class="tab">
-          Admin
-        </button>
-      </div>
-
-      <div id="session">
-        <img src="static/usuariologado.jpeg" alt="usuario" class="circle">
-        <button id="logado" class="dropbtn">
-          José Ivaldo 
-        </button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#home" class="textoComum">Logout</a>
-        </div>
-      </div>
-  </div>
-  <div id="conApp">
-//HTML:
-//  1 Novo
-//  1 Normal c 1 Card
-//  Meu Nivel Vazio
-//
-//Cenario:
-//  Nivel novo acima
-//  Nivel acima com 1 card
-//  Nivel acima vazio
-//  Meu Nivel com 30 cards
-//  Nivel abaixo com 8 cards, um deles sendo arrastado
-//  Nivel abaixo com 3 cards, nivel destino do arrastado
-//  Nivel novo abaixo
-
-    <div class="new-level">
-      <p class="textoComum">ADD NEW LEVEL</p>
-    </div>
-    <div class="normal">
-      <div class="defNivel">
-        <p class="textoComum">1</p>
-      </div>
-    </div>
-
-    <div id="yourLevel" class="normal">
-      <p class="textoComum">YOUR LEVEL</p>
-      <div id='ret1' class="card">
-          <img class="circle" src="static/usuariologado.jpeg"alt="Avatar"><strong> José Ivaldo </strong>
-      </div>
-    </div>
-    <div class="new-level"><p class="textoComum">ADD NEW LEVEL</p></div>
-  </div>
-  <div id="conLog">
-    <p class="textoComum">Get a magic login link in your email</p>
-    <input class="mailMagic" type="text" placeholder="you@mail.com">
-    <input class="sendMagic" type="submit" value="Send">
-    <p class="textoComum"> or </p>
-    <button id="login" onclick="Percy.loginClicked();">
-      <img class="googleLogo" src="static/googleLogo.png"alt="Avatar">
-      Fazer login
+  <div id="menu">
+    <button id="appraisals-tab" class="tab selected">
+      Appraisals
+    </button>
+    <button id="admin-tab" class="tab">
+      Admin
     </button>
   </div>
-  <div id="conAdm">
-    <h6>Team Members</h6>
-    <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea placeholder="johndoe@acme.com <tab> John Doe&#x0a;&#10;&#x0a;&#x09;&#x09;&#x09;&#x09;&#x09;&#x09;&#x09;&#x09;marydoe@acme.com <tab> Mary Doe"></textarea>
-    <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton1" class="saveButton">Save</button>
+
+  <div id="session">
+    <img src="static/user-picture.jpeg" alt="user picture" class="circle">
+    <button id="user-name" class="drop-button">
+      José Ivaldo
+    </button>
+    <ul id="session-dropdown" class="dropdown-list">
+      <li id="logout">Logout</li>
+    </ul>
   </div>
-    <div id="conDisabled">
-    <h6>Team Members</h6>
-    <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea id="caixaTexto" placeholder="Add new people!"></textarea>
-    <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton2" class="saveButton">Save</button>
+</div>
+<div id="appraisals">
+  <div class="new-level">
+    <p>ADD NEW LEVEL</p>
   </div>
-    <div id="conWrong">
-    <h6>Team Members</h6>
-    <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea placeholder="Add new people!"></textarea>
-    <p id="redText" class="wrongText">Texto erro</p>
-    <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton3" class="saveButton">Save</button>
+  <div class="level">
+    <div class="level-label your-level">
+      <p>YOUR LEVEL</p>
+    </div>
   </div>
-  <div id="conOk">
-    <h6>Team Members</h6>
-    <p class="textoComum">Email &lt;tab&gt; Name</p>
-    <textarea placeholder="Add new people!"></textarea>
-    <p id="greenText" class="okText">Texto ok</p>
-    <p class="textoComum">(Copy-and-paste from a spreadsheet works too)</p>
-    <button id="saveButton4" class="saveButton">Save</button>
-  </div>
-  <div id="conMagicLog">
-    <p class="textoComum">A magic link has been sent to
-      <strong>bla@mail.com</strong>
-      Use it to log in to Percival from any device.
-      If you did not receive the email after a few minutes, please let us know. Look in your spam folder too.</p>
-  </div>
-  </div>
+</div>
+<div id="login">
+  <p>Get a magic login link in your email</p>
+  <input class="mailMagic" type="text" placeholder="you@mail.com">
+  <input class="sendMagic" type="submit" value="Send">
+  <p> or </p>
+  <button id="login-button" onclick="Percy.loginClicked();">
+    <img class="googleLogo" src="static/googleLogo.png" alt="Avatar">
+    Fazer login
+  </button>
+</div>
+<div id="conAdm">
+  <h6>Team Members</h6>
+  <p>Email &lt;tab&gt; Name</p>
+  <textarea
+          placeholder="johndoe@acme.com <tab> John Doe [NEWLINE] marydoe@acme.com <tab> Mary Doe"></textarea>
+  <p>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id="saveButton1" class="saveButton">Save</button>
+</div>
+<div id="conDisabled">
+  <h6>Team Members</h6>
+  <p>Email &lt;tab&gt; Name</p>
+  <textarea id="caixaTexto" placeholder="Add new people!"></textarea>
+  <p>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id="saveButton2" class="saveButton">Save</button>
+</div>
+<div id="conWrong">
+  <h6>Team Members</h6>
+  <p>Email &lt;tab&gt; Name</p>
+  <textarea placeholder="Add new people!"></textarea>
+  <p id="redText" class="wrongText">Texto erro</p>
+  <p>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id="saveButton3" class="saveButton">Save</button>
+</div>
+<div id="conOk">
+  <h6>Team Members</h6>
+  <p>Email &lt;tab&gt; Name</p>
+  <textarea placeholder="Add new people!"></textarea>
+  <p id="greenText" class="okText">Texto ok</p>
+  <p>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id="saveButton4" class="saveButton">Save</button>
+</div>
+<div id="conMagicLog">
+  <p>A magic link has been sent to
+    <strong>bla@mail.com</strong>
+    Use it to log in to Percival from any device.
+    If you did not receive the email after a few minutes, please let us know. Look in your spam folder too.</p>
+</div>
 </body>
-  <footer>
-    Copyright 2019 Klaus Wuestefeld
-  </footer>
+
+<footer>
+  Copyright 2019 Klaus Wuestefeld
+</footer>
+
 </html>

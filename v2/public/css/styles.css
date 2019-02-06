@@ -12,7 +12,7 @@
   --percival-dark: rgb(40,40,40);
 }
 
-#cabecalho {
+#header {
 
    border-top-color: var(--percival-blue);
    border-top-style: solid;
@@ -25,14 +25,14 @@
    display: flex;
    justify-content: space-between;
 
-   height: 75px;                         
-   background: white;                    
+   height: 75px;
+   background: white;
  }
 
-#logo {    
-  font-size: 14px;                        
-  color: var(--percival-dark);           
-  border: 1px solid var(--percival-dark);  
+#logo {
+  font-size: 14px;
+  color: var(--percival-dark);
+  border: 1px solid var(--percival-dark);
   padding: 0px 50px;
 }
 
@@ -42,9 +42,9 @@
 
 
 .tab {
- 
-  font-size: 14px;                     
-  color: var(--percival-dark);           
+
+  font-size: 14px;
+  color: var(--percival-dark);
   padding: 0px 20px;
 }
 
@@ -54,7 +54,7 @@
   border-top-width: 4px;
   border-bottom-color: var(--percival-blue);
   border-bottom-style: solid;
-  border-bottom-width: 4px;  
+  border-bottom-width: 4px;
 }
 
 
@@ -65,7 +65,7 @@
 }
 
 
-#login {    
+#login {
   font-size: 14px;                        /* tamanho da fonte*/
   color: var(--percival-dark);            /* cor da fonte (branco)*/
   border: 1px solid var(--percival-dark);  /* borda (branca)*/
@@ -95,10 +95,10 @@
 html { height: 100%; }
 body { min-height: 100%; padding:0; margin:0; position:relative; }
 body::after { content: ""; display:block; height: var(--footer-height); }
-footer { 
+footer {
   position: absolute;
   bottom: 0;
-  width: 100%; 
+  width: 100%;
   height: var(--footer-height);
 
   font-size: 14px;

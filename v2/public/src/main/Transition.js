@@ -1,21 +1,21 @@
 window.addEventListener("load", function() {
-     document.getElementById("scnLog").onclick = function() {logScreen()};
-     document.getElementById("scnAdm").onclick = function() {admScreen()};
-     document.getElementById("scnApp").onclick = function() {appScreen()};
-     document.getElementById("scnAdmDisabled").onclick = function() {disabledScreen()};
-     document.getElementById("scnAdmWrong").onclick = function() {wrongScreen()};
-     document.getElementById("scnAdmOk").onclick = function() {okScreen()};
-     document.getElementById("scnMagicLog").onclick = function() {magicLogScreen()};
-     document.getElementById("scnDropdown").onclick = function() {dropdownScreen()};
+     document.getElementById("scenario-login").onclick = function() {logScreen()};
+     document.getElementById("scenario-admin-filled").onclick = function() {admScreen()};
+     document.getElementById("scenario-appraisals-vazio").onclick = function() {appScreen()};
+     document.getElementById("scenario-admin-vazio").onclick = function() {disabledScreen()};
+     document.getElementById("scenario-admin-error").onclick = function() {wrongScreen()};
+     document.getElementById("scenario-admin-ok").onclick = function() {okScreen()};
+     document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
+     document.getElementById("scenario-dropdown").onclick = function() {dropdownScreen()};
 });
 
 function logScreen() {
     setDisplay({
        "session": false,
        "menu": false,
-       "conLog": true,
+       "login": true,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": false,
        "conOk": false,
@@ -27,9 +27,9 @@ function admScreen() {
     setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": true,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": false,
        "conOk": false,
@@ -42,9 +42,9 @@ function appScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp":true,
+       "appraisals":true,
        "conDisabled": false,
        "conWrong": false,
        "conOk": false,
@@ -56,9 +56,9 @@ function disabledScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": true,
        "conWrong": false,
        "conOk": false,
@@ -70,9 +70,9 @@ function wrongScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": true,
        "conOk": false,
@@ -84,9 +84,9 @@ function okScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": false,
        "conOk": true,
@@ -98,9 +98,9 @@ function magicLogScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": false,
        "conOk": false,
@@ -112,15 +112,15 @@ function dropdownScreen() {
   setDisplay({
        "session": true,
        "menu": true,
-       "conLog": false,
+       "login": false,
        "conAdm": false,
-       "conApp": false,
+       "appraisals": false,
        "conDisabled": false,
        "conWrong": false,
        "conOk": false,
        "conMagicLog": false
     });
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("session-dropdown").classList.toggle("show");
 }
 
 function setDisplay(displaysById){

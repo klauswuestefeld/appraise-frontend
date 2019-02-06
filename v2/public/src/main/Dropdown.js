@@ -1,15 +1,15 @@
 /*window.addEventListener("load", function() {
-  document.getElementById("scnDropdown").onclick = function() {myFunction()};
+  document.getElementById("scenario-dropdown").onclick = function() {myFunction()};
 });
 
 
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("session-dropdown").classList.toggle("show");
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+  if (!event.target.matches('.drop-button')) {
+    var dropdowns = document.getElementsByClassName("dropdown-list");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
