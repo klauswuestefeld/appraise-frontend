@@ -1,16 +1,16 @@
 Login
-  Logotipo Google arrumar no FF
+  OK Logotipo Google arrumar no FF
 
 Ordenar scenarios
-  Drop down logo depois do login
-  Appraisals depois do admin
+  OK Drop down logo depois do login
+  OK Appraisals depois do admin
 CSS Before
-  Ordenar classes agrupando por cenario
+  OK Ordenar classes agrupando por cenario
 index.html
-  Traduzir p ingles
-  nomes extensos
-  camelCase -> snake-case
-  Eliminar repetiçoẽs, se houver
+  OK Traduzir p ingles
+  OK nomes extensos
+  OK camelCase -> snake-case
+  OK Eliminar repetiçoẽs, se houver
 
 Appraisals
   scenario "Vazio"
