@@ -25,17 +25,17 @@
 <body>
 <div id="scenarios">
   <button id="scenario-login" class="scenario">login</button>
+  <button id="scenario-dropdown" class="scenario">dropdown</button>
   <button id="scenario-magic-login" class="scenario">magic login</button>
-  <button id="scenario-appraisals-vazio" class="scenario">appraisals-empty</button>
-  <button id="scenario-admin-vazio" class="scenario">admin-empty</button>
+  <button id="scenario-admin-empty" class="scenario">admin-empty</button>
   <button id="scenario-admin-filled" class="scenario">admin-filled</button>
   <button id="scenario-admin-error" class="scenario">admin-error</button>
   <button id="scenario-admin-ok" class="scenario">admin-msg-ok</button>
-  <button id="scenario-dropdown" class="scenario">dropdown</button>
+  <button id="scenario-appraisals-empty" class="scenario">appraisals-empty</button>
 </div>
 <div id="header">
   <button id="logo">
-    <img class="logoPercival" src="static/logo.jpeg" alt="Percival">
+    <img class="logo-percival" src="static/logo.jpeg" alt="Percival">
   </button>
 
   <div id="menu">
@@ -69,46 +69,46 @@
 </div>
 <div id="login">
   <p>Get a magic login link in your email</p>
-  <input class="mailMagic" type="text" placeholder="you@mail.com">
-  <input class="sendMagic" type="submit" value="Send">
+  <input class="mail-magic" type="text" placeholder="you@mail.com">
+  <input class="send-magic" type="submit" value="Send">
   <p> or </p>
   <button id="login-button" onclick="Percy.loginClicked();">
-    <img class="googleLogo" src="static/googleLogo.png" alt="Avatar">
+    <img class="google-logo" src="static/googleLogo.png" alt="Avatar">
     Fazer login
   </button>
 </div>
-<div id="conAdm">
+<div id="admin-filled">
   <h6>Team Members</h6>
   <p>Email &lt;tab&gt; Name</p>
   <textarea
           placeholder="johndoe@acme.com <tab> John Doe [NEWLINE] marydoe@acme.com <tab> Mary Doe"></textarea>
   <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="saveButton1" class="saveButton">Save</button>
+  <button id="save-button1" class="save-button">Save</button>
 </div>
-<div id="conDisabled">
+<div id="admin-empty">
   <h6>Team Members</h6>
   <p>Email &lt;tab&gt; Name</p>
-  <textarea id="caixaTexto" placeholder="Add new people!"></textarea>
+  <textarea id="caixa-texto" placeholder="Add new people!"></textarea>
   <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="saveButton2" class="saveButton">Save</button>
+  <button id="save-button2" class="save-button">Save</button>
 </div>
-<div id="conWrong">
-  <h6>Team Members</h6>
-  <p>Email &lt;tab&gt; Name</p>
-  <textarea placeholder="Add new people!"></textarea>
-  <p id="redText" class="wrongText">Texto erro</p>
-  <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="saveButton3" class="saveButton">Save</button>
-</div>
-<div id="conOk">
+<div id="admin-error">
   <h6>Team Members</h6>
   <p>Email &lt;tab&gt; Name</p>
   <textarea placeholder="Add new people!"></textarea>
-  <p id="greenText" class="okText">Texto ok</p>
+  <p id="error-text-id" class="error-text">Texto erro</p>
   <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="saveButton4" class="saveButton">Save</button>
+  <button id="save-button3" class="save-button">Save</button>
 </div>
-<div id="conMagicLog">
+<div id="admin-ok">
+  <h6>Team Members</h6>
+  <p>Email &lt;tab&gt; Name</p>
+  <textarea placeholder="Add new people!"></textarea>
+  <p id="ok-text-id" class="ok-Text">Texto ok</p>
+  <p>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id="save-button4" class="save-button">Save</button>
+</div>
+<div id="magic-login">
   <p>A magic link has been sent to
     <strong>bla@mail.com</strong>
     Use it to log in to Percival from any device.

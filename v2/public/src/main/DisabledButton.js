@@ -1,26 +1,26 @@
 window.addEventListener("load", function() {
      document.getElementById("saveButton2").onclick = function() {disableSave()};
-     document.getElementById("saveButton3").onclick = function() {redSave()};
-     document.getElementById("saveButton4").onclick = function() {greenSave()};
-     //document.getElementById("redText").style.display="none";
-     //document.getElementById("greenText").style.display="none";
+     document.getElementById("saveButton3").onclick = function() {errorSave()};
+     document.getElementById("saveButton4").onclick = function() {okSave()};
+     //document.getElementById("error-text-id").style.display="none";
+     //document.getElementById("ok-text-id").style.display="none";
 });
 
 
 /*function disableSave(){
-	var texto = document.getElementById("caixaTexto");	
+	var texto = document.getElementById("caixa-texto");	
 	if(texto.value.length == 0)	{
 			alert("O campo deve ser preenchido");					
-			document.getElementById("saveButton2").disabled = true;
+			document.getElementById("save-button2").disabled = true;
     }
 }
 
-function redSave(){
- 	var botaoVermelho = document.getElementById("redText");
+function okSave(){
+ 	var botaoVermelho = document.getElementById("error-text-id");
  	botaoVermelho.style.display="inline";
 }
 
 function greenSave(){
- 	var botaoVerde = document.getElementById("greenText");
+ 	var botaoVerde = document.getElementById("ok-text-id");
  	botaoVerde.style.display="inline";
 }*/

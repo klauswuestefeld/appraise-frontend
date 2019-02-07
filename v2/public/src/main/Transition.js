@@ -1,12 +1,12 @@
 window.addEventListener("load", function() {
      document.getElementById("scenario-login").onclick = function() {logScreen()};
+     document.getElementById("scenario-dropdown").onclick = function() {dropdownScreen()};
+     document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
      document.getElementById("scenario-admin-filled").onclick = function() {admScreen()};
-     document.getElementById("scenario-appraisals-vazio").onclick = function() {appScreen()};
-     document.getElementById("scenario-admin-vazio").onclick = function() {disabledScreen()};
+     document.getElementById("scenario-appraisals-empty").onclick = function() {appScreen()};
+     document.getElementById("scenario-admin-empty").onclick = function() {disabledScreen()};
      document.getElementById("scenario-admin-error").onclick = function() {wrongScreen()};
      document.getElementById("scenario-admin-ok").onclick = function() {okScreen()};
-     document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
-     document.getElementById("scenario-dropdown").onclick = function() {dropdownScreen()};
 });
 
 function logScreen() {
@@ -14,12 +14,12 @@ function logScreen() {
        "session": false,
        "menu": false,
        "login": true,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": false
     });
 }
 
@@ -28,12 +28,12 @@ function admScreen() {
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": true,
+       "admin-filled": true,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": false
     });
 }
 
@@ -43,12 +43,12 @@ function appScreen(){
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals":true,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": false
     });
 }
 
@@ -57,12 +57,12 @@ function disabledScreen(){
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": true,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": true,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": false
     });
 }
 
@@ -71,12 +71,12 @@ function wrongScreen(){
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": true,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": true,
+       "admin-ok": false,
+       "magic-login": false
     });
 }
 
@@ -85,12 +85,12 @@ function okScreen(){
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": true,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": true,
+       "magic-login": false
     });
 }
 
@@ -99,12 +99,12 @@ function magicLogScreen(){
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": true
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": true
     });
 }
 
@@ -113,12 +113,12 @@ function dropdownScreen() {
        "session": true,
        "menu": true,
        "login": false,
-       "conAdm": false,
+       "admin-filled": false,
        "appraisals": false,
-       "conDisabled": false,
-       "conWrong": false,
-       "conOk": false,
-       "conMagicLog": false
+       "admin-empty": false,
+       "admin-error": false,
+       "admin-ok": false,
+       "magic-login": false
     });
   document.getElementById("session-dropdown").classList.toggle("show");
 }
