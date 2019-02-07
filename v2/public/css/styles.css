@@ -68,8 +68,12 @@
 #login {
   font-size: 14px;                        /* tamanho da fonte*/
   color: var(--percival-dark);            /* cor da fonte (branco)*/
-  border: 1px solid var(--percival-dark);  /* borda (branca)*/
-  padding: 10px 5px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-top:130px;
+ /* margin-left:30%;
+  margin-right:30%;*/
 }
 
 .new-level {
