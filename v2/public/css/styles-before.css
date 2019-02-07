@@ -41,9 +41,14 @@ li {
   margin:10px;
 }
 
+h6 {
+  font-size: 14px;
+  color: black;
+  margin:35px;
+}
 
 
-/**** Sscenario Control */
+/**** Scenario Control */
 .force-display-none {display: none !important;}
 
 #scenarios {
@@ -62,23 +67,62 @@ li {
   margin-top: 5px;
 }
 
+/*Header*/
 
-.normal {
-  width: calc(100% - 100px);
-  overflow: auto;
-  height: 100px;
-  background-color: white;
-  border-radius: 6px;
-  margin: 15px 15px auto auto;
-  border-style: solid;
-  border-width: 2px;
+.logo-percival{
+  height: 70px;
+  width: 150px;
 }
 
+/*Login */
 
-#logado {
-  font-size: 14px;
+.send-magic {
+
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 5px;
+  font-size: 16px;
+  width:80px;
+  height:26px;
+  margin-right: 20px;
+ }
+
+ .mail-magic {
+  float: left;
+  width:300px;
+  height:20px;
+  border-style: solid;
+  margin-left:106px;
+  display: flex;
+  font-size: 16px;
   color: black;
   padding: 10px 5px;
+}
+
+.login-button{
+  font-size: 14px;                        
+  color: var(--percival-dark);            
+  border: 1px solid var(--percival-dark);  
+  width:50px;
+  height:50px;
+}
+
+.google-logo{
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  float: left;
+  margin: 0px 10px ;
+}
+/*Dropdown*/
+
+.drop-button {
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: black;
 }
 
 #session::after{
@@ -90,6 +134,73 @@ li {
   border-right: 7px solid transparent;
   border-top: 6px solid black;
 }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+}
+
+.dropdown-list a {
+  color: black;;
+  display: block;
+}
+
+.show {display: block;}
+
+/*Admin*/
+
+textarea {
+  width:400px;
+  height:200px;
+  border-style: solid;
+  border-width: 1px;
+  margin:100px;
+  display: flex;
+  padding: 10px 5px;
+}
+
+.save-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+::placeholder{
+  word-break: break-all;
+  font-size: 14px;
+  line-break: normal;
+}
+
+/*Admin ok*/
+
+.ok-text{
+  font-size: 10px;
+  color: black;
+  margin:10px;
+}
+
+/*Admin error*/
+
+.error-text{
+  font-size: 10px;
+  color: black;
+  margin:10px;
+}
+
+/*Appraisals*/
 
 .level {
   width: calc(100% - 100px);
@@ -113,39 +224,6 @@ li {
   border-width: 1px;
 }
 
-textarea {
-  width:400px;
-  height:200px;
-  border-style: solid;
-  border-width: 1px;
-  margin:100px;
-  display: flex;
-  padding: 10px 5px;
-}
-
-::placeholder{
-  word-break: break-all;
-  font-size: 14px;
-  line-break: normal;
-}
-
-h6 {
-  font-size: 14px;
-  color: black;
-  margin:35px;
-}
-
-.saveButton {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 8px;
-}
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 200px;
@@ -159,82 +237,3 @@ h6 {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-.sendMagic {
-
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 10px 5px;
-  font-size: 16px;
-  width:80px;
-  height:26px;
-  margin-right: 20px;
- }
-
-.mailMagic {
-  float: left;
-  width:300px;
-  height:20px;
-  border-style: solid;
-  margin-left:106px;
-  display: flex;
-  font-size: 16px;
-  color: black;
-  padding: 10px 5px;
-}
-
-.drop-button {
-  border: none;
-  cursor: pointer;
-  font-size: 10px;
-  color: black;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-list {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-}
-
-.dropdown-list a {
-  color: black;;
-  display: block;
-}
-
-.show {display: block;}
-
-
-.logoPercival{
-  height: 70px;
-  width: 150px;
-}
-
-.okText{
-  font-size: 10px;
-  color: black;
-  margin:10px;
-}
-
-.wrongText{
-  font-size: 10px;
-  color: black;
-  margin:10px;
-}
-
-.googleLogo{
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  float: left;
-  margin: 0px 10px ;
-}
-
