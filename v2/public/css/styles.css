@@ -8,13 +8,19 @@
 }
 
 :root {
-  --percival-blue: #486ece;
+  /* Palette */
+  --percival-primary: #2b4588;
+  --percival-secondary: rgb(194, 109, 41);
   --percival-dark: rgb(40,40,40);
+  --percival-alert: rgb(192, 28, 28);
+
+  --percival-header: var(--percival-primary);
+
 }
 
 #header {
 
-   border-top-color: var(--percival-blue);
+   border-top-color: var(--percival-header);
    border-top-style: solid;
    border-top-width: 3px;
    border-bottom-color: lightgray;
@@ -52,7 +58,7 @@
   border-top-color: transparent;
   border-top-style: solid;
   border-top-width: 4px;
-  border-bottom-color: var(--percival-blue);
+  border-bottom-color: var(--percival-header);
   border-bottom-style: solid;
   border-bottom-width: 4px;
 }
@@ -71,12 +77,12 @@
   width: 320px;
   margin-left: auto;
   margin-right: auto;
-  height: 100%;
-  padding-top: 150px;
+  margin-top: 150px;
 
   display: flex;
   flex-direction:column;
   align-items:center;
+  color:var(--percival-dark);
 }
 #magic-email-field {
   width: 100%;
@@ -88,18 +94,16 @@
 }
 #mail-magic {
   width: 100%;
-  border: solid 2px black;
+  border: solid 1px var(--percival-primary);
   font-size: 16px;
-  color: black;
-  padding: 10px 5px;
+  color: var(--percival-dark);
+  padding: 10px;
 }
 #send-magic {
-  width:80px;
+  width:70px;
   flex-shrink: 0;
-  background-color: black;
+  background-color:var(--percival-primary);
   color: white;
-  border: none;
-  padding: 10px 5px;
   font-size: 14px;
 }
 #login-button {
@@ -107,15 +111,16 @@
   width:100%;
   display: flex;
   align-items: center;
-  background: #4285F4;
-  padding: 8px;
+  background:var(--percival-primary);
+  padding: 2px;
 }
 #google-logo {
   width: 36px;
   height: 36px;
-  flex-shrink: 0;
-  border-radius: 10%;
+  flex-shrink: 0;  
   overflow: hidden;
+  padding:6px;
+  background:white;
 }
 #google-label {
   width: 100%;
