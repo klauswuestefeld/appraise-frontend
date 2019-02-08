@@ -69,12 +69,14 @@
 </div>
 <div id="login">
   <p>Get a magic login link in your email</p>
-  <input class="mail-magic" type="text" placeholder="you@mail.com">
-  <button id="send-magic">Send</button>
+  <div id="magic-email-field">
+    <input id="mail-magic" type="text" placeholder="you@yourcompany.com">
+    <button id="send-magic">SEND</button>
+  </div>
   <p>or</p>
   <button id="login-button" onclick="Percy.loginClicked();">
-    <img class="google-logo" src="static/googleLogo.png" alt="Avatar">
-    Fazer login
+    <img id="google-logo" src="static/googleLogo.png" alt="Avatar">
+    <p id="google-label">Sign in with Google</p>
   </button>
 </div>
 <div id="magic-login">

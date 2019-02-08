@@ -55,48 +55,6 @@ body {
   width: 150px;
 }
 
-/*Login */
-
-.send-magic {
-
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 10px 5px;
-  font-size: 16px;
-  width:80px;
-  height:26px;
-  margin-right: 20px;
- }
-
- .mail-magic {
-  float: left;
-  width:300px;
-  height:20px;
-  border-style: solid;
-  margin-left:106px;
-  display: flex;
-  font-size: 16px;
-  color: black;
-  padding: 10px 5px;
-}
-
-.login-button{
-  font-size: 14px;                        
-  color: var(--percival-dark);            
-  border: 1px solid var(--percival-dark);  
-  width:50px;
-  height:50px;
-}
-
-.google-logo{
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  float: left;
-  margin: 0px 10px ;
-}
 /*Dropdown*/
 
 .drop-button {
