@@ -25,13 +25,14 @@
 <body>
 <div id="scenarios">
   <button id="scenario-login" class="scenario">login</button>
-  <button id="scenario-dropdown" class="scenario">dropdown</button>
   <button id="scenario-magic-login" class="scenario">magic login</button>
+  <button id="scenario-logout" class="scenario">logout</button>
   <button id="scenario-admin-empty" class="scenario">admin-empty</button>
   <button id="scenario-admin-filled" class="scenario">admin-filled</button>
   <button id="scenario-admin-error" class="scenario">admin-error</button>
   <button id="scenario-admin-ok" class="scenario">admin-msg-ok</button>
   <button id="scenario-appraisals-empty" class="scenario">appraisals-empty</button>
+  <button id="scenario-appraisals-filled" class="scenario">appraisals-filled</button>
 </div>
 <div id="header">
   <button id="logo">
@@ -85,36 +86,17 @@
     Use it to log in to Percival from any device.
     If you did not receive the email after a few minutes, please let us know. Look in your spam folder too.</p>
 </div>
-<div id="admin-filled">
+<div id="admin">
   <h6>Team Members</h6>
   <p>Email &lt;tab&gt; Name</p>
-  <textarea
-          placeholder="johndoe@acme.com <tab> John Doe [NEWLINE] marydoe@acme.com <tab> Mary Doe"></textarea>
+    <textarea id="textarea-empty" placeholder="johndoe@acme.com &lt;tab&gt; John Doe
+marydoe@acme.com &lt;tab&gt; Mary Doe"></textarea>
+    <textarea id="textarea-filled" placeholder="johndoe@acme.com &lt;tab&gt; John Doe
+marydoe@acme.com &lt;tab&gt; Mary Doe">fernandinho@camail.com       Fernandinho</textarea>
+    <p id="error-text-id" class="error-text">Texto erro</p>
+    <p id="ok-text-id" class="ok-Text">Texto ok</p>
   <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="save-button1" class="save-button">Save</button>
-</div>
-<div id="admin-empty">
-  <h6>Team Members</h6>
-  <p>Email &lt;tab&gt; Name</p>
-  <textarea id="caixa-texto" placeholder="Add new people!"></textarea>
-  <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="save-button2" class="save-button">Save</button>
-</div>
-<div id="admin-error">
-  <h6>Team Members</h6>
-  <p>Email &lt;tab&gt; Name</p>
-  <textarea placeholder="Add new people!"></textarea>
-  <p id="error-text-id" class="error-text">Texto erro</p>
-  <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="save-button3" class="save-button">Save</button>
-</div>
-<div id="admin-ok">
-  <h6>Team Members</h6>
-  <p>Email &lt;tab&gt; Name</p>
-  <textarea placeholder="Add new people!"></textarea>
-  <p id="ok-text-id" class="ok-Text">Texto ok</p>
-  <p>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id="save-button4" class="save-button">Save</button>
+  <button class="save-button">Save</button>
 </div>
 
 </body>

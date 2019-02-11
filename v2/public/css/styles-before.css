@@ -29,6 +29,24 @@ body {
   box-sizing: inherit;
 }
 
+/**** Normal Text */
+p {
+  font-size: 10px;
+  color: black;
+  margin:10px;
+}
+li {
+  font-size: 10px;
+  color: black;
+  margin:10px;
+}
+
+h6 {
+  font-size: 14px;
+  color: black;
+  margin:35px;
+}
+
 /**** Scenario Control */
 .force-display-none {display: none !important;}
 
@@ -104,6 +122,15 @@ textarea {
   margin:100px;
   display: flex;
   padding: 10px 5px;
+  font: 15px sans-serif;
+}
+
+::placeholder{
+  word-break: break-all;
+  font-size: 14px;
+  line-break: normal;
+  font: 15px sans-serif;
+  font-style: italic;
 }
 
 .save-button {
@@ -115,12 +142,6 @@ textarea {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 8px;
-}
-
-::placeholder{
-  word-break: break-all;
-  font-size: 14px;
-  line-break: normal;
 }
 
 /*Admin ok*/
