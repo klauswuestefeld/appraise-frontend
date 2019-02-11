@@ -1,15 +1,15 @@
 Scenarios
-  Renomear dropdown p logout
-  Ordenar magic login depois do login e antes do logout
+  OK Renomear dropdown p logout
+  OK Ordenar magic login depois do login e antes do logout
 
 index.html
-  Eliminar repetiçoẽs, se houver
+  OK Eliminar repetiçoẽs, se houver
     No HTML tem quatro divs de admin. Tem q ter só uma.
 
 Admin
-  O campo de texto esta desabilitado. Tem q ser possivel digitar lá.
-  "caixa-texto" -> "team-members"
-  O cenario "admin filled" é com members filled no campo, não com placeholder diferente.
+  OK O campo de texto esta desabilitado. Tem q ser possivel digitar lá.
+  ? "caixa-texto" -> "team-members"
+  OK O cenario "admin filled" é com members filled no campo, não com placeholder diferente.
 
 Appraisals
   scenario "Vazio"
@@ -28,7 +28,7 @@ Appraisals
 
 
 Admin
-  Quebra de linha no placeholder - fazer com JS, se necessário
+  OK Quebra de linha no placeholder - fazer com JS, se necessário
 
 Menu
-  Fazer selecao de abas funcionar de acordo com os scenarios
+  OK Fazer selecao de abas funcionar de acordo com os scenarios
