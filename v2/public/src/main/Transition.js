@@ -156,6 +156,16 @@ function appraisalFilledScreen(){
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+    var i = 1;
+    var all = 4;
+    var myLevel = document.getElementById('id-level');  
+    for (i = 1; i <= all; i++) {
+      var levelClone   = myLevel.cloneNode(true);
+      document.getElementById("appraisals").appendChild(levelClone); 
+    }
+    var newLevel = document.getElementById('id-new-level');  
+    var newClone   = newLevel.cloneNode(true);
+    document.getElementById("appraisals").appendChild(newClone);  
 }
 
 function setDisplay(displaysById){
@@ -167,3 +177,5 @@ function setDisplay(displaysById){
         }
     }
 }
+
+

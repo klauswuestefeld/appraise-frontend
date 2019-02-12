@@ -182,11 +182,12 @@ textarea {
   background-color: lightblue;
   border-radius: 3px 0px 0px 6px;
   border-width: 1px;
+  float: left;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 200px;
+  width: 150px;
   border-radius: 6px;
   float: left;
   padding-bottom:10px;
