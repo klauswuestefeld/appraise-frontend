@@ -1,20 +1,7 @@
-Scenarios
-  OK Renomear dropdown p logout
-  OK Ordenar magic login depois do login e antes do logout
-
-index.html
-  OK Eliminar repetiçoẽs, se houver
-    No HTML tem quatro divs de admin. Tem q ter só uma.
-
-Admin
-  OK O campo de texto esta desabilitado. Tem q ser possivel digitar lá.
-  ? "caixa-texto" -> "team-members"
-  OK O cenario "admin filled" é com members filled no campo, não com placeholder diferente.
-
 Appraisals
   scenario "Vazio"
-    1 Nivel Novo Acima
-    Meu Nivel c 1 Card
+    OK 1 Nivel Novo Acima
+    OK Meu Nivel c 1 Card
     1 Nivel Novo Abaixo
 
   scenario "Cheio"
@@ -26,9 +13,5 @@ Appraisals
     Nivel abaixo com 3 cards, nivel destino do arrastado
     Nivel novo abaixo
 
-
-Admin
-  OK Quebra de linha no placeholder - fazer com JS, se necessário
-
-Menu
-  OK Fazer selecao de abas funcionar de acordo com os scenarios
+Eliminar o uso da classe show
+  Usar a force-display-none em vez dela
