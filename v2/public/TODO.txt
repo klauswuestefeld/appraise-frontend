@@ -14,4 +14,4 @@ Appraisals
     OK Nivel novo abaixo
 
 Eliminar o uso da classe show
-  Usar a force-display-none em vez dela
+  OK Usar a force-display-none em vez dela
