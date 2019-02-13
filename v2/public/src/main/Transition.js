@@ -2,10 +2,10 @@ window.addEventListener("load", function() {
      document.getElementById("scenario-login").onclick = function() {loginScreen()};
      document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
      document.getElementById("scenario-logout").onclick = function() {dropdownScreen()};
-     document.getElementById("scenario-admin-empty").onclick = function() {emptyScreen()};
-     document.getElementById("scenario-admin-filled").onclick = function() {filledScreen()};
-     document.getElementById("scenario-admin-error").onclick = function() {errorScreen()};
-     document.getElementById("scenario-admin-ok").onclick = function() {okScreen()};
+     document.getElementById("scenario-admin-empty").onclick = function() {adminEmptyScreen()};
+     document.getElementById("scenario-admin-filled").onclick = function() {adminFilledScreen()};
+     document.getElementById("scenario-admin-error").onclick = function() {adminErrorScreen()};
+     document.getElementById("scenario-admin-ok").onclick = function() {adminOkScreen()};
      document.getElementById("scenario-appraisals-empty").onclick = function() {appraisalEmptyScreen()};
      document.getElementById("scenario-appraisals-filled").onclick = function() {appraisalFilledScreen()};
 });
@@ -16,6 +16,7 @@ function loginScreen() {
        "menu": false,
        "login": true,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": false,
        "textarea-empty": false,
        "textarea-filled": false,       
@@ -25,12 +26,15 @@ function loginScreen() {
     });
 }
 
+document.getElementById("session-dropdown").classList.toggle("show");
+
 function magicLogScreen(){
   setDisplay({
        "session": false,
        "menu": false,
        "login": false,
        "magic-login": true,
+       "session-dropdown": false,
        "admin": false,
        "textarea-empty": false,
        "textarea-filled": false,       
@@ -46,6 +50,7 @@ function dropdownScreen() {
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": true,
        "admin": false,
        "textarea-empty": false,
        "textarea-filled": false,       
@@ -53,15 +58,15 @@ function dropdownScreen() {
        "ok-text-id": false,
        "appraisals": false
     });
-  document.getElementById("session-dropdown").classList.toggle("show");
 }
 
-function emptyScreen(){
+function adminEmptyScreen(){
   setDisplay({
        "session": true,
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": true,
        "textarea-empty": true,
        "textarea-filled": false,       
@@ -73,12 +78,13 @@ function emptyScreen(){
   document.getElementById('admin-tab').classList.add('selected');
 }
 
-function filledScreen() {
+function adminFilledScreen() {
     setDisplay({
       "session": true,
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": true,
        "textarea-empty": false,
        "textarea-filled": true,       
@@ -90,12 +96,13 @@ function filledScreen() {
     document.getElementById('admin-tab').classList.add('selected');
 }
 
-function errorScreen(){
+function adminErrorScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": true,
        "textarea-empty": false,
        "textarea-filled": true,       
@@ -107,12 +114,13 @@ function errorScreen(){
   document.getElementById('admin-tab').classList.add('selected');
 }
 
-function okScreen(){
+function adminOkScreen(){
 	setDisplay({
        "session": true,
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": true,
        "textarea-empty": false,
        "textarea-filled": true,       
@@ -130,6 +138,7 @@ function appraisalEmptyScreen(){
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": false,
        "textarea-empty": false,
        "textarea-filled": false,       
@@ -139,6 +148,9 @@ function appraisalEmptyScreen(){
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  var newLevel = document.getElementById('id-new-level');  
+  var newClone   = newLevel.cloneNode(true);
+  document.getElementById("appraisals").appendChild(newClone); 
 }
 
 function appraisalFilledScreen(){
@@ -147,6 +159,7 @@ function appraisalFilledScreen(){
        "menu": true,
        "login": false,
        "magic-login": false,
+       "session-dropdown": false,
        "admin": false,
        "textarea-empty": false,
        "textarea-filled": false,       

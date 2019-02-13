@@ -2,16 +2,16 @@ Appraisals
   scenario "Vazio"
     OK 1 Nivel Novo Acima
     OK Meu Nivel c 1 Card
-    1 Nivel Novo Abaixo
+    OK 1 Nivel Novo Abaixo
 
   scenario "Cheio"
-    Nivel novo acima
-    Nivel acima com 1 card
+    OK Nivel novo acima
+    OK Nivel acima com 1 card
     Nivel acima vazio
     Meu Nivel com 30 cards
     Nivel abaixo com 8 cards, um deles sendo arrastado
     Nivel abaixo com 3 cards, nivel destino do arrastado
-    Nivel novo abaixo
+    OK Nivel novo abaixo
 
 Eliminar o uso da classe show
   Usar a force-display-none em vez dela
