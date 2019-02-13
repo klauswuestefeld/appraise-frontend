@@ -26,7 +26,7 @@ function loginScreen() {
     });
 }
 
-document.getElementById("session-dropdown").classList.toggle("show");
+//document.getElementById("session-dropdown").classList.toggle("show");
 
 function magicLogScreen(){
   setDisplay({
