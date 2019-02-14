@@ -1,8 +1,6 @@
 Appraisals
   scenario "Vazio"
-    OK 1 Nivel Novo Acima
-    OK Meu Nivel c 1 Card
-    OK 1 Nivel Novo Abaixo
+    Consertar a volta ao cenário vazio depois de clicar em outro cenario.
 
   scenario "Cheio"
     OK Nivel novo acima
@@ -12,6 +10,3 @@ Appraisals
     Nivel abaixo com 8 cards, um deles sendo arrastado
     Nivel abaixo com 3 cards, nivel destino do arrastado
     OK Nivel novo abaixo
-
-Eliminar o uso da classe show
-  OK Usar a force-display-none em vez dela
