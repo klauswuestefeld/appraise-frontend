@@ -10,3 +10,18 @@ Appraisals
     Nivel abaixo com 8 cards, um deles sendo arrastado
     Nivel abaixo com 3 cards, nivel destino do arrastado
     OK Nivel novo abaixo
+
+
+Ideia/Proposta:
+
+Criar uma div "my level" fixa.
+
+Criar duas divs de adição dinâmica: uma acima e outra abaixo do nivel fixo
+
+Usar algo do gênero:
+var div = document.getElementById('div_id'),
+    clone = div.cloneNode(true); //colocar false e adicionar separadamente a span q identifica nivel
+    clone.id = "some_id";
+    document.body.appendChild(clone);
+
+criar um add level fixo embaixo.
