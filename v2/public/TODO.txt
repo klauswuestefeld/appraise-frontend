@@ -24,4 +24,6 @@ var div = document.getElementById('div_id'),
     clone.id = "some_id";
     document.body.appendChild(clone);
 
+document.getElementById("div"+1).innerHTML=i; // usar para mudar nǘiel do span
+
 criar um add level fixo embaixo.
