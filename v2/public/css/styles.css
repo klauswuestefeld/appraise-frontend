@@ -142,20 +142,29 @@ strong{
   color: red;
 }
 
-#admin-filled{
+#admin{
   display:flex;
   flex-direction: column;
+  
   height: auto;
   margin-top:60px;
+  
+  width:600px;
   margin-left:auto;
   margin-right:auto;
-  width:600px;
 }
 
-textarea{
-  border:3px solid var(--percival-primary); 
-  
- }
+h6{
+  margin-left:100px;
+  color: var(--percival-dark);
+  margin-top:30px;
+  font-size: 16px;
+}
+
+.caixa-texto{
+  border:1px solid var(--percival-primary);
+  margin-top:10px;  
+}
 
 #email1{
   margin-left:400px;  
@@ -163,6 +172,16 @@ textarea{
   color: var(--percival-secondary);
 }
 
+.save-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
 #save-button1{
   display:flex;
    justify-content: center;   
@@ -179,73 +198,6 @@ textarea{
   margin-top:-60px;
   font-size: 12px;
   color: var(--percival-secondary); 
-}
-
-#admin-empty{
-  display:flex;
-  flex-direction: column;
-  height: auto;
-  margin-top:60px;
-  margin-left:auto;
-  margin-right:auto;
-  width:600px;
-}
-
-h6{
-   margin-left:100px;
-   color: var(--percival-dark);
-   margin-top:30px;  
-}
-
-#email{
-  margin-left:400px;  
-  font-size: 12px;
-  color: var(--percival-secondary);
-}  
-
-#copy{
-  margin-left:100px;
-  margin-top:-70px;
-  font-size: 12px;
-  color: var(--percival-secondary);  
-}
-
- #caixa-texto{
-   border:1px solid var(--percival-primary);
-   margin-top:20px;  
-  }
-
-  #save-button2{
-   display:flex;
-   justify-content: center;   
-   padding:20px;
-   margin-top:-20px; 
-   margin-left: 400px;
-   margin-right: 100px;
-   font-size: 13px;
-   background:var(--percival-primary);  
-  
- }
-
- textarea {
-  width:400px;
-  height:200px;
-  border-style: solid;
-  border-width: 1px;
-  margin:100px;
-  display: flex;
-  padding: 10px 5px;
- }
-
-.save-button {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 8px;
 }
 
 ::placeholder{

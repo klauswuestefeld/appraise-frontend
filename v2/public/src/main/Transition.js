@@ -18,8 +18,7 @@ function loginScreen() {
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea-empty": false,
-       "textarea-filled": false,       
+       "textarea": false,
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": false
@@ -36,8 +35,7 @@ function magicLogScreen(){
        "magic-login": true,
        "session-dropdown": false,
        "admin": false,
-       "textarea-empty": false,
-       "textarea-filled": false,       
+       "textarea": false,
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": false
@@ -52,8 +50,7 @@ function dropdownScreen() {
        "magic-login": false,
        "session-dropdown": true,
        "admin": false,
-       "textarea-empty": false,
-       "textarea-filled": false,       
+       "textarea": false,
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": false
@@ -68,8 +65,7 @@ function adminEmptyScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea-empty": true,
-       "textarea-filled": false,       
+       "textarea": true,
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": false
@@ -86,8 +82,7 @@ function adminFilledScreen() {
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea-empty": false,
-       "textarea-filled": true,       
+       "textarea": true,       
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": false
@@ -104,8 +99,7 @@ function adminErrorScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea-empty": false,
-       "textarea-filled": true,       
+       "textarea": true,       
        "error-text-id": true,
        "ok-text-id": false,
        "appraisals": false
@@ -122,8 +116,7 @@ function adminOkScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea-empty": false,
-       "textarea-filled": true,       
+       "textarea": true,       
        "error-text-id": false,
        "ok-text-id": true,
        "appraisals": false
@@ -140,8 +133,7 @@ function appraisalEmptyScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea-empty": false,
-       "textarea-filled": false,       
+       "textarea": false,       
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": true
@@ -161,8 +153,7 @@ function appraisalFilledScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea-empty": false,
-       "textarea-filled": false,       
+       "textarea": false,
        "error-text-id": false,
        "ok-text-id": false,
        "appraisals": true
