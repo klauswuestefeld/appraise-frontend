@@ -1,110 +1,46 @@
 window.addEventListener("load", function() {
-     document.getElementById("scenario-login").onclick = function() {logScreen()};
-     document.getElementById("scenario-dropdown").onclick = function() {dropdownScreen()};
+     document.getElementById("scenario-login").onclick = function() {loginScreen()};
      document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
-     document.getElementById("scenario-admin-filled").onclick = function() {admScreen()};
-     document.getElementById("scenario-appraisals-empty").onclick = function() {appScreen()};
-     document.getElementById("scenario-admin-empty").onclick = function() {disabledScreen()};
-     document.getElementById("scenario-admin-error").onclick = function() {wrongScreen()};
-     document.getElementById("scenario-admin-ok").onclick = function() {okScreen()};
+     document.getElementById("scenario-logout").onclick = function() {dropdownScreen()};
+     document.getElementById("scenario-admin-empty").onclick = function() {adminEmptyScreen()};
+     document.getElementById("scenario-admin-filled").onclick = function() {adminFilledScreen()};
+     document.getElementById("scenario-admin-error").onclick = function() {adminErrorScreen()};
+     document.getElementById("scenario-admin-ok").onclick = function() {adminOkScreen()};
+     document.getElementById("scenario-appraisals-empty").onclick = function() {appraisalEmptyScreen()};
+     document.getElementById("scenario-appraisals-filled").onclick = function() {appraisalFilledScreen()};
 });
 
-function logScreen() {
+function loginScreen() {
     setDisplay({
        "session": false,
        "menu": false,
        "login": true,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": false
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": false,
+       "textarea-empty": false,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": false
     });
 }
 
-function admScreen() {
-    setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "admin-filled": true,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": false
-    });
-}
-
-
-function appScreen(){
-	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "admin-filled": false,
-       "appraisals":true,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": false
-    });
-}
-
-function disabledScreen(){
-	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": true,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": false
-    });
-}
-
-function wrongScreen(){
-	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": true,
-       "admin-ok": false,
-       "magic-login": false
-    });
-}
-
-function okScreen(){
-	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": true,
-       "magic-login": false
-    });
-}
+//document.getElementById("session-dropdown").classList.toggle("show");
 
 function magicLogScreen(){
-	setDisplay({
-       "session": true,
-       "menu": true,
+  setDisplay({
+       "session": false,
+       "menu": false,
        "login": false,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": true
+       "magic-login": true,
+       "session-dropdown": false,
+       "admin": false,
+       "textarea-empty": false,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": false
     });
 }
 
@@ -113,14 +49,136 @@ function dropdownScreen() {
        "session": true,
        "menu": true,
        "login": false,
-       "admin-filled": false,
-       "appraisals": false,
-       "admin-empty": false,
-       "admin-error": false,
-       "admin-ok": false,
-       "magic-login": false
+       "magic-login": false,
+       "session-dropdown": true,
+       "admin": false,
+       "textarea-empty": false,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": false
     });
-  document.getElementById("session-dropdown").classList.toggle("show");
+}
+
+function adminEmptyScreen(){
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": true,
+       "textarea-empty": true,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": false
+    });
+  document.getElementById('appraisals-tab').classList.remove('selected');
+  document.getElementById('admin-tab').classList.add('selected');
+}
+
+function adminFilledScreen() {
+    setDisplay({
+      "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": true,
+       "textarea-empty": false,
+       "textarea-filled": true,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": false
+    });
+    document.getElementById('appraisals-tab').classList.remove('selected');
+    document.getElementById('admin-tab').classList.add('selected');
+}
+
+function adminErrorScreen(){
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": true,
+       "textarea-empty": false,
+       "textarea-filled": true,       
+       "error-text-id": true,
+       "ok-text-id": false,
+       "appraisals": false
+    });
+  document.getElementById('appraisals-tab').classList.remove('selected');
+  document.getElementById('admin-tab').classList.add('selected');
+}
+
+function adminOkScreen(){
+	setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": true,
+       "textarea-empty": false,
+       "textarea-filled": true,       
+       "error-text-id": false,
+       "ok-text-id": true,
+       "appraisals": false
+    });
+  document.getElementById('appraisals-tab').classList.remove('selected');
+  document.getElementById('admin-tab').classList.add('selected');
+}
+
+function appraisalEmptyScreen(){
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": false,
+       "textarea-empty": false,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": true
+    });
+  document.getElementById('appraisals-tab').classList.add('selected');
+  document.getElementById('admin-tab').classList.remove('selected');
+  var newLevel = document.getElementById('id-new-level');  
+  var newClone   = newLevel.cloneNode(true);
+  document.getElementById("appraisals").appendChild(newClone); 
+}
+
+function appraisalFilledScreen(){
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": false,
+       "textarea-empty": false,
+       "textarea-filled": false,       
+       "error-text-id": false,
+       "ok-text-id": false,
+       "appraisals": true
+    });
+  document.getElementById('appraisals-tab').classList.add('selected');
+  document.getElementById('admin-tab').classList.remove('selected');
+    var i = 1;
+    var all = 4;
+    var myLevel = document.getElementById('id-level');  
+    for (i = 1; i <= all; i++) {
+      var levelClone   = myLevel.cloneNode(true);
+      document.getElementById("appraisals").appendChild(levelClone); 
+    }
+    var newLevel = document.getElementById('id-new-level');  
+    var newClone   = newLevel.cloneNode(true);
+    document.getElementById("appraisals").appendChild(newClone);  
 }
 
 function setDisplay(displaysById){
@@ -132,3 +190,5 @@ function setDisplay(displaysById){
         }
     }
 }
+
+
