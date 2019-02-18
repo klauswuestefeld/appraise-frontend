@@ -48,7 +48,6 @@
 
 
 .tab {
-
   font-size: 14px;
   color: var(--percival-dark);
   padding: 0px 20px;
@@ -70,6 +69,11 @@
   align-items: center;
 }
 
+#user-name{
+  font-size: 15px;
+  color:var(--percival-secondary);
+  margin-right: 7px;
+}
 
 /**** Login */
 
@@ -83,6 +87,7 @@
   align-items:center;
   color:var(--percival-dark);
 }
+
 #magic-email-field {
   width: 100%;
   height: 30px;
@@ -91,6 +96,7 @@
   flex-direction: row;
   margin-bottom: 30px;
 }
+
 #mail-magic {
   width: 100%;
   border: solid 1px var(--percival-primary);
@@ -98,6 +104,7 @@
   color: var(--percival-dark);
   padding: 10px;
 }
+
 #send-magic {
   width:70px;
   flex-shrink: 0;
@@ -105,6 +112,7 @@
   color: white;
   font-size: 14px;
 }
+
 #login-button {
   margin-top: 30px;
   width:100%;
@@ -113,6 +121,7 @@
   background:var(--percival-primary);
   padding: 2px;
 }
+
 #google-logo {
   width: 36px;
   height: 36px;
@@ -121,6 +130,7 @@
   padding:6px;
   background:white;
 }
+
 #google-label {
   width: 100%;
   font-size: 18px;
@@ -144,11 +154,9 @@ strong{
 
 #admin{
   display:flex;
-  flex-direction: column;
-  
+  flex-direction: column;  
   height: auto;
-  margin-top:60px;
-  
+  margin-top:60px;  
   width:600px;
   margin-left:auto;
   margin-right:auto;
@@ -182,6 +190,7 @@ h6{
   margin: 4px 2px;
   border-radius: 8px;
 }
+
 #save-button1{
   display:flex;
    justify-content: center;   
@@ -220,29 +229,47 @@ h6{
 
 #appraisals{
   background-color:lightgray;  
+  padding-top:70px;
 }
 
 #id-new-level{
   display:flex;
   justify-content:center;  
   line-height: 25px;
+  height:72px;
   margin-left:50px;
+  /*margin-top:100px;*/
   color:var(--percival-dark);
+  
 }
 #your{
   display:flex;
   justify-content: center;
   background-color:darkgray;
+  margin-top:5px;
+  margin-left:10px;
+  
+  font-size:10px;
+  
 }
 
 #ret1{
 background-color: lightgray;
-margin-top:15px;
+margin-top:8px;
+height:50px;
 }
 
+.circle{
+  margin-top:5px;
+  height:40px;
+  width:40px;
+
+}
 
 .level-label{
   background-color:darkgray;
+  width:5%;
+  height:70px;
 }
 
 #id-level{
@@ -250,6 +277,7 @@ margin-top:15px;
   color:var(--percival-dark);
   border:1px solid var(--percival-primary);
   margin-left:50px;
+  height:72px;
 }
 
 
