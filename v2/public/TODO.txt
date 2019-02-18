@@ -1,29 +1,12 @@
 Appraisals
   scenario "Vazio"
-    Consertar a volta ao cenário vazio depois de clicar em outro cenario.
+    OK Consertar a volta ao cenário vazio depois de clicar em outro cenario.
 
   scenario "Cheio"
     OK Nivel novo acima
     OK Nivel acima com 1 card
-    Nivel acima vazio
-    Meu Nivel com 30 cards
-    Nivel abaixo com 8 cards, um deles sendo arrastado
-    Nivel abaixo com 3 cards, nivel destino do arrastado
+    OK Nivel acima vazio
+    OK Meu Nivel com 30 cards
+    OK Nivel abaixo com 8 cards, um deles sendo arrastado
+    OK Nivel abaixo com 3 cards, nivel destino do arrastado
     OK Nivel novo abaixo
-
-
-Ideia/Proposta:
-
-Criar uma div "my level" fixa.
-
-Criar duas divs de adição dinâmica: uma acima e outra abaixo do nivel fixo
-
-Usar algo do gênero:
-var div = document.getElementById('div_id'),
-    clone = div.cloneNode(true); //colocar false e adicionar separadamente a span q identifica nivel
-    clone.id = "some_id";
-    document.body.appendChild(clone);
-
-document.getElementById("div"+1).innerHTML=i; // usar para mudar nǘiel do span
-
-criar um add level fixo embaixo.
