@@ -1,6 +1,6 @@
 Cenario "Cheio"
-  um card sendo arrastado
-  um nivel destino do arrastado
+  OK um card sendo arrastado
+  OK um nivel destino do arrastado
 
 Cenario persistente na URL
   Nao mostrar menu cenarios qdo nao houver esta opcao na URL
