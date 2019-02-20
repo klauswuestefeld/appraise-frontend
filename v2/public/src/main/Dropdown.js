@@ -19,3 +19,5 @@ window.onclick = function(event) {
     }
   }
 }
+
+//document.getElementById("session-dropdown").classList.toggle("show");
