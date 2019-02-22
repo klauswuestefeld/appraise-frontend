@@ -232,25 +232,42 @@ h6{
   padding-top:70px;
 }
 
+.level{
+  background-color:green;
+  margin-top:-20px;
+}
 #id-new-level{
   display:flex;
   justify-content:center;  
   line-height: 25px;
   height:72px;
   margin-left:50px;
-  /*margin-top:100px;*/
-  color:var(--percival-dark);
-  
+  margin-bottom:30px; 
+  color:var(--percival-header);
+  border-top:none;
+  border-left:none;
+  border-right: none;  
+}
+
+#add{
+  color:black;
+  margin-top:40px;
 }
 #your{
   display:flex;
   justify-content: center;
-  background-color:darkgray;
-  margin-top:5px;
-  margin-left:10px;
-  
+  background-color:var(--percival-primary);
+  color:white;
+  width:62px;
   font-size:10px;
+  height:70px;
+     
+}
+
+#span-level{
+  height:72px;
   
+
 }
 
 #ret1{
@@ -287,14 +304,15 @@ height:50px;
 .new-level {
   width: calc(100% - 100px);
   height: 100px;
-  padding: auto;
-  background-color: white;
+  /*padding: auto;*/
+ 
   opacity: 0.5;
   border-radius: 6px;
-  margin: 15px 15px auto auto;
+  /*margin: 15px 15px auto auto;*/
   border-style: dashed;
   border-width: 2px;
   border-color: gray;
+  
 }
 
 
