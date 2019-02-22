@@ -1,32 +1,40 @@
 
 window.addEventListener("load", function() {
     var i = 1;
-    var all = 2;
+    var increasing = 2;
+    var decreasing = 1;
     var myLevel = document.getElementById('id-level');  
     var spanLevel = document.getElementById('span-level');
     var appraisal = document.getElementById("appraisals")
-    for (i = 1; i <= all; i++) {
+    for (i = 2; i >= decreasing; i--) {
       var levelClone   = myLevel.cloneNode(false);
       levelClone.id = "id-extra"+i;
-      var pele = document.getElementById('id-level');
-      appraisal.insertBefore(levelClone, pele); 
+      var beforeLevel = document.getElementById('id-level');
+      appraisal.insertBefore(levelClone, beforeLevel); 
       var levelSpan   = spanLevel.cloneNode(true);
       levelClone.appendChild(levelSpan);
       levelSpan.innerHTML=i;  
       if (i == 1){
       	var card = document.getElementById('ret1');  
     	var newCard   = card.cloneNode(true);
-    	document.getElementById("id-extra1").appendChild(newCard);
+    	document.getElementById("id-extra2").appendChild(newCard);
+      }
+      if (i == 2){
+      	levelClone.className = "drag-target";
       }
     }
 
     for (i = 1; i <= 4; i++) {
       var card = document.getElementById('ret1');  
       var newCard   = card.cloneNode(true);
+      if (i == 2){
+      	newCard.className = "dragging-card";
+      	newCard.innerHTML="Estou sendo arrastado";
+      }
       document.getElementById("id-level").appendChild(newCard);
     }
 
-    for (i = 1; i <= all; i++) {
+    for (i = 1; i <= increasing; i++) {
       var levelClone   = myLevel.cloneNode(false);
       levelClone.id = "id-extra-"+i;
       appraisal.appendChild(levelClone); 

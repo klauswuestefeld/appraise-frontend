@@ -1,12 +1,7 @@
-Appraisals
-  scenario "Vazio"
-    OK Consertar a volta ao cenário vazio depois de clicar em outro cenario.
+Cenario "Cheio"
+  OK um card sendo arrastado
+  OK um nivel destino do arrastado
 
-  scenario "Cheio"
-    OK Nivel novo acima
-    OK Nivel acima com 1 card
-    OK Nivel acima vazio
-    OK Meu Nivel com 30 cards
-    OK Nivel abaixo com 8 cards, um deles sendo arrastado
-    OK Nivel abaixo com 3 cards, nivel destino do arrastado
-    OK Nivel novo abaixo
+Cenario persistente na URL
+  Nao mostrar menu cenarios qdo nao houver esta opcao na URL
+  Usar query, param, hashtag ou algo assim p preservar o cenario na URL e habilitar o menu
