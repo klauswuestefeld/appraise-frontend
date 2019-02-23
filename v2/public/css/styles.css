@@ -228,14 +228,33 @@ h6{
 }
 
 #appraisals{
-  background-color:lightgray;  
+  background-color:white;  
   padding-top:70px;
 }
 
 .level{
-  background-color:green;
-  margin-top:-20px;
+  background-color:lightgray;
+  height:70px;
+  margin-top:10px;
+  border-top: 1px solid darkgray;
+  border-left:none;
+  border-right: none;
+  border-bottom:1px solid darkgray;
+  
 }
+
+.drag-target{
+  background-color:lightgray;
+  margin-top:-10px;
+  border-top:1px solid darkgray;
+  border-left:none;
+  border-right: none;
+  border-bottom:1px solid darkgray;
+  height:70px;
+
+}
+
+
 #id-new-level{
   display:flex;
   justify-content:center;  
@@ -244,34 +263,34 @@ h6{
   margin-left:50px;
   margin-bottom:30px; 
   color:var(--percival-header);
-  border-top:none;
   border-left:none;
   border-right: none;  
+  
 }
 
 #add{
   color:black;
-  margin-top:40px;
+  margin-top:25px;
 }
+
 #your{
-  display:flex;
-  justify-content: center;
   background-color:var(--percival-primary);
   color:white;
-  width:62px;
-  font-size:10px;
-  height:70px;
-     
+  height:68px;
+  width:40px;   
+  font-size:10px;     
 }
 
 #span-level{
-  height:72px;
+  display:flex;
+  justify-content:center;
   
-
+  height:68px;
+  background-color: lightgray;
 }
 
 #ret1{
-background-color: lightgray;
+background-color: white;
 margin-top:8px;
 height:50px;
 }
@@ -285,16 +304,19 @@ height:50px;
 
 .level-label{
   background-color:darkgray;
-  width:5%;
-  height:70px;
+  width:3%;
+  height:68px;
 }
 
 #id-level{
   line-height: 25px;
   color:var(--percival-dark);
-  border:1px solid var(--percival-primary);
+  border:1px solid darkgray;
   margin-left:50px;
-  height:72px;
+  height:70px;
+  
+  border-left:none;
+  border-right: none; 
 }
 
 
