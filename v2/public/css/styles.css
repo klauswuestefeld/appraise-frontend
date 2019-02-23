@@ -152,79 +152,81 @@ strong{
   color: var(--percival-secondary);
 }
 
+/*Admin*/
+
 #admin{
-  display:flex;
-  flex-direction: column;  
-  height: auto;
   margin-top:60px;  
-  width:600px;
+  height: auto;
+  width:500px;
   margin-left:auto;
   margin-right:auto;
+  
+  display:flex;
+  flex-wrap: wrap;  
+  justify-content:space-between;
+  align-items: center;
 }
 
-h6{
-  margin-left:100px;
-  color: var(--percival-dark);
-  margin-top:30px;
+h6{  
+  color: var(--percival-dark);  
   font-size: 16px;
 }
 
-.caixa-texto{
-  border:1px solid var(--percival-primary);
-  margin-top:10px;  
-}
-
-#email1{
-  margin-left:400px;  
+#email1{  
   font-size: 12px;
   color: var(--percival-secondary);
 }
 
-.save-button {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 8px;
-}
-
-#save-button1{
-  display:flex;
-   justify-content: center;   
-   padding:20px;
-   margin-top:-20px; 
-   margin-left: 380px;
-   margin-right: 100px;
-   font-size: 13px;
-   background:var(--percival-primary);  
-}
-
-#copy1{
-  margin-left:100px;
-  margin-top:-60px;
-  font-size: 12px;
-  color: var(--percival-secondary); 
+textarea {
+  width:100%;
+  height:200px;
+  border:1px solid var(--percival-primary); 
+  margin:10px 0px;   
+  padding: 10px 5px;
+  font: 15px sans-serif;
 }
 
 ::placeholder{
   word-break: break-all;
   font-size: 14px;
   line-break: normal;
+  font: 15px sans-serif;
+  font-style: italic;
 }
 
-#admin-error{
-  display:flex;
-  flex-direction: column;
-  line-height: 15px;
-  margin-top:60px;
-  margin-bottom:40px;
-  margin-left:auto;
-  margin-right:auto;
-  width:600px;
-  border:2px solid red;
+#copy1{  
+  font-size: 12px;
+  color: var(--percival-secondary);   
+}
+
+#save-button1{
+  width:90px;
+  padding: 20px;
+
+  border: none;
+  border-radius: 8px;
+  
+  background:var(--percival-primary);  
+  text-align: center;   
+  font-size: 13px;
+  color: white;
+}
+
+
+/*Admin ok*/
+
+#ok-text{
+  width: 100%;
+  font-size: 12px;
+  color: darkgreen;
+  margin:10px 0px;
+}
+
+#error-text{
+  width: 100%;
+  font-size: 12px;
+  color: red;
+  margin:10px 0px;
 }
 
 #appraisals{
