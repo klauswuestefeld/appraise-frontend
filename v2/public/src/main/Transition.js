@@ -1,5 +1,9 @@
 window.addEventListener("load", function() {
-     document.getElementById("scenario-login").onclick = function() {loginScreen()};
+    console.log(window.location.hash);
+    if (window.location.hash == "#login"){
+      loginScreen();
+    }
+     //document.getElementById("scenario-login").onclick = function() {loginScreen()};
      document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
      document.getElementById("scenario-logout").onclick = function() {dropdownScreen()};
      document.getElementById("scenario-admin-empty").onclick = function() {adminEmptyScreen()};
