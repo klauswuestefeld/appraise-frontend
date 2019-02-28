@@ -1,2 +1,3 @@
 Fazer os cenários de appraisals empty e filled funcionarem de novo.
   (Tive q deletar algumas linhas que estavam causando erro no console)
+  O refresh nao está funcionando para eles: está trazendo todos os elementos do html.
