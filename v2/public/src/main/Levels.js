@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
       levelClone.appendChild(levelSpan);
       levelSpan.innerHTML=i;  
       if (i == 1){
-      	var card = document.getElementById('ret1');  
+      	var card = document.getElementById('id-card');  
     	var newCard   = card.cloneNode(true);
     	document.getElementById("id-extra2").appendChild(newCard);
       }
@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
     }
 
     for (i = 1; i <= 4; i++) {
-      var card = document.getElementById('ret1');  
+      var card = document.getElementById('id-card');  
       var newCard   = card.cloneNode(true);
       if (i == 2){
       	newCard.className = "dragging-card";
@@ -44,13 +44,13 @@ window.addEventListener("load", function() {
     }
 
     for (i=1; i <= 6; i++){
-	    var card = document.getElementById('ret1');  
+	    var card = document.getElementById('id-card');  
 	    var newCard   = card.cloneNode(true);
 	    document.getElementById("id-extra-1").appendChild(newCard);
     }
 
     for (i=1; i <= 3; i++){
-	    var card = document.getElementById('ret1');  
+	    var card = document.getElementById('id-card');  
 	    var newCard   = card.cloneNode(true);
 	    document.getElementById("id-extra-2").appendChild(newCard);
     }

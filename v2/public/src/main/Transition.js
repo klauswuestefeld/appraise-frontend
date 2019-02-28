@@ -33,6 +33,10 @@ window.addEventListener("load", function() {
       adminFilledcreen();
       console.log("gol");
     }
+    if (window.location.hash == "#anchor-admin-error"){
+      adminErrorScreen();
+      console.log("gol");
+    }
     if (window.location.hash == "#anchor-admin-ok"){
       adminOkScreen();
       console.log("gol");
