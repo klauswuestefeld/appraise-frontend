@@ -1,9 +1,6 @@
 window.addEventListener("load", function() {
-    console.log(window.location.hash);
-    if (window.location.hash == "#login"){
-      loginScreen();
-    }
-     //document.getElementById("scenario-login").onclick = function() {loginScreen()};
+
+     document.getElementById("scenario-login").onclick = function() {loginScreen()};
      document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
      document.getElementById("scenario-logout").onclick = function() {dropdownScreen()};
      document.getElementById("scenario-admin-empty").onclick = function() {adminEmptyScreen()};
@@ -12,7 +9,45 @@ window.addEventListener("load", function() {
      document.getElementById("scenario-admin-ok").onclick = function() {adminOkScreen()};
      document.getElementById("scenario-appraisals-empty").onclick = function() {appraisalEmptyScreen()};
      document.getElementById("scenario-appraisals-filled").onclick = function() {appraisalFilledScreen()};
-});
+    if (window.location.hash == "#anchor-login"){
+      loginScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-login"){
+      MagicLogScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-magic-login"){
+      magicLogScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-logout"){
+      dropdownScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-admin-empty"){
+      adminEmptyScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-admin-filled"){
+      adminFilledcreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-admin-ok"){
+      adminOkScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-appraisals-empty"){
+      appraisalsEmptyScreen();
+      console.log("gol");
+    }
+    if (window.location.hash == "#anchor-appraisals-filled"){
+      appraisalsFilledScreen();
+      console.log("gol");
+    }
+  });
+
+
 
 /*function myFunction() {
     location.hash = "login";
@@ -68,6 +103,7 @@ function loginScreen() {
        "id-extra-2" : false,
        "appraisals": false
     });
+    console.log("hkhb");
 }
 
 
