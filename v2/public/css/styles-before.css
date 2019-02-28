@@ -110,14 +110,12 @@ body {
 .level {
   width: calc(100% - 100px);
   height: 100px;
-  min-height: min-content;
+ /* min-height: min-content;*/
   padding: auto;
-  background-color: white;
   border-radius: 6px;
   margin: 15px 15px auto auto;
   line-height: 25px;
-  color:var(--percival-dark);
-  border:1px solid var(--percival-primary);
+  color:var(--percival-dark); 
   margin-left:50px;
 }
 
@@ -126,7 +124,7 @@ body {
   width: 110px;
   overflow: auto;
   padding: initial;
-  background-color: lightblue;
+  
   border-radius: 3px 0px 0px 6px;
   border-width: 1px;
   float: left;
@@ -150,13 +148,10 @@ body {
   width: calc(100% - 100px);
   height: 100px;
   min-height: min-content;
-  padding: auto;
-  background-color: coral;
-  border-radius: 6px;
-  margin: 15px 15px auto auto;
+  padding: auto;  
+  border-radius: 6px; 
   line-height: 25px;
-  color:var(--percival-dark);
-  border:1px solid var(--percival-primary);
+  color:var(--percival-dark);  
   margin-left:50px;
 }
 

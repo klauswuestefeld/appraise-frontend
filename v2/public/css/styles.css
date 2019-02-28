@@ -202,10 +202,8 @@ textarea {
 #save-button1{
   width:90px;
   padding: 20px;
-
   border: none;
-  border-radius: 8px;
-  
+  border-radius: 8px;  
   background:var(--percival-primary);  
   text-align: center;   
   font-size: 13px;
@@ -229,71 +227,75 @@ textarea {
   margin:10px 0px;
 }
 
+/*appraisals*/
+
 #appraisals{
-  background-color:white;  
+  background-color: lightgray;  
   padding-top:70px;
+  padding-bottom:50px;
 }
 
-.level{
-  background-color:lightgray;
-  height:70px;
-  margin-top:10px;
-  border-top: 1px solid darkgray;
-  border-left:none;
-  border-right: none;
-  border-bottom:1px solid darkgray;
-  
-}
+.level {
+  width: calc(100% - 100px);
+  line-height: 25px;
+  color:var(--percival-dark);
+  height:90px;  
+  /*min-height: min-content;*/
+  margin-left:50px;
+  padding: auto;
+  border-bottom:1px dashed var(--percival-primary);
+  }
 
 .drag-target{
-  background-color:lightgray;
-  margin-top:-10px;
-  border-top:1px solid darkgray;
-  border-left:none;
-  border-right: none;
-  border-bottom:1px solid darkgray;
-  height:70px;
-
+  width: calc(100% - 100px);
+  height:90px;
+  min-height: min-content;
+  padding: auto;  
+  border-radius: 6px;
+  margin-left:50px;
+  line-height: 25px;
+  color:var(--percival-dark);
+  border-bottom:1px dashed var(--percival-primary);
 }
-
 
 #id-new-level{
   display:flex;
   justify-content:center;  
-  line-height: 25px;
-  height:72px;
-  margin-left:50px;
-  margin-bottom:30px; 
-  color:var(--percival-header);
+  line-height: 25px;  
+  margin-left:50px;  
+  margin-bottom:25px;
+  margin-top:20px;
+  border-top:none;
   border-left:none;
-  border-right: none;  
-  
+  border-right: none;
+  border-bottom: 2px dashed var(--percival-primary);
 }
 
 #add{
   color:black;
-  margin-top:25px;
+  margin-top:40px;
+  font-size: 15px;
 }
 
 #your{
-  background-color:var(--percival-primary);
-  color:white;
+  /*background-color:var(--percival-primary);*/
+  color:black;
   height:68px;
   width:40px;   
-  font-size:10px;     
+  font-size:13px;     
 }
 
 #span-level{
   display:flex;
-  justify-content:center;
-  
+  justify-content:center;  
+  margin-top:10px;
   height:68px;
   background-color: lightgray;
 }
 
 #ret1{
 background-color: white;
-margin-top:8px;
+margin-top:10px;
 height:50px;
 }
 
@@ -305,20 +307,22 @@ height:50px;
 }
 
 .level-label{
-  background-color:darkgray;
-  width:3%;
-  height:68px;
+  width:5%;  
+  overflow: auto;  
+  background-color: lightblue;
+  border-radius: 3px 0px 0px 6px;
+  border-width: 1px;
+  float: left;
 }
+
 
 #id-level{
   line-height: 25px;
   color:var(--percival-dark);
-  border:1px solid darkgray;
+  border-bottom:1px dashed var(--percival-primary);
   margin-left:50px;
-  height:70px;
+  height:90px;  
   
-  border-left:none;
-  border-right: none; 
 }
 
 
@@ -328,11 +332,11 @@ height:50px;
 .new-level {
   width: calc(100% - 100px);
   height: 100px;
-  /*padding: auto;*/
+ 
  
   opacity: 0.5;
   border-radius: 6px;
-  /*margin: 15px 15px auto auto;*/
+ 
   border-style: dashed;
   border-width: 2px;
   border-color: gray;
