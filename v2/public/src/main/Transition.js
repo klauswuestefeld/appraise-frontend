@@ -11,43 +11,30 @@ window.addEventListener("load", function() {
      document.getElementById("scenario-appraisals-filled").onclick = function() {appraisalFilledScreen()};
     if (window.location.hash == "#anchor-login"){
       loginScreen();
-      console.log("gol");
-    }
-    if (window.location.hash == "#anchor-login"){
-      MagicLogScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-magic-login"){
       magicLogScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-logout"){
       dropdownScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-admin-empty"){
       adminEmptyScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-admin-filled"){
       adminFilledcreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-admin-error"){
       adminErrorScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-admin-ok"){
       adminOkScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-appraisals-empty"){
       appraisalsEmptyScreen();
-      console.log("gol");
     }
     if (window.location.hash == "#anchor-appraisals-filled"){
       appraisalsFilledScreen();
-      console.log("gol");
     }
   });
 
@@ -107,7 +94,6 @@ function loginScreen() {
        "id-extra-2" : false,
        "appraisals": false
     });
-    console.log("hkhb");
 }
 
 
@@ -255,7 +241,7 @@ function appraisalEmptyScreen(){
 }
 
 function appraisalFilledScreen(){
-  setDisplay({
+  filledsetDisplay({
        "session": true,
        "menu": true,
        "login": false,
@@ -284,5 +270,7 @@ function setDisplay(displaysById){
         }
     }
 }
+
+
 
 
