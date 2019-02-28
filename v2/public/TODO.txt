@@ -1,7 +1,2 @@
-Cenario "Cheio"
-  OK um card sendo arrastado
-  OK um nivel destino do arrastado
-
-Cenario persistente na URL
-  Nao mostrar menu cenarios qdo nao houver esta opcao na URL
-  Usar query, param, hashtag ou algo assim p preservar o cenario na URL e habilitar o menu
+Fazer os cenários de appraisals empty e filled funcionarem de novo.
+  (Tive q deletar algumas linhas que estavam causando erro no console)

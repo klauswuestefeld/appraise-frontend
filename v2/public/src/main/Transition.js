@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
       adminEmptyScreen();
     }
     if (window.location.hash == "#anchor-admin-filled"){
-      adminFilledcreen();
+      adminFilledScreen();
     }
     if (window.location.hash == "#anchor-admin-error"){
       adminErrorScreen();
@@ -57,7 +57,7 @@ window.addEventListener("load", function() {
         else {
             hash = url.split('#');
             url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
-            if (typeof hash[1] !== 'undefined' && hash[1] !== null) 
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
                 url += '#' + hash[1];
             return url;
         }
@@ -67,7 +67,7 @@ window.addEventListener("load", function() {
             var separator = url.indexOf('?') !== -1 ? '&' : '?';
             hash = url.split('#');
             url = hash[0] + separator + key + '=' + value;
-            if (typeof hash[1] !== 'undefined' && hash[1] !== null) 
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
                 url += '#' + hash[1];
             return url;
         }
@@ -88,10 +88,6 @@ function loginScreen() {
        "textarea": false,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
 }
@@ -108,10 +104,6 @@ function magicLogScreen(){
        "textarea": false,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
 }
@@ -127,10 +119,6 @@ function dropdownScreen() {
        "textarea": false,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
 }
@@ -146,10 +134,6 @@ function adminEmptyScreen(){
        "textarea": true,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
@@ -164,13 +148,9 @@ function adminFilledScreen() {
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,       
+       "textarea": true,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
     document.getElementById('appraisals-tab').classList.remove('selected');
@@ -185,13 +165,9 @@ function adminErrorScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,       
+       "textarea": true,
        "error-text": true,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
@@ -206,13 +182,9 @@ function adminOkScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,       
+       "textarea": true,
        "error-text": false,
        "ok-text": true,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
@@ -227,17 +199,13 @@ function appraisalEmptyScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea": false,       
+       "textarea": false,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : false,
-       "id-extra2" : false,
-       "id-extra-1" : false,
-       "id-extra-2" : false,
        "appraisals": true
     });
   document.getElementById('appraisals-tab').classList.add('selected');
-  document.getElementById('admin-tab').classList.remove('selected'); 
+  document.getElementById('admin-tab').classList.remove('selected');
 }
 
 function appraisalFilledScreen(){
@@ -251,10 +219,6 @@ function appraisalFilledScreen(){
        "textarea": false,
        "error-text": false,
        "ok-text": false,
-       "id-extra1" : true,
-       "id-extra2" : true,
-       "id-extra-1" : true,
-       "id-extra-2" : true,
        "appraisals": true
     });
   document.getElementById('appraisals-tab').classList.add('selected');

@@ -36,17 +36,19 @@ body {
 #scenarios {
   height: 40px;
   background: #F0F0F0;
+
+  display: flex;
+  align-items: center;
+
   border-bottom-color: gray;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
 
 .scenario {
-  height: 40px;
+  margin: 0px 20px;
   color: grey;
   font-size: 14px;
-  margin-right: 20px;
-  margin-top: 5px;
 }
 
 /*Header*/
