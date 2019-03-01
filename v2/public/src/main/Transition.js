@@ -31,10 +31,10 @@ window.addEventListener("load", function() {
       adminOkScreen();
     }
     if (window.location.hash == "#anchor-appraisals-empty"){
-      appraisalsEmptyScreen();
+      appraisalEmptyScreen();
     }
     if (window.location.hash == "#anchor-appraisals-filled"){
-      appraisalsFilledScreen();
+      appraisalFilledScreen();
     }
   });
 
