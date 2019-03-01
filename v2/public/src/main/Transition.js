@@ -1,42 +1,30 @@
-window.addEventListener("load", function() {
+"use strict";
 
-     document.getElementById("scenario-login").onclick = function() {loginScreen()};
-     document.getElementById("scenario-magic-login").onclick = function() {magicLogScreen()};
-     document.getElementById("scenario-logout").onclick = function() {dropdownScreen()};
-     document.getElementById("scenario-admin-empty").onclick = function() {adminEmptyScreen()};
-     document.getElementById("scenario-admin-filled").onclick = function() {adminFilledScreen()};
-     document.getElementById("scenario-admin-error").onclick = function() {adminErrorScreen()};
-     document.getElementById("scenario-admin-ok").onclick = function() {adminOkScreen()};
-     document.getElementById("scenario-appraisals-empty").onclick = function() {appraisalEmptyScreen()};
-     document.getElementById("scenario-appraisals-filled").onclick = function() {appraisalFilledScreen()};
-    if (window.location.hash == "#anchor-login"){
-      loginScreen();
-    }
-    if (window.location.hash == "#anchor-magic-login"){
-      magicLogScreen();
-    }
-    if (window.location.hash == "#anchor-logout"){
-      dropdownScreen();
-    }
-    if (window.location.hash == "#anchor-admin-empty"){
-      adminEmptyScreen();
-    }
-    if (window.location.hash == "#anchor-admin-filled"){
-      adminFilledScreen();
-    }
-    if (window.location.hash == "#anchor-admin-error"){
-      adminErrorScreen();
-    }
-    if (window.location.hash == "#anchor-admin-ok"){
-      adminOkScreen();
-    }
-    if (window.location.hash == "#anchor-appraisals-empty"){
-      appraisalEmptyScreen();
-    }
-    if (window.location.hash == "#anchor-appraisals-filled"){
-      appraisalFilledScreen();
-    }
+window.addEventListener("load", function() {
+     displayBody();
+
+     onSituation("login", loginScreen);
+     onSituation("magic-login", magicLogScreen);
+     onSituation("logout", dropdownScreen);
+     onSituation("admin-empty", adminEmptyScreen);
+     onSituation("admin-filled", adminFilledScreen);
+     onSituation("admin-error", adminErrorScreen);
+     onSituation("admin-ok", adminOkScreen);
+     onSituation("appraisals-empty", appraisalEmptyScreen);
+     onSituation("appraisals-filled", appraisalFilledScreen);
   });
+
+
+function displayBody() {
+    document.getElementsByTagName('body')[0].classList.remove('force-display-none');
+}
+
+function onSituation(name, handler) {
+    document.getElementById("situation-" + name).onclick = handler;
+    if (window.location.hash == ("#situation-" + name)){
+      handler();
+    }
+}
 
 function loginScreen() {
     setDisplay({
@@ -177,7 +165,11 @@ function appraisalFilledScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
 }
 
-function setDisplay(displaysById){ 
+function setDisplay(displaysById){
+//TODO force-display-none em todos os filhos da body q nao sejam scenarios nem header.
+//TODO   Apagar as linhas acima q se tornarem desnecessarias,
+
+    var id;
     for (id in displaysById) {
         if (displaysById[id]) {
  	        document.getElementById(id).classList.remove('force-display-none');
@@ -186,7 +178,4 @@ function setDisplay(displaysById){
         }
     }
 }
-
-
-
 

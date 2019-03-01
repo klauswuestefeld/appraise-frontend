@@ -1,5 +1,6 @@
-/*window.addEventListener("load", function() {
-  document.getElementById("scenario-dropdown").onclick = function() {myFunction()};
+/*
+window.addEventListener("load", function() {
+  document.getElementById("situation-dropdown").onclick = function() {myFunction()};
 });
 
 
@@ -19,5 +20,6 @@ window.onclick = function(event) {
     }
   }
 }
+*/
 
 //document.getElementById("session-dropdown").classList.toggle("show");

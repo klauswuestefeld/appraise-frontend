@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
-     document.getElementById("saveButton2").onclick = function() {disableSave()};
-     document.getElementById("saveButton3").onclick = function() {errorSave()};
-     document.getElementById("saveButton4").onclick = function() {okSave()};
+//     document.getElementById("saveButton2").onclick = function() {disableSave()};
+//     document.getElementById("saveButton3").onclick = function() {errorSave()};
+//     document.getElementById("saveButton4").onclick = function() {okSave()};
      //document.getElementById("error-text-id").style.display="none";
      //document.getElementById("ok-text-id").style.display="none";
 });
