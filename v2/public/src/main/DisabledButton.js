@@ -8,9 +8,9 @@ window.addEventListener("load", function() {
 
 
 /*function disableSave(){
-	var texto = document.getElementById("caixa-texto");	
+	var texto = document.getElementById("caixa-texto");
 	if(texto.value.length == 0)	{
-			alert("O campo deve ser preenchido");					
+			alert("O campo deve ser preenchido");
 			document.getElementById("save-button2").disabled = true;
     }
 }

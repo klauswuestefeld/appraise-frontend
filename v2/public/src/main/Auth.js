@@ -64,6 +64,3 @@ Percy.authenticator = {
 };
 
 
-
-
-

@@ -104,7 +104,7 @@ function adminFilledScreen() {
        "login": false,
        "magic-login": false,
        "session-dropdown": false,
-       "admin": true, 
+       "admin": true,
        "error-text": false,
        "ok-text": false,
        "appraisals": false
