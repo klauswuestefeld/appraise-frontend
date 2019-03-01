@@ -1,5 +1,5 @@
 
-/*window.addEventListener("load", function() {
+window.addEventListener("load", function() {
     var i = 1;
     var increasing = 2;
     var decreasing = 1;

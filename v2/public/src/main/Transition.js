@@ -209,7 +209,7 @@ function appraisalEmptyScreen(){
 }
 
 function appraisalFilledScreen(){
-  filledsetDisplay({
+  setDisplay({
        "session": true,
        "menu": true,
        "login": false,
@@ -225,7 +225,7 @@ function appraisalFilledScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
 }
 
-function setDisplay(displaysById){
+function setDisplay(displaysById){ 
     for (id in displaysById) {
         if (displaysById[id]) {
  	        document.getElementById(id).classList.remove('force-display-none');
