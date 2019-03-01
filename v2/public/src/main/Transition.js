@@ -85,7 +85,6 @@ function loginScreen() {
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea": false,
        "error-text": false,
        "ok-text": false,
        "appraisals": false
@@ -101,7 +100,6 @@ function magicLogScreen(){
        "magic-login": true,
        "session-dropdown": false,
        "admin": false,
-       "textarea": false,
        "error-text": false,
        "ok-text": false,
        "appraisals": false
@@ -116,7 +114,6 @@ function dropdownScreen() {
        "magic-login": false,
        "session-dropdown": true,
        "admin": false,
-       "textarea": false,
        "error-text": false,
        "ok-text": false,
        "appraisals": false
@@ -131,7 +128,6 @@ function adminEmptyScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,
        "error-text": false,
        "ok-text": false,
        "appraisals": false
@@ -147,8 +143,7 @@ function adminFilledScreen() {
        "login": false,
        "magic-login": false,
        "session-dropdown": false,
-       "admin": true,
-       "textarea": true,
+       "admin": true, 
        "error-text": false,
        "ok-text": false,
        "appraisals": false
@@ -165,7 +160,6 @@ function adminErrorScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,
        "error-text": true,
        "ok-text": false,
        "appraisals": false
@@ -182,7 +176,6 @@ function adminOkScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": true,
-       "textarea": true,
        "error-text": false,
        "ok-text": true,
        "appraisals": false
@@ -199,7 +192,6 @@ function appraisalEmptyScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea": false,
        "error-text": false,
        "ok-text": false,
        "appraisals": true
@@ -216,7 +208,6 @@ function appraisalFilledScreen(){
        "magic-login": false,
        "session-dropdown": false,
        "admin": false,
-       "textarea": false,
        "error-text": false,
        "ok-text": false,
        "appraisals": true
