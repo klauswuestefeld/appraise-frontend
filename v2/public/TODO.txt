@@ -1,3 +1,21 @@
-Fazer os cenários de appraisals empty e filled funcionarem de novo.
-  (Tive q deletar algumas linhas que estavam causando erro no console)
-  O refresh nao está funcionando para eles: está trazendo todos os elementos do html.
+Colocar "use strict" em todos os js.
+
+Eliminar todos os erros do console
+
+Fazer TODOs do codigo.
+
+Scenario -> Situation
+
+Fazer appraisals-empty e filled funcionarem de novo.
+  Filled: 30 cards no "Your Level".
+  Empty: Só 2 cards no "Your Level"
+  10 niveis p cima, 10 p baixo
+    Scroll p o "Your Level" qdo abre a tela.
+  Classes level + drag-target juntas.
+  Classes card + dragging-card juntas.
+    Card com conteudo normal.
+
+Situation de admin-filled precisa ter emails e nomes no campo.
+
+Menu de situations
+  Nao abrir logo de cara. Abrir com algum easter egg no site.
