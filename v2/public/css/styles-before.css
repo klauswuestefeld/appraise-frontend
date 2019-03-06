@@ -19,7 +19,7 @@ body {
   background: none;
   border: none;
   box-sizing: border-box;
-  /*white-space: initial;*/
+  white-space: initial;
   outline: none;
   cursor: inherit;
 }
@@ -34,21 +34,25 @@ body {
 .force-display-none {display: none !important;}
 
 #scenarios {
-  height: 40px;
+  
   background: #F0F0F0;
-
+ 
+  line-height: 20px;   
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-
+  
   border-bottom-color: gray;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
 
 .scenario {
-  margin: 0px 20px;
+  
   color: grey;
-  font-size: 14px;
+  font-size: 12px;
+  padding:12px;
+
 }
 
 /*Header*/
