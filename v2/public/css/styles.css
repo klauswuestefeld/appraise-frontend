@@ -99,7 +99,7 @@ body {
 #header {
    display: flex;
    justify-content: space-between;
-
+   border-bottom:1px solid var(--percival-header);
    height: 75px;
    background: var(--percival-header);
  }
@@ -107,6 +107,11 @@ body {
 #logo {
   border: 1px solid var(--percival-dark);
   padding: 0px 50px;
+}
+@media only screen and (max-width:500px){
+  #logo{
+    width: 30%;
+  }
 }
 
 #menu {
@@ -128,7 +133,6 @@ body {
   border-bottom-style: solid;
   border-bottom-width: 4px;
 }
-
 
 #session {
   display: flex;
@@ -153,6 +157,13 @@ body {
   flex-direction:column;
   align-items:center;
   color:var(--percival-dark);
+}
+@media only screen and (max-height:500px){  
+  #login{
+    width: 70%;   
+    height:49%;
+    margin-top: 40px;
+  }
 }
 
 #magic-email-field {
@@ -205,14 +216,23 @@ body {
   font-weight: bold;
 }
 
+/*celular*/
+@media only screen and (max-width:500px){  
+  Footer{
+    font-size: 12px;
+    height:10%;
+  }
+}
+
 #magic-login {
+  margin-top:85px; 
   display:flex;   
   flex-direction: column;
   align-items:center;
-  margin-top:85px; 
   color: var(--percival-dark);
   line-height: 18px; 
   font-size:16px;
+  text-align: center;
 }
 
 strong{
@@ -389,3 +409,8 @@ footer {
   align-items: center;
   padding-left: 20px;
 }
+@media only screen and (max-width:500px){  
+  Footer{
+    font-size: 12px;
+    height:10%;
+  }
