@@ -25,6 +25,15 @@ body {
   background-color: var(--percival-background);
 }
 
+@media only screen and (max-height:500px), screen and (max-width:500px){  
+  #scenarios{
+    display:none;
+  }
+}
+
+
+
+
 
 
 
