@@ -216,14 +216,6 @@ body {
   font-weight: bold;
 }
 
-/*celular*/
-@media only screen and (max-width:500px){  
-  Footer{
-    font-size: 12px;
-    height:10%;
-  }
-}
-
 #magic-login {
   margin-top:85px; 
   display:flex;   
@@ -234,6 +226,11 @@ body {
   font-size:16px;
   text-align: center;
 }
+@media only screen and (max-height:400px){  
+  #magic-login {
+    margin-top:10px;
+  }
+}  
 
 strong{
   color: var(--percival-secondary);
@@ -298,7 +295,6 @@ textarea {
   color: white;
 }
 
-
 /*Admin ok*/
 
 #ok-text{
@@ -314,8 +310,6 @@ textarea {
   color: red;
   margin:10px 0px;
 }
-
-
 
 /*Appraisals*/
 
@@ -357,8 +351,6 @@ textarea {
 }
 */
 
-
-
 .card{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -384,8 +376,6 @@ textarea {
   text-align: left;
   background-color: coral;
 }
-
-
 
 /**** Footer */
 
