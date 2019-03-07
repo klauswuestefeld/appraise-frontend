@@ -21,5 +21,5 @@ Menu de situations
   Nao abrir logo de cara. Abrir com algum easter egg no site.
 
 Quebra de linha do placeholder do team-members não funciona em alguns browsers, inclusive o meu (Chromw Linux) e o da Kelly (Chrome Windows).
-  Fazer isto em JS: http://jsfiddle.net/airandfingers/pdXRx/247/ mas sem usar JQuery
+   Pesquisei bastante isso. Pelo jeito, temos q fazer em JS: http://jsfiddle.net/airandfingers/pdXRx/247/ mas vamos fazer sem usar JQuery
     Tbem mudar a cor pra cinza médio qdo for o placeholder.
