@@ -31,19 +31,17 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
 /*Header*/
 
 .logo-percival{
   height: 70px;
   width: 100px;
+}
+
+@media only screen and (max-width:401px){
+  .logo-percival{
+    display:none;
+  }
 }
 
 /*Dropdown*/
@@ -92,10 +90,6 @@ body {
 }
 
 
-
-
-
-
 #header {
    display: flex;
    justify-content: space-between;
@@ -108,9 +102,10 @@ body {
   border: 1px solid var(--percival-dark);
   padding: 0px 50px;
 }
-@media only screen and (max-width:500px){
+@media only screen and (max-width:400px){
   #logo{
     width: 30%;
+    display:none;
   }
 }
 
