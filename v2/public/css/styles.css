@@ -8,6 +8,11 @@
   height:40px;
   width:40px;
 }
+@media only screen and (max-width:401px){
+  .circle{
+    display:none;
+  }
+}
 
 :root {
   /* Palette */
@@ -100,11 +105,10 @@ body {
 
 #logo {
   border: 1px solid var(--percival-dark);
-  padding: 0px 50px;
+  margin-left: 15px;
 }
-@media only screen and (max-width:400px){
-  #logo{
-    width: 30%;
+@media only screen and (max-width:401px){
+  #logo{    
     display:none;
   }
 }
@@ -113,11 +117,15 @@ body {
   display: flex;
 }
 
-
 .tab {
   font-size: 14px;
   color: white;
   padding: 0px 20px;
+}
+@media only screen and (max-width:401px){
+  .tab{
+    font-size:12px;
+  }
 }
 
 .selected {
@@ -139,6 +147,15 @@ body {
   font-size: 15px;
   color:var(--percival-secondary);
   margin-right: 7px;
+}
+@media only screen and (max-width:401px){
+  #session{
+    margin-right: 28%;   
+  }
+  #user-name{
+    font-size: 12px;
+  }
+
 }
 
 /**** Login */
@@ -238,8 +255,7 @@ strong{
   height: auto;
   width:500px;
   margin-left:auto;
-  margin-right:auto;
-  
+  margin-right:auto;  
   display:flex;
   flex-wrap: wrap;  
   justify-content:space-between;
@@ -359,7 +375,6 @@ textarea {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
 
 .dragging-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
