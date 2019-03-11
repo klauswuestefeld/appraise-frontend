@@ -13,6 +13,11 @@
     display:none;
   }
 }
+@media only screen and (max-height:401px){
+  .circle{
+    display:none;
+  }
+}
 
 :root {
   /* Palette */
@@ -21,15 +26,12 @@
   --percival-background: #e9ebed;
   --percival-dark: rgb(40,40,40);
   --percival-alert: rgb(192, 28, 28);
-
   --percival-header: var(--percival-primary);
-
 }
 
 body {
   background-color: var(--percival-background);
 }
-
 @media only screen and (max-height:500px), screen and (max-width:500px){  
   #scenarios{
     display:none;
@@ -42,7 +44,6 @@ body {
   height: 70px;
   width: 100px;
 }
-
 @media only screen and (max-width:401px){
   .logo-percival{
     display:none;
@@ -112,6 +113,11 @@ body {
     display:none;
   }
 }
+@media only screen and (max-width:700px){
+  #logo{    
+    display:none;
+  }
+}
 
 #menu {
   display: flex;
@@ -124,8 +130,13 @@ body {
 }
 @media only screen and (max-width:401px){
   .tab{
-    font-size:12px;
+    font-size:10px;
   }
+}
+@media only screen and (max-width:700px){
+  .tab{
+    font-size: 12px;
+  }  
 }
 
 .selected {
@@ -150,12 +161,19 @@ body {
 }
 @media only screen and (max-width:401px){
   #session{
-    margin-right: 28%;   
+    margin-right: 30%;   
   }
   #user-name{
     font-size: 12px;
   }
-
+}
+@media only screen and (max-height:401px){
+  #session{
+   
+  }
+  #user-name{
+    font-size: 12px;
+  }
 }
 
 /**** Login */
@@ -238,11 +256,11 @@ body {
   font-size:16px;
   text-align: center;
 }
-@media only screen and (max-height:400px){  
+@media only screen and (max-height:401px){  
   #magic-login {
-    margin-top:10px;
+    margin-top:30px;
   }
-}  
+} 
 
 strong{
   color: var(--percival-secondary);
@@ -266,11 +284,31 @@ h6{
   color: var(--percival-dark);  
   font-size: 16px;
 }
-
+@media only screen and (max-width:401px){  
+  h6 {    
+    font-size: 10px;
+   }
+ } 
+ @media only screen and (max-width:700px){  
+  h6 {    
+    font-size: 12px;
+   }
+ } 
 #email1{  
   font-size: 12px;
   color: var(--percival-secondary);
 }
+@media only screen and (max-width:401px){  
+  #email1 {    
+    font-size: 10px;
+   }
+ } 
+ @media only screen and (max-width:700px){  
+  #email1 {    
+   
+    font-size: 12px;
+   }
+ } 
 
 textarea {
   width:100%;
@@ -281,6 +319,17 @@ textarea {
   padding: 10px 5px;
   font: 15px sans-serif;
 }
+@media only screen and (max-width:401px){  
+  textarea {    
+    width:70%;
+  }
+ } 
+ 
+/*@media only screen and (max-width:700px){  
+  textarea {    
+    width:80%;
+  }
+ } */
 
 ::placeholder{
   word-break: break-all;
@@ -289,11 +338,26 @@ textarea {
   font: 15px sans-serif;
   font-style: italic;
 }
+@media only screen and (max-width:401px){  
+  ::placeholder {    
+    font-size:9px;
+  }
+ } 
 
 #copy1{  
   font-size: 12px;
   color: var(--percival-secondary);   
 }
+@media only screen and (max-width:700px){  
+  #copy1 {    
+    font-size: 9px;
+  }
+ } 
+ @media only screen and (max-height:401px){  
+  #copy1 {    
+    font-size: 12px;
+  }
+ }
 
 #save-button1{
   width:90px;
@@ -305,6 +369,21 @@ textarea {
   font-size: 13px;
   color: white;
 }
+@media only screen and (max-width:401px){  
+  #save-button1 {    
+   margin-right: 40%;
+   font-size: 9px;
+   padding: 10px;
+  }
+ } 
+ @media only screen and (max-width:700px){  
+  #save-button1 {    
+   width:50px;
+   
+   font-size: 10px;
+   padding: 15px;
+  }
+ } 
 
 /*Admin ok*/
 
@@ -335,7 +414,6 @@ textarea {
   line-height: 25px;
   display: block;
   overflow: auto;
-
   padding: auto;
   border-bottom:2px dashed #aaa;
   color:#aaa;
@@ -355,12 +433,6 @@ textarea {
   width:5%;
   float: left; 
 }
-
-/*
-.drag-target{
-  background-color: black;
-}
-*/
 
 .card{
   background-color: white;
@@ -409,8 +481,8 @@ footer {
   align-items: center;
   padding-left: 20px;
 }
-@media only screen and (max-width:500px){  
+@media only screen and (max-width:700px){  
   Footer{
     font-size: 12px;
-    height:10%;
+    height:12%;
   }
