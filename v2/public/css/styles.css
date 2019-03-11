@@ -318,6 +318,7 @@ textarea {
   margin:10px 0px;   
   padding: 10px 5px;
   font: 15px sans-serif;
+  white-space: pre-line;
 }
 @media only screen and (max-width:401px){  
   textarea {    
