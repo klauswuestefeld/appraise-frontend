@@ -8,12 +8,7 @@
   height:40px;
   width:40px;
 }
-@media only screen and (max-width:401px){
-  .circle{
-    display:none;
-  }
-}
-@media only screen and (max-height:401px){
+@media only screen and (max-width:400px), screen and (max-width:700px){
   .circle{
     display:none;
   }
@@ -32,7 +27,7 @@
 body {
   background-color: var(--percival-background);
 }
-@media only screen and (max-height:500px), screen and (max-width:500px){  
+@media only screen and (max-height:500px), screen and (max-width:500px){
   #scenarios{
     display:none;
   }
@@ -44,7 +39,7 @@ body {
   height: 70px;
   width: 100px;
 }
-@media only screen and (max-width:401px){
+@media only screen and (max-width:400px){
   .logo-percival{
     display:none;
   }
@@ -108,17 +103,11 @@ body {
   border: 1px solid var(--percival-dark);
   margin-left: 15px;
 }
-@media only screen and (max-width:401px){
-  #logo{    
+@media only screen and (max-width:400px), screen and (max-width:700px){
+  #logo{
     display:none;
   }
 }
-@media only screen and (max-width:700px){
-  #logo{    
-    display:none;
-  }
-}
-
 #menu {
   display: flex;
 }
@@ -128,15 +117,10 @@ body {
   color: white;
   padding: 0px 20px;
 }
-@media only screen and (max-width:401px){
+@media only screen and (max-width:400px), screen and (max-width:700px){
   .tab{
-    font-size:10px;
+    font-size:12px;
   }
-}
-@media only screen and (max-width:700px){
-  .tab{
-    font-size: 12px;
-  }  
 }
 
 .selected {
@@ -159,22 +143,6 @@ body {
   color:var(--percival-secondary);
   margin-right: 7px;
 }
-@media only screen and (max-width:401px){
-  #session{
-    margin-right: 30%;   
-  }
-  #user-name{
-    font-size: 12px;
-  }
-}
-@media only screen and (max-height:401px){
-  #session{
-   
-  }
-  #user-name{
-    font-size: 12px;
-  }
-}
 
 /**** Login */
 
@@ -188,9 +156,9 @@ body {
   align-items:center;
   color:var(--percival-dark);
 }
-@media only screen and (max-height:500px){  
+@media only screen and (max-height:500px){
   #login{
-    width: 70%;   
+    width: 65%;
     height:49%;
     margin-top: 40px;
   }
@@ -233,7 +201,7 @@ body {
 #google-logo {
   width: 36px;
   height: 36px;
-  flex-shrink: 0;  
+  flex-shrink: 0;
   overflow: hidden;
   padding:6px;
   background:white;
@@ -247,20 +215,20 @@ body {
 }
 
 #magic-login {
-  margin-top:85px; 
-  display:flex;   
+  margin-top:85px;
+  display:flex;
   flex-direction: column;
   align-items:center;
   color: var(--percival-dark);
-  line-height: 18px; 
+  line-height: 18px;
   font-size:16px;
   text-align: center;
 }
-@media only screen and (max-height:401px){  
+@media only screen and (max-height:400px){
   #magic-login {
     margin-top:30px;
   }
-} 
+}
 
 strong{
   color: var(--percival-secondary);
@@ -269,68 +237,55 @@ strong{
 /*Admin*/
 
 #admin{
-  margin-top:60px;  
+  margin-top:60px;
   height: auto;
   width:500px;
   margin-left:auto;
-  margin-right:auto;  
+  margin-right:auto;
   display:flex;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   justify-content:space-between;
   align-items: center;
 }
 
-h6{  
-  color: var(--percival-dark);  
+h6{
+  color: var(--percival-dark);
   font-size: 16px;
 }
-@media only screen and (max-width:401px){  
-  h6 {    
+@media only screen and (max-width:400px){
+  h6 {
     font-size: 10px;
    }
- } 
- @media only screen and (max-width:700px){  
-  h6 {    
+ }
+ @media only screen and (max-width:700px){
+  h6 {
     font-size: 12px;
    }
- } 
-#email1{  
+ }
+#email1{
   font-size: 12px;
   color: var(--percival-secondary);
 }
-@media only screen and (max-width:401px){  
-  #email1 {    
-    font-size: 10px;
+@media only screen and (max-width:400px){
+  #email1 {
+    margin-right: 20%;
    }
- } 
- @media only screen and (max-width:700px){  
-  #email1 {    
-   
-    font-size: 12px;
-   }
- } 
-
+ }
 textarea {
   width:100%;
   height:200px;
   border:1px solid var(--percival-primary);
   background-color: white;
-  margin:10px 0px;   
+  margin:10px 0px;
   padding: 10px 5px;
   font: 15px sans-serif;
   white-space: pre-line;
 }
-@media only screen and (max-width:401px){  
-  textarea {    
-    width:70%;
-  }
- } 
- 
-/*@media only screen and (max-width:700px){  
-  textarea {    
+@media only screen and (max-width:400px){
+  textarea {
     width:80%;
   }
- } */
+ }
 
 ::placeholder{
   word-break: break-all;
@@ -339,23 +294,18 @@ textarea {
   font: 15px sans-serif;
   font-style: italic;
 }
-@media only screen and (max-width:401px){  
-  ::placeholder {    
-    font-size:9px;
+@media only screen and (max-width:400px){
+  ::placeholder {
+    font-size:10px;
   }
- } 
+ }
 
-#copy1{  
+#copy1{
   font-size: 12px;
-  color: var(--percival-secondary);   
+  color: var(--percival-secondary);
 }
-@media only screen and (max-width:700px){  
-  #copy1 {    
-    font-size: 9px;
-  }
- } 
- @media only screen and (max-height:401px){  
-  #copy1 {    
+ @media only screen and (max-height:400px) and (max-width:400px){
+  #copy1 {
     font-size: 12px;
   }
  }
@@ -364,27 +314,26 @@ textarea {
   width:90px;
   padding: 20px;
   border: none;
-  border-radius: 8px;  
-  background:var(--percival-primary);  
-  text-align: center;   
+  border-radius: 8px;
+  background:var(--percival-primary);
+  text-align: center;
   font-size: 13px;
   color: white;
 }
-@media only screen and (max-width:401px){  
-  #save-button1 {    
-   margin-right: 40%;
-   font-size: 9px;
-   padding: 10px;
-  }
- } 
- @media only screen and (max-width:700px){  
-  #save-button1 {    
-   width:50px;
-   
+@media only screen and (max-width:400px){
+  #save-button1 {
+   margin-right: 20%;
    font-size: 10px;
    padding: 15px;
   }
- } 
+ }
+ @media only screen and (max-width:700px){
+  #save-button1 {
+   width:50px;
+   font-size: 10px;
+   padding: 15px;
+  }
+ }
 
 /*Admin ok*/
 
@@ -419,20 +368,36 @@ textarea {
   border-bottom:2px dashed #aaa;
   color:#aaa;
 }
+@media only screen and (max-width:400px){
+  .level {
+   width:80%;
+  }
+ }
+ @media only screen and (max-height:400px){
+  .level {
+   width:90%;
+  }
+ }
 
-.your{  
+.your{
   color:black;
-  width:40px;   
-  font-size:13px;  
-  margin-top:20px;   
+  width:40px;
+  font-size:13px;
+  margin-top:20px;
 }
+@media only screen and (max-height:400px){
+  .your {
+   width:10%;
+   margin-right: 25px;
+  }
+ }
 
 .level-label{
   display:flex;
-  justify-content:center;    
+  justify-content:center;
   height:100%;
   width:5%;
-  float: left; 
+  float: left;
 }
 
 .card{
@@ -444,22 +409,32 @@ textarea {
   float: left;
   height:60px;
 }
+@media only screen and (max-height:400px){
+  .card {
+   width:20%;
+  }
+ }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .dragging-card {
+  background-color: coral;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 190px;
   border-radius: 6px;
+  margin: 15px;
+  width: 160px;
   float: left;
   padding-bottom:10px;
-  margin: 11px;
   text-align: left;
-  background-color: coral;
 }
-
+@media only screen and (max-height:400px){
+  .dragging-card {
+   width:20%;
+   align-items: center;
+  }
+ }
 /**** Footer */
 
 :root {
@@ -482,7 +457,7 @@ footer {
   align-items: center;
   padding-left: 20px;
 }
-@media only screen and (max-width:700px){  
+@media only screen and (max-width:700px){
   Footer{
     font-size: 12px;
     height:12%;
