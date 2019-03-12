@@ -33,7 +33,7 @@ body {
   background-color: var(--percival-background);
 }
 @media only screen and (max-height:500px), screen and (max-width:500px){  
-  #scenarios{
+  #situations{
     display:none;
   }
 }
@@ -450,14 +450,24 @@ textarea {
 }
 
 .dragging-card {
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 190px;
   border-radius: 6px;
+  margin: 15px;
+  width: 160px;
   float: left;
-  padding-bottom:10px;
-  margin: 11px;
-  text-align: left;
-  background-color: coral;
+  height:60px;
+}
+
+.drag-target{
+  margin-left:50px;
+  width: calc(100% - 100px);
+  line-height: 25px;
+  display: block;
+  overflow: auto;
+  padding: auto;
+  border-bottom:2px dashed #aaa;
+  color:#aaa;
 }
 
 /**** Footer */

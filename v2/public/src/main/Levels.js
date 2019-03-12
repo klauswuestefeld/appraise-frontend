@@ -1,12 +1,12 @@
 
 window.addEventListener("load", function() {
     var i = 1;
-    var increasing = 2;
+    var increasing = 10;
     var decreasing = 1;
     var myLevel = document.getElementById('id-level');
     var spanLevel = document.getElementById('span-level');
     var appraisal = document.getElementById("appraisals")
-    for (i = 2; i >= decreasing; i--) {
+    for (i = 10; i >= decreasing; i--) {
       var levelClone   = myLevel.cloneNode(false);
       levelClone.id = "id-extra"+i;
       var beforeLevel = document.getElementById('id-level');
@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
       var newCard   = card.cloneNode(true);
       if (i == 2){
       	newCard.className = "dragging-card";
-      	newCard.innerHTML="Estou sendo arrastado";
+      	//newCard.innerHTML="Estou sendo arrastado";
       }
       document.getElementById("id-level").appendChild(newCard);
     }

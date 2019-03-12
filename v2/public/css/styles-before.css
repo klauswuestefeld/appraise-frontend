@@ -33,7 +33,7 @@ body {
 /**** Scenario Control */
 .force-display-none {display: none !important;}
 
-#scenarios {
+#situations {
   
   background: #F0F0F0;
  
@@ -47,7 +47,7 @@ body {
   border-bottom-width: 1px;
 }
 
-.scenario {
+.situation {
   
   color: grey;
   font-size: 12px;
