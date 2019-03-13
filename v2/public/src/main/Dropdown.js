@@ -1,4 +1,4 @@
-/*
+/*"use strict";
 window.addEventListener("load", function() {
   document.getElementById("situation-dropdown").onclick = function() {myFunction()};
 });

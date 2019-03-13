@@ -1,4 +1,4 @@
-
+"use strict";
 window.addEventListener("load", function() {
     var i = 1;
     var increasing = 10;
