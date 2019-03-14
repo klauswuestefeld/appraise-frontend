@@ -13,7 +13,7 @@ Fazer appraisals-empty e filled funcionarem de novo.
    Scroll p o "Your Level" qdo abre a tela.
    Classes level + drag-target juntas.
    Classes card + dragging-card juntas.
-OK Card com conteudo normal.
+  OK Card com conteudo normal.
 
 Situation de admin-filled precisa ter emails e nomes no campo.
 
