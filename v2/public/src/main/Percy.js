@@ -1,5 +1,5 @@
 "use strict";
-Percy = {};
+var Percy = {};
 
-percy = window.percy || {};           // Namespace for all classes and objects
+var percy = window.percy || {};           // Namespace for all classes and objects
 

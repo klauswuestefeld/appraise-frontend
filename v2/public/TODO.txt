@@ -1,4 +1,4 @@
-Colocar "use strict" em todos os js.
+OK Colocar "use strict" em todos os js.
 
 OK Eliminar todos os erros do console
 
