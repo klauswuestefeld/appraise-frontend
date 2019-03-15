@@ -385,22 +385,17 @@ textarea {
   }
  }
 
-.your{
+.your-level{
   color:black;
   width:40px;
   font-size:13px;
   margin-top:20px;
 }
 @media only screen and (max-width:500px){
-  .your {
-   width:40%;
+  .your-level {
+    width:40%;
   }
- }
- @media only screen and (max-height:500px){
-  .your {
-   width:30%;
-  }
- }
+}
 
 .level-label{
   display:flex;
@@ -510,3 +505,4 @@ footer {
     font-size: 12px;
     height:12%;
   }
+}

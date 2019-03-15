@@ -1,4 +1,4 @@
-Colocar "use strict" em todos os js.
+OK Colocar "use strict" em todos os js.
 
 OK Eliminar todos os erros do console
 
@@ -7,13 +7,13 @@ Fazer TODOs do codigo.
 OK Scenario -> Situation
 
 Fazer appraisals-empty e filled funcionarem de novo.
-  Filled: 30 cards no "Your Level".
+  OK Filled: 30 cards no "Your Level".
   Empty: Só 2 cards no "Your Level"
   OK 10 niveis p cima, 10 p baixo
-   Scroll p o "Your Level" qdo abre a tela.
+   OK Scroll p o "Your Level" qdo abre a tela.
    Classes level + drag-target juntas.
    Classes card + dragging-card juntas.
-OK Card com conteudo normal.
+  OK Card com conteudo normal.
 
 Situation de admin-filled precisa ter emails e nomes no campo.
 

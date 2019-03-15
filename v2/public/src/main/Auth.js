@@ -1,4 +1,4 @@
-
+"use strict";
 Percy.initAuth = function() {
 
     gapi.load('auth2', function() {

@@ -1,4 +1,4 @@
-/*
+/*"use strict";
 function change(el) {
 if (el == 'appraisals-tab'){
    document.getElementById('appraisals-tab').classList.add('selected');

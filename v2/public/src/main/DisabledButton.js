@@ -1,3 +1,4 @@
+"use strict";
 window.addEventListener("load", function() {
 //     document.getElementById("saveButton2").onclick = function() {disableSave()};
 //     document.getElementById("saveButton3").onclick = function() {errorSave()};

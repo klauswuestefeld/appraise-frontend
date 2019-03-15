@@ -9,9 +9,15 @@ window.addEventListener("load", function() {
      onSituation("admin-empty", adminEmptyScreen);
      onSituation("admin-filled", adminFilledScreen);
      onSituation("admin-error", adminErrorScreen);
-     onSituation("admin-ok", adminOkScreen);
+     onSituation("admin-ok", adminOkScreen);  
      onSituation("appraisals-empty", appraisalEmptyScreen);
      onSituation("appraisals-filled", appraisalFilledScreen);
+     if (window.location.hash != ("#situation-appraisals-filled")){
+        document.getElementById("ghost-card").classList.add('force-display-none');
+     }
+      else{
+        document.getElementById("ghost-card").classList.remove('force-display-none');
+     }
   });
 
 
