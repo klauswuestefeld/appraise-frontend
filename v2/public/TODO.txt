@@ -17,5 +17,5 @@ OK Fazer appraisals-empty e filled funcionarem de novo.
 
 OK Situation de admin-filled precisa ter emails e nomes no campo.
 
-Menu de situations
-  Nao abrir logo de cara. Abrir com algum easter egg no site.
+OK Menu de situations
+  OK Nao abrir logo de cara. Abrir com algum easter egg no site.
