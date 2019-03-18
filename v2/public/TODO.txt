@@ -1,7 +1,12 @@
+Fazer appraisals-empty e filled funcionarem de novo.
   Scroll p o "Your Level" qdo abre a tela.
     Isso tem que funcionar qdo clica nas situations de appraisals.
 
-OK Situation de admin-filled precisa ter emails e nomes no campo.
+Tela de detalhe de Card com foto, nome, nivel e 6 botoes de certeza: 0%, 20%, 40%, 60%, 80%, 100%.
 
-OK Menu de situations
-  OK Nao abrir logo de cara. Abrir com algum easter egg no site.
+Começar a fazer as chamadas pro backend:
+  Login
+  Logout
+  Admin
+  Appraisals
+  Appraisal
