@@ -2,7 +2,7 @@ OK Colocar "use strict" em todos os js.
 
 OK Eliminar todos os erros do console
 
-Fazer TODOs do codigo.
+OK Fazer TODOs do codigo.
 
 OK Scenario -> Situation
 

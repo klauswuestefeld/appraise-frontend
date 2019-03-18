@@ -172,9 +172,6 @@ function appraisalFilledScreen(){
 }
 
 function setDisplay(displaysById){
-//TODO force-display-none em todos os filhos da body q nao sejam scenarios nem header.
-//TODO   Apagar as linhas acima q se tornarem desnecessarias,
-
     var id;
     for (id in displaysById) {
         if (displaysById[id]) {
