@@ -5,8 +5,6 @@
   overflow: hidden;
   float: left;
   margin: 8px 10px 0px 8px;
-  height:40px;
-  width:40px;
 }
 @media only screen and (max-height:504px), screen and (max-width:504px){
   .circle{
@@ -244,7 +242,8 @@ strong{
 #admin{
   margin-top:60px;
   height: auto;
-  width:500px;
+  width:95%;
+  max-width: 500px;
   margin-left:auto;
   margin-right:auto;
   display:flex;
@@ -286,11 +285,7 @@ textarea {
   font: 15px sans-serif;
   white-space: pre-line;
 }
-@media only screen and (max-width:400px){
-  textarea {
-    width:80%;
-  }
- }
+
 
 ::placeholder{
   word-break: break-all;
@@ -367,33 +362,36 @@ textarea {
   margin-left:50px;
   width: calc(100% - 100px);
   line-height: 25px;
+  height: 90px;
   display: block;
-  overflow: auto;
+  overflow:hidden;
   padding: auto;
   border-bottom:2px dashed #aaa;
   color:#aaa;
 }
+
 @media only screen and (max-width:500px){
   .level {
-   width:85%;
-   margin-left:10%;
+   width:95%;
+   margin-left:10px;
+   height: 75px;
   }
  }
- @media only screen and (max-height:400px){
-  .level {
-   width:90%;
-  }
- }
+#id-your-level{
+  color: var(--percival-primary);
+}
 
-.your-level{
+ .your-level{
   color:black;
   width:40px;
   font-size:13px;
-  margin-top:20px;
+  margin-top:10px;
 }
 @media only screen and (max-width:500px){
   .your-level {
-    width:40%;
+    width:30px;
+    margin-left: 5px;
+    margin-top: 5px;
   }
 }
 
@@ -404,29 +402,32 @@ textarea {
   width:5%;
   float: left;
 }
-
 .card{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
+  margin-top:10px;
   width: 160px;
   float: left;
-  height:60px;
-  display: flex;
-  flex-direction: column;
+  height:68px;
+  padding-bottom: 12px;
+  text-align: left;
+  line-height: 25px;
+
 }
 @media only screen and (max-width:502px){
   .card {
    width:20%;
-   margin-left: 20%;
+   margin-left: 25px;
+   margin-top: 5px;
+   height: 60px;
   }
  }
  @media only screen and (max-height:500px){
   .card {
    width:25%;
    margin-left: 15%;
-
   }
  }
 
@@ -439,27 +440,23 @@ textarea {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
+  margin-top:10px;
   width: 160px;
   float: left;
   padding-bottom:10px;
   text-align: left;
-  height:60px;
+  line-height: 25px;
 }
 @media only screen and (max-width:502px){
   .dragging-card {
    width:20%;
-  }
- }
- @media only screen and (max-height:400px){
-  .dragging-card {
-   width:20%;
+   margin-top: 5px;
   }
  }
  @media only screen and (max-height:500px){
   .dragging-card {
    width:25%;
    margin-left: 20%;
-
   }
  }
 .drag-target{
@@ -472,10 +469,11 @@ textarea {
   border-bottom:2px dashed #aaa;
   color:#aaa;
 }
-
 @media only screen and (max-width:499px){
-  .dragging-target {
-   width:80%;
+  .drag-target {
+   width:95%;
+   margin-left:10px;
+   height: 75px;
   }
  }
 /**** Footer */

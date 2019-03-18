@@ -1,13 +1,7 @@
-Fazer TODOs do codigo.
-
-Fazer appraisals-empty e filled funcionarem de novo.
-  Empty: Só 2 cards no "Your Level"
   Scroll p o "Your Level" qdo abre a tela.
     Isso tem que funcionar qdo clica nas situations de appraisals.
-  Classes level + drag-target juntas.
-  Classes card + dragging-card juntas.
 
-Situation de admin-filled precisa ter emails e nomes no campo.
+OK Situation de admin-filled precisa ter emails e nomes no campo.
 
-Menu de situations
-  Nao abrir logo de cara. Abrir com algum easter egg no site.
+OK Menu de situations
+  OK Nao abrir logo de cara. Abrir com algum easter egg no site.
