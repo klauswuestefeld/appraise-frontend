@@ -1,6 +1,11 @@
 "use strict";
 window.addEventListener("load", function() {
-    var i = 1;
+	otherLevels();
+	ghostCards();
+});
+
+function otherLevels(){
+	var i = 1;
     var increasing = 10;
     var decreasing = 1;
     var myLevel = document.getElementById('id-level');
@@ -14,29 +19,31 @@ window.addEventListener("load", function() {
       var levelSpan   = spanLevel.cloneNode(true);
       levelClone.appendChild(levelSpan);
       levelSpan.innerHTML=i;
-      if (i == 1){
-      	var card = document.getElementById('id-card');
-    	var newCard   = card.cloneNode(true);
-    	document.getElementById("id-extra+2").appendChild(newCard);
-      }
-      if (i == 2){
-      	levelClone.className = "drag-target";
-      }
+	      if (i == 1){
+	      	var card = document.getElementById('id-card');
+	    	var newCard   = card.cloneNode(true);
+	    	document.getElementById("id-extra+2").appendChild(newCard);
+	      }
+	      if (i == 2){
+	      	document.getElementById("id-level").classList.add("drag-target");
+	      }
     }
 
     for (i = 1; i <= 29; i++) {
       var card = document.getElementById('id-card');
       var newCard   = card.cloneNode(true);
-      if (i == 1){
-      	newCard.className = "dragging-card";
-      }
-      document.getElementById("id-level").appendChild(newCard);
-      if (i > 1){
-      	newCard.id = "ghost-card";
-      }
+	      if (i == 1){
+	      	document.getElementById("id-card").classList.add("dragging-card");
+	      }
+	      document.getElementById("id-level").appendChild(newCard);
+	      if (i > 1){
+	 		document.getElementById("id-card").classList.remove("dragging-card");
+	      	newCard.id = "ghost-card"+i;
+	      }
     }
 
     for (i = 1; i <= increasing; i++) {
+      document.getElementById("id-level").classList.remove("drag-target");
       var levelClone   = myLevel.cloneNode(false);
       levelClone.id = "id-extra-"+i;
       appraisal.appendChild(levelClone);
@@ -45,15 +52,26 @@ window.addEventListener("load", function() {
       levelSpan.innerHTML=-i;
     }
 
-    for (i=1; i <= 6; i++){
-	    var card = document.getElementById('id-card');
-	    var newCard   = card.cloneNode(true);
-	    document.getElementById("id-extra-1").appendChild(newCard);
-    }
+	    for (i=1; i <= 6; i++){
+		    var card = document.getElementById('id-card');
+		    var newCard   = card.cloneNode(true);
+		    document.getElementById("id-extra-1").appendChild(newCard);
+	    }
 
-    for (i=1; i <= 3; i++){
-	    var card = document.getElementById('id-card');
-	    var newCard   = card.cloneNode(true);
-	    document.getElementById("id-extra-2").appendChild(newCard);
-    }
-});
+	    for (i=1; i <= 3; i++){
+		    var card = document.getElementById('id-card');
+		    var newCard   = card.cloneNode(true);
+		    document.getElementById("id-extra-2").appendChild(newCard);
+	    }
+
+}
+
+function ghostCards(){
+	if (window.location.hash != ("#situation-appraisals-filled")){ 
+      for (i = 2; i <= 29; i++)
+        document.getElementById("ghost-card"+i).classList.add('force-display-none');
+     }
+     else{
+        document.getElementById("ghost-card"+i).classList.remove('force-display-none');
+     }
+}
