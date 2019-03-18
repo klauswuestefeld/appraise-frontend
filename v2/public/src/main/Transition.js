@@ -2,7 +2,6 @@
 
 window.addEventListener("load", function() {
      displayBody();
-
      onSituation("login", loginScreen);
      onSituation("magic-login", magicLogScreen);
      onSituation("logout", dropdownScreen);
@@ -12,17 +11,19 @@ window.addEventListener("load", function() {
      onSituation("admin-ok", adminOkScreen);  
      onSituation("appraisals-empty", appraisalEmptyScreen);
      onSituation("appraisals-filled", appraisalFilledScreen);
-     if (window.location.hash != ("#situation-appraisals-filled")){
-        document.getElementById("ghost-card").classList.add('force-display-none');
-     }
-      else{
-        document.getElementById("ghost-card").classList.remove('force-display-none');
-     }
+     adminContent();
+     document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
   });
 
+function easterEgg(){
+  /*A função está sendo chamando com "ondblclcick" ao clicar no símbolo de copyright
+  duas vezes, o que diminui a chance de alguém descobrir o easter-egg.*/
+  document.getElementById("situations").classList.remove('force-display-none');
+}
 
 function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
+    document.getElementById("situations").classList.add('force-display-none');
 }
 
 function onSituation(name, handler) {
@@ -172,9 +173,6 @@ function appraisalFilledScreen(){
 }
 
 function setDisplay(displaysById){
-//TODO force-display-none em todos os filhos da body q nao sejam scenarios nem header.
-//TODO   Apagar as linhas acima q se tornarem desnecessarias,
-
     var id;
     for (id in displaysById) {
         if (displaysById[id]) {
@@ -184,4 +182,16 @@ function setDisplay(displaysById){
         }
     }
 }
+if (i == 1){
+          var card = document.getElementById('id-card');
+        var newCard   = card.cloneNode(true);
+        document.getElementById("id-extra+2").appendChild(newCard);
+        }
+
+function adminContent(){
+  if (window.location.hash == ("#situation-admin-filled")) {
+  document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen';
+  }
+}
+
 

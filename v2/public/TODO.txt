@@ -2,20 +2,20 @@ OK Colocar "use strict" em todos os js.
 
 OK Eliminar todos os erros do console
 
-Fazer TODOs do codigo.
+OK Fazer TODOs do codigo.
 
 OK Scenario -> Situation
 
-Fazer appraisals-empty e filled funcionarem de novo.
+OK Fazer appraisals-empty e filled funcionarem de novo.
   OK Filled: 30 cards no "Your Level".
-  Empty: Só 2 cards no "Your Level"
+  OK Empty: Só 2 cards no "Your Level"
   OK 10 niveis p cima, 10 p baixo
    OK Scroll p o "Your Level" qdo abre a tela.
-   Classes level + drag-target juntas.
-   Classes card + dragging-card juntas.
+   OK Classes level + drag-target juntas.
+   OK Classes card + dragging-card juntas.
   OK Card com conteudo normal.
 
-Situation de admin-filled precisa ter emails e nomes no campo.
+OK Situation de admin-filled precisa ter emails e nomes no campo.
 
-Menu de situations
-  Nao abrir logo de cara. Abrir com algum easter egg no site.
+OK Menu de situations
+  OK Nao abrir logo de cara. Abrir com algum easter egg no site.
