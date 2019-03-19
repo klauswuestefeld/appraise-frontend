@@ -11,7 +11,9 @@ window.addEventListener("load", function() {
      onSituation("admin-ok", adminOkScreen);  
      onSituation("appraisals-empty", appraisalEmptyScreen);
      onSituation("appraisals-filled", appraisalFilledScreen);
+     onSituation("certainty", certaintyScreen);
      adminContent();
+     opacityAppraisals();
      document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
   });
 
@@ -43,7 +45,8 @@ function loginScreen() {
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -58,7 +61,8 @@ function magicLogScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -72,7 +76,8 @@ function dropdownScreen() {
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -86,7 +91,8 @@ function adminEmptyScreen(){
        "admin": true,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
@@ -102,7 +108,8 @@ function adminFilledScreen() {
        "admin": true,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
     document.getElementById('appraisals-tab').classList.remove('selected');
     document.getElementById('admin-tab').classList.add('selected');
@@ -118,7 +125,8 @@ function adminErrorScreen(){
        "admin": true,
        "error-text": true,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
@@ -134,7 +142,8 @@ function adminOkScreen(){
        "admin": true,
        "error-text": false,
        "ok-text": true,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
@@ -150,7 +159,8 @@ function appraisalEmptyScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": true
+       "appraisals": true,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
@@ -166,7 +176,25 @@ function appraisalFilledScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": true
+       "appraisals": true,
+       "certainty": false
+    });
+  document.getElementById('appraisals-tab').classList.add('selected');
+  document.getElementById('admin-tab').classList.remove('selected');
+}
+
+function certaintyScreen(){
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": false,
+       "error-text": false,
+       "ok-text": false,
+       "appraisals": true,
+       "certainty": true
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
@@ -193,5 +221,15 @@ function adminContent(){
   document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen';
   }
 }
+
+function opacityAppraisals(){
+  if (window.location.hash == ("#situation-certainty")) {
+    document.getElementById('appraisals').classList.add('darker');
+  }
+  else{
+    document.getElementById('appraisals').classList.remove('darker');
+  }
+}
+
 
 
