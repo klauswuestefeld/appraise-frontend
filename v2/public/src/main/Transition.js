@@ -13,7 +13,6 @@ window.addEventListener("load", function() {
      onSituation("appraisals-filled", appraisalFilledScreen);
      onSituation("certainty", certaintyScreen);
      adminContent();
-     opacityAppraisals();
      document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
   });
 
@@ -222,14 +221,7 @@ function adminContent(){
   }
 }
 
-function opacityAppraisals(){
-  if (window.location.hash == ("#situation-certainty")) {
-    document.getElementById('appraisals').classList.add('darker');
-  }
-  else{
-    document.getElementById('appraisals').classList.remove('darker');
-  }
-}
+
 
 
 
