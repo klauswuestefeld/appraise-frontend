@@ -2,6 +2,12 @@
 
 window.addEventListener("load", function() {
      displayBody();
+     if (window.location.hash != ("#situation-certainty")){
+        document.getElementById("id-modal").classList.add('force-display-none');
+    }
+    else{
+      document.getElementById("id-modal").classList.remove('force-display-none');
+    }
      onSituation("login", loginScreen);
      onSituation("magic-login", magicLogScreen);
      onSituation("logout", dropdownScreen);
