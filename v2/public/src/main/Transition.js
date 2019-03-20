@@ -1,6 +1,7 @@
 "use strict";
 
 window.addEventListener("load", function() {
+  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
      displayBody();
      if (window.location.hash != ("#situation-certainty")){
         document.getElementById("id-modal").classList.add('force-display-none');
@@ -19,7 +20,6 @@ window.addEventListener("load", function() {
      onSituation("appraisals-filled", appraisalFilledScreen);
      onSituation("certainty", certaintyScreen);
      adminContent();
-     document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
   });
 
 function easterEgg(){
@@ -215,11 +215,7 @@ function setDisplay(displaysById){
         }
     }
 }
-if (i == 1){
-          var card = document.getElementById('id-card');
-        var newCard   = card.cloneNode(true);
-        document.getElementById("id-extra+2").appendChild(newCard);
-        }
+
 
 function adminContent(){
   if (window.location.hash == ("#situation-admin-filled")) {
