@@ -3,12 +3,12 @@
 window.addEventListener("load", function() {
   document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
      displayBody();
-     if (window.location.hash != ("#situation-certainty")){
+      if (window.location.hash != ("#situation-certainty")){
         document.getElementById("certainty").classList.add('force-display-none');
-    }
-    else{
-      document.getElementById("certainty").classList.remove('force-display-none');
-    }
+      }
+      else{
+        document.getElementById("certainty").classList.remove('force-display-none');
+      }
      onSituation("login", loginScreen);
      onSituation("magic-login", magicLogScreen);
      onSituation("logout", dropdownScreen);
@@ -223,6 +223,7 @@ function adminContent(){
   document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen';
   }
 }
+
 
 
 
