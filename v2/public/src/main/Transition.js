@@ -4,10 +4,10 @@ window.addEventListener("load", function() {
   document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
      displayBody();
      if (window.location.hash != ("#situation-certainty")){
-        document.getElementById("id-modal").classList.add('force-display-none');
+        document.getElementById("certainty").classList.add('force-display-none');
     }
     else{
-      document.getElementById("id-modal").classList.remove('force-display-none');
+      document.getElementById("certainty").classList.remove('force-display-none');
     }
      onSituation("login", loginScreen);
      onSituation("magic-login", magicLogScreen);
@@ -23,14 +23,14 @@ window.addEventListener("load", function() {
   });
 
 function easterEgg(){
-  /*A função está sendo chamando com "ondblclcick" ao clicar no símbolo de copyright
-  duas vezes, o que diminui a chance de alguém descobrir o easter-egg.*/
+  /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
+  twice. It decreases the chance of someone figure out the easter-egg.*/
   document.getElementById("situations").classList.remove('force-display-none');
 }
 
 function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
-    document.getElementById("situations").classList.add('force-display-none');
+    //document.getElementById("situations").classList.add('force-display-none');
 }
 
 function onSituation(name, handler) {
@@ -101,6 +101,7 @@ function adminEmptyScreen(){
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  document.getElementById('textarea').value = '';
 }
 
 function adminFilledScreen() {
