@@ -1,7 +1,14 @@
 "use strict";
 
 window.addEventListener("load", function() {
+  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
      displayBody();
+      if (window.location.hash != ("#situation-certainty")){
+        document.getElementById("certainty").classList.add('force-display-none');
+      }
+      else{
+        document.getElementById("certainty").classList.remove('force-display-none');
+      }
      onSituation("login", loginScreen);
      onSituation("magic-login", magicLogScreen);
      onSituation("logout", dropdownScreen);
@@ -11,19 +18,19 @@ window.addEventListener("load", function() {
      onSituation("admin-ok", adminOkScreen);  
      onSituation("appraisals-empty", appraisalEmptyScreen);
      onSituation("appraisals-filled", appraisalFilledScreen);
+     onSituation("certainty", certaintyScreen);
      adminContent();
-     document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
   });
 
 function easterEgg(){
-  /*A função está sendo chamando com "ondblclcick" ao clicar no símbolo de copyright
-  duas vezes, o que diminui a chance de alguém descobrir o easter-egg.*/
+  /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
+  twice. It decreases the chance of someone figure out the easter-egg.*/
   document.getElementById("situations").classList.remove('force-display-none');
 }
 
 function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
-    document.getElementById("situations").classList.add('force-display-none');
+    //document.getElementById("situations").classList.add('force-display-none');
 }
 
 function onSituation(name, handler) {
@@ -43,7 +50,8 @@ function loginScreen() {
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -58,7 +66,8 @@ function magicLogScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -72,7 +81,8 @@ function dropdownScreen() {
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
 }
 
@@ -86,10 +96,12 @@ function adminEmptyScreen(){
        "admin": true,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  document.getElementById('textarea').value = '';
 }
 
 function adminFilledScreen() {
@@ -102,7 +114,8 @@ function adminFilledScreen() {
        "admin": true,
        "error-text": false,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
     document.getElementById('appraisals-tab').classList.remove('selected');
     document.getElementById('admin-tab').classList.add('selected');
@@ -118,7 +131,8 @@ function adminErrorScreen(){
        "admin": true,
        "error-text": true,
        "ok-text": false,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
@@ -134,7 +148,8 @@ function adminOkScreen(){
        "admin": true,
        "error-text": false,
        "ok-text": true,
-       "appraisals": false
+       "appraisals": false,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
@@ -150,7 +165,8 @@ function appraisalEmptyScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": true
+       "appraisals": true,
+       "certainty": false
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
@@ -166,7 +182,25 @@ function appraisalFilledScreen(){
        "admin": false,
        "error-text": false,
        "ok-text": false,
-       "appraisals": true
+       "appraisals": true,
+       "certainty": false
+    });
+  document.getElementById('appraisals-tab').classList.add('selected');
+  document.getElementById('admin-tab').classList.remove('selected');
+}
+
+function certaintyScreen(){
+  setDisplay({
+       "session": true,
+       "menu": true,
+       "login": false,
+       "magic-login": false,
+       "session-dropdown": false,
+       "admin": false,
+       "error-text": false,
+       "ok-text": false,
+       "appraisals": true,
+       "certainty": true
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
@@ -182,16 +216,16 @@ function setDisplay(displaysById){
         }
     }
 }
-if (i == 1){
-          var card = document.getElementById('id-card');
-        var newCard   = card.cloneNode(true);
-        document.getElementById("id-extra+2").appendChild(newCard);
-        }
+
 
 function adminContent(){
   if (window.location.hash == ("#situation-admin-filled")) {
   document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen';
   }
 }
+
+
+
+
 
 

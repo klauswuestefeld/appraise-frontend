@@ -5,5 +5,4 @@ window.addEventListener("load", function() {
   function ScrollToLevel(){
   	var levelScroll = document.getElementById("id-your-level");
     levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-    console.log("Teste1");
   }
