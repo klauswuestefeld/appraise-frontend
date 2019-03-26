@@ -1,7 +1,7 @@
 .circle {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   overflow: hidden;
   float: left;
   margin: 8px 10px 0px 8px;
@@ -377,24 +377,32 @@ textarea {
    height: 75px;
   }
  }
-#id-your-level{
-  color: var(--percival-primary);
-}
-
  .your-level{
   color:black;
   width:40px;
-  font-size:13px;
+  font-size:20px;
   margin-top:10px;
 }
 @media only screen and (max-width:500px){
   .your-level {
-    width:30px;
-    margin-left: 5px;
-    margin-top: 5px;
+    width:20px;
+    margin-left: 20px;
+    margin-top:25px;
   }
 }
 
+#id-your-level{
+  color: var(--percival-secondary);
+  width:40px;
+  font-size:15px;
+  margin-bottom:45px;
+  margin-left: 5px;
+}
+@media only screen and (max-width:400px){
+  #id-your-level{
+    margin-top:10px;
+  }
+}
 .level-label{
   display:flex;
   justify-content:center;
@@ -402,26 +410,26 @@ textarea {
   width:5%;
   float: left;
 }
+
 .card{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
   margin-top:10px;
-  width: 160px;
+  width: 180px;
   float: left;
-  height:68px;
-  padding-bottom: 12px;
+  height:60px;
   text-align: left;
   line-height: 25px;
-
 }
 @media only screen and (max-width:502px){
   .card {
-   width:20%;
-   margin-left: 25px;
-   margin-top: 5px;
-   height: 60px;
+   width:25%;
+   margin-left: 40px;
+   margin-top: 10px;
+   height: 50px;
+   text-align: center;
   }
  }
  @media only screen and (max-height:500px){
@@ -436,7 +444,7 @@ textarea {
 }
 
 .dragging-card {
-  background-color: white;
+  background-color: rgb(170, 23, 23);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
@@ -464,7 +472,7 @@ textarea {
   width: calc(100% - 100px);
   line-height: 25px;
   display: block;
-  overflow: auto;
+  overflow: hidden;
   padding: auto;
   border-bottom:2px dashed #aaa;
   color:#aaa;
@@ -498,9 +506,10 @@ footer {
   align-items: center;
   padding-left: 20px;
 }
-@media only screen and (max-width:700px){
+@media only screen and (max-width:401px){
   Footer{
     font-size: 12px;
     height:12%;
+
   }
 }
