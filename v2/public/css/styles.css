@@ -88,7 +88,6 @@ body {
   margin: 10px;
 }
 
-
 #header {
    display: flex;
    justify-content: space-between;
@@ -381,7 +380,8 @@ textarea {
   color:black;
   width:40px;
   font-size:20px;
-  margin-top:10px;
+  margin-top:60px;
+
 }
 @media only screen and (max-width:500px){
   .your-level {
@@ -417,11 +417,13 @@ textarea {
   border-radius: 6px;
   margin: 15px;
   margin-top:10px;
+  margin-left: 30px;
   width: 180px;
   float: left;
   height:60px;
   text-align: left;
   line-height: 25px;
+
 }
 @media only screen and (max-width:502px){
   .card {
@@ -444,16 +446,19 @@ textarea {
 }
 
 .dragging-card {
-  background-color: rgb(170, 23, 23);
+  background-color: rgb(75, 71, 71);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
   margin-top:10px;
-  width: 160px;
+  margin-left: 30px;
+  width: 180px;
   float: left;
+  margin-right: 5px;
   padding-bottom:10px;
   text-align: left;
   line-height: 25px;
+  opacity: 0.5;
 }
 @media only screen and (max-width:502px){
   .dragging-card {
@@ -467,6 +472,7 @@ textarea {
    margin-left: 20%;
   }
  }
+
 .drag-target{
   margin-left:50px;
   width: calc(100% - 100px);
