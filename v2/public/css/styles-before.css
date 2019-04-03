@@ -34,21 +34,20 @@ body {
 .force-display-none {display: none !important;}
 
 #situations {
-  
+
   background: #F0F0F0;
- 
-  line-height: 20px;   
+
+  line-height: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  
+
   border-bottom-color: gray;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
 
 .situation {
-  
   color: grey;
   font-size: 12px;
   padding:12px;
@@ -64,14 +63,6 @@ body {
   height: 80%;
 }
 
-.modal-doing-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 10px;
-  border: 1px solid #888;
-  width: 80%;
-  height: 10px;
-}
 
 .modal-doing-buttons{
   width: 50%;
@@ -94,21 +85,7 @@ body {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.certainty-button{
-  float: left;
-  margin-top: 80px;
-  margin-left: 30px;
-  border-style: solid;
-  padding: 40px;
-}
 
-.certainty-text{
-  color: var(--percival-dark);
-  font-size: 16px;
-  margin: 10px;
-}
 
-div#certainty strong{
-  margin: 80px;
-  font: 15px sans-serif;
-}
+
+
