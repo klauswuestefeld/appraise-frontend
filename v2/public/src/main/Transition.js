@@ -221,7 +221,23 @@ function setDisplay(displaysById){
 
 function adminContent(){
   if (window.location.hash == ("#situation-admin-filled")) {
-    document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen\njosedasilva@blamail.com José Pereira da Costa e Silva';
+    document.getElementById('textarea').value =
+     'eriksen@gmail.com Eriksen\n' +
+     'josedasilva@blamail.com José Pereira da Costa e Silva\n' +
+     'josedasilva2@blamail.com José Pereira da Costa e Silva2\n' +
+     'josedasilva3@blamail.com José Pereira da Costa e Silva3\n' +
+     'josedasilva4@blamail.com José Pereira da Costa e Silva4\n' +
+     'josedasilva5@blamail.com José Pereira da Costa e Silva5\n' +
+     'josedasilva6@blamail.com José Pereira da Costa e Silva6\n' +
+     'josedasilva7@blamail.com José Pereira da Costa e Silva7\n' +
+     'josedasilva8@blamail.com José Pereira da Costa e Silva8\n' +
+     'josedasilva9@blamail.com José Pereira da Costa e Silva9\n' +
+     'josedasilva10@blamail.com José Pereira da Costa e Silva10\n' +
+     'josedasilva11@blamail.com José Pereira da Costa e Silva11\n' +
+     'josedasilva12@blamail.com José Pereira da Costa e Silva12\n' +
+     'josedasilva13@blamail.com José Pereira da Costa e Silva13\n' +
+     'josedasilva14@blamail.com José Pereira da Costa e Silva14\n' +
+     'josedasilva15@blamail.com José Pereira da Costa e Silva15\n';
   }
 }
 
