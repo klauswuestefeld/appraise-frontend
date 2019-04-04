@@ -2,25 +2,27 @@
 
 window.addEventListener("load", function() {
   document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
-     displayBody();
-      if (window.location.hash != ("#situation-certainty")){
-        document.getElementById("certainty").classList.add('force-display-none');
-      }
-      else{
-        document.getElementById("certainty").classList.remove('force-display-none');
-      }
-     onSituation("login", loginScreen);
-     onSituation("magic-login", magicLogScreen);
-     onSituation("logout", dropdownScreen);
-     onSituation("admin-empty", adminEmptyScreen);
-     onSituation("admin-filled", adminFilledScreen);
-     onSituation("admin-error", adminErrorScreen);
-     onSituation("admin-ok", adminOkScreen);  
-     onSituation("appraisals-empty", appraisalEmptyScreen);
-     onSituation("appraisals-filled", appraisalFilledScreen);
-     onSituation("certainty", certaintyScreen);
-     adminContent();
-  });
+
+  displayBody();
+
+  if (window.location.hash != ("#situation-certainty")){
+    document.getElementById("certainty").classList.add('force-display-none');
+  } else {
+    document.getElementById("certainty").classList.remove('force-display-none');
+  }
+  onSituation("login", loginScreen);
+  onSituation("magic-login", magicLogScreen);
+  onSituation("logout", dropdownScreen);
+  onSituation("admin-empty", adminEmptyScreen);
+  onSituation("admin-filled", adminFilledScreen);
+  onSituation("admin-error", adminErrorScreen);
+  onSituation("admin-ok", adminOkScreen);
+  onSituation("appraisals-empty", appraisalEmptyScreen);
+  onSituation("appraisals-filled", appraisalFilledScreen);
+  onSituation("certainty", certaintyScreen);
+
+  adminContent();
+});
 
 function easterEgg(){
   /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
@@ -30,7 +32,6 @@ function easterEgg(){
 
 function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
-    //document.getElementById("situations").classList.add('force-display-none');
 }
 
 function onSituation(name, handler) {
@@ -220,7 +221,7 @@ function setDisplay(displaysById){
 
 function adminContent(){
   if (window.location.hash == ("#situation-admin-filled")) {
-  document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen';
+    document.getElementById('textarea').value = 'eriksen@gmail.com Eriksen\njosedasilva@blamail.com José Pereira da Costa e Silva';
   }
 }
 
