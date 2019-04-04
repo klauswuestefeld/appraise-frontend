@@ -17,8 +17,8 @@ window.addEventListener("load", function() {
   onSituation("admin-filled", adminFilledScreen);
   onSituation("admin-error", adminErrorScreen);
   onSituation("admin-ok", adminOkScreen);
-  onSituation("appraisals-empty", appraisalEmptyScreen);
-  onSituation("appraisals-filled", appraisalFilledScreen);
+  onSituation("appraisals-empty", appraisalsEmptyScreen);
+  onSituation("appraisals-filled", appraisalsFilledScreen);
   onSituation("certainty", certaintyScreen);
 
   adminContent();
@@ -156,7 +156,7 @@ function adminOkScreen(){
   document.getElementById('admin-tab').classList.add('selected');
 }
 
-function appraisalEmptyScreen(){
+function appraisalsEmptyScreen(){
   setDisplay({
        "session": true,
        "menu": true,
@@ -173,7 +173,7 @@ function appraisalEmptyScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
 }
 
-function appraisalFilledScreen(){
+function appraisalsFilledScreen(){
   setDisplay({
        "session": true,
        "menu": true,

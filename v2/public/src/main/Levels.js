@@ -2,7 +2,7 @@
 window.addEventListener("load", function() {
 	otherLevels();
 	//ghostCards();
-  //document.getElementById("situation-appraisals-empty").onclick = function() {adminFilledScreen()};
+  //document.getElementById("situation-appraisals-empty").onclick = function() {appraisalsEmptyScreen()};
   document.getElementById("situation-appraisals-filled").onclick = function() {ghostCards()};
 });
 
@@ -69,7 +69,7 @@ function otherLevels(){
 }
 
 function ghostCards(){
-	if (window.location.hash == ("#situation-appraisals-filled")){ 
+	if (window.location.hash == ("#situation-appraisals-filled")){
       for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.remove('force-display-none');
       }
