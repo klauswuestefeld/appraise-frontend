@@ -10,18 +10,16 @@ window.addEventListener("load", function() {
   } else {
     document.getElementById("certainty").classList.remove('force-display-none');
   }
-  onSituation("login", loginScreen);
-  onSituation("magic-login", magicLogScreen);
-  onSituation("logout", dropdownScreen);
-  onSituation("admin-empty", adminEmptyScreen);
-  onSituation("admin-filled", adminFilledScreen);
-  onSituation("admin-error", adminErrorScreen);
-  onSituation("admin-ok", adminOkScreen);
-  onSituation("appraisals-empty", appraisalsEmptyScreen);
-  onSituation("appraisals-filled", appraisalsFilledScreen);
-  onSituation("certainty", certaintyScreen);
-
-  adminContent();
+  registerSituation("login", loginScreen);
+  registerSituation("magic-login", magicLogScreen);
+  registerSituation("logout", dropdownScreen);
+  registerSituation("admin-empty", adminEmptyScreen);
+  registerSituation("admin-filled", adminFilledScreen);
+  registerSituation("admin-error", adminErrorScreen);
+  registerSituation("admin-ok", adminOkScreen);
+  registerSituation("appraisals-empty", appraisalsEmptyScreen);
+  registerSituation("appraisals-filled", appraisalsFilledScreen);
+  registerSituation("certainty", certaintyScreen);
 });
 
 function easterEgg(){
@@ -34,7 +32,7 @@ function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
 }
 
-function onSituation(name, handler) {
+function registerSituation(name, handler) {
     document.getElementById("situation-" + name).onclick = handler;
     if (window.location.hash == ("#situation-" + name)){
       handler();
@@ -106,20 +104,22 @@ function adminEmptyScreen(){
 }
 
 function adminFilledScreen() {
-    setDisplay({
-      "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": true,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
-    });
-    document.getElementById('appraisals-tab').classList.remove('selected');
-    document.getElementById('admin-tab').classList.add('selected');
+  setDisplay({
+    "session": true,
+    "menu": true,
+    "login": false,
+    "magic-login": false,
+    "session-dropdown": false,
+    "admin": true,
+    "error-text": false,
+    "ok-text": false,
+    "appraisals": false,
+    "certainty": false
+  });
+  document.getElementById('appraisals-tab').classList.remove('selected');
+  document.getElementById('admin-tab').classList.add('selected');
+
+  adminContent();
 }
 
 function adminErrorScreen(){
