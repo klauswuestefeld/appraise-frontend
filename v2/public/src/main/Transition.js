@@ -33,6 +33,7 @@ function displayBody() {
 }
 
 function registerSituation(name, handler) {
+  console.log(name);
     document.getElementById("situation-" + name).onclick = handler;
     if (window.location.hash == ("#situation-" + name)) {
       handler();
@@ -104,6 +105,7 @@ function adminEmptyScreen(){
 }
 
 function adminFilledScreen() {
+  console.log("hh");
   setDisplay({
     "session": true,
     "menu": true,
@@ -140,6 +142,7 @@ function adminErrorScreen(){
 }
 
 function adminOkScreen(){
+  console.log("mn");
 	setDisplay({
        "session": true,
        "menu": true,
@@ -157,6 +160,7 @@ function adminOkScreen(){
 }
 
 function appraisalsEmptyScreen(){
+  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -169,11 +173,14 @@ function appraisalsEmptyScreen(){
        "appraisals": true,
        "certainty": false
     });
+  console.log("gg");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  console.log("gg");
 }
 
 function appraisalsFilledScreen(){
+  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -186,11 +193,14 @@ function appraisalsFilledScreen(){
        "appraisals": true,
        "certainty": false
     });
+  console.log("gg");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  console.log("gg");
 }
 
 function certaintyScreen(){
+  console.log("ff");
   setDisplay({
        "session": true,
        "menu": true,
