@@ -5,9 +5,9 @@ Fazer appraisals-empty e filled funcionarem de novo.
   Card: escalazinha da certeza.
 
 Tela de detalhe de Card
-  6 botoes de certeza: 0% (Delete), 20%, 40%, 60%, 80%, 100%
-    Colorir de acordo com a seleção
-  Botao de delete some (vai pra junto do 0%).
+  OK 6 botoes de certeza: 0% (Delete), 20%, 40%, 60%, 80%, 100%
+  OK Colorir de acordo com a seleção
+  OK Botao de delete some (vai pra junto do 0%).
 
 Começar a fazer as chamadas pro backend:
   Login

@@ -518,7 +518,6 @@ textarea {
  }
 
  .certainty-button{
-  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   float: left;
   margin-top: 90px;
@@ -526,6 +525,30 @@ textarea {
   border: 2px solid #aaa;
   border-radius:6px;
   padding: 60px;
+}
+
+.zero-percent{
+   background-color: pink;
+}
+
+.twenty-percent{
+   background-color: pink;
+}
+
+.forty-percent{
+   background-color: pink;
+}
+
+.sixty-percent{
+   background-color: pink;
+}
+
+.eigthy-percent{
+   background-color: pink;
+}
+
+.hundred-percent{
+   background-color: pink;
 }
 
 
