@@ -47,11 +47,10 @@ body {
   border-bottom-width: 1px;
 }
 
-.situation {
+#situations > a{
   color: grey;
   font-size: 12px;
   padding:12px;
-
 }
 
 

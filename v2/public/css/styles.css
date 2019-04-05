@@ -581,6 +581,31 @@ div#certainty strong{
   }
 }
 
+.zero-percent{
+   background-color: pink;
+}
+
+.twenty-percent{
+   background-color: pink;
+}
+
+.forty-percent{
+   background-color: pink;
+}
+
+.sixty-percent{
+   background-color: pink;
+}
+
+.eigthy-percent{
+   background-color: pink;
+}
+
+.hundred-percent{
+   background-color: pink;
+}
+
+
 .modal-doing-content {
   display: flex;
   justify-content: space-between;

@@ -10,18 +10,16 @@ window.addEventListener("load", function() {
   } else {
     document.getElementById("certainty").classList.remove('force-display-none');
   }
-  onSituation("login", loginScreen);
-  onSituation("magic-login", magicLogScreen);
-  onSituation("logout", dropdownScreen);
-  onSituation("admin-empty", adminEmptyScreen);
-  onSituation("admin-filled", adminFilledScreen);
-  onSituation("admin-error", adminErrorScreen);
-  onSituation("admin-ok", adminOkScreen);
-  onSituation("appraisals-empty", appraisalsEmptyScreen);
-  onSituation("appraisals-filled", appraisalsFilledScreen);
-  onSituation("certainty", certaintyScreen);
-
-  adminContent();
+  registerSituation("login", loginScreen);
+  registerSituation("magic-login", magicLogScreen);
+  registerSituation("logout", dropdownScreen);
+  registerSituation("admin-empty", adminEmptyScreen);
+  registerSituation("admin-filled", adminFilledScreen);
+  registerSituation("admin-error", adminErrorScreen);
+  registerSituation("admin-ok", adminOkScreen);
+  registerSituation("appraisals-empty", appraisalsEmptyScreen);
+  registerSituation("appraisals-filled", appraisalsFilledScreen);
+  registerSituation("certainty", certaintyScreen);
 });
 
 function easterEgg(){
@@ -34,9 +32,10 @@ function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
 }
 
-function onSituation(name, handler) {
+function registerSituation(name, handler) {
+  console.log(name);
     document.getElementById("situation-" + name).onclick = handler;
-    if (window.location.hash == ("#situation-" + name)){
+    if (window.location.hash == ("#situation-" + name)) {
       handler();
     }
 }
@@ -106,20 +105,23 @@ function adminEmptyScreen(){
 }
 
 function adminFilledScreen() {
-    setDisplay({
-      "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": true,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
-    });
-    document.getElementById('appraisals-tab').classList.remove('selected');
-    document.getElementById('admin-tab').classList.add('selected');
+  console.log("hh");
+  setDisplay({
+    "session": true,
+    "menu": true,
+    "login": false,
+    "magic-login": false,
+    "session-dropdown": false,
+    "admin": true,
+    "error-text": false,
+    "ok-text": false,
+    "appraisals": false,
+    "certainty": false
+  });
+  document.getElementById('appraisals-tab').classList.remove('selected');
+  document.getElementById('admin-tab').classList.add('selected');
+
+  adminContent();
 }
 
 function adminErrorScreen(){
@@ -140,6 +142,7 @@ function adminErrorScreen(){
 }
 
 function adminOkScreen(){
+  console.log("mn");
 	setDisplay({
        "session": true,
        "menu": true,
@@ -157,6 +160,7 @@ function adminOkScreen(){
 }
 
 function appraisalsEmptyScreen(){
+  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -169,11 +173,14 @@ function appraisalsEmptyScreen(){
        "appraisals": true,
        "certainty": false
     });
+  console.log("gg");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  console.log("gg");
 }
 
 function appraisalsFilledScreen(){
+  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -186,11 +193,14 @@ function appraisalsFilledScreen(){
        "appraisals": true,
        "certainty": false
     });
+  console.log("gg");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  console.log("gg");
 }
 
 function certaintyScreen(){
+  console.log("ff");
   setDisplay({
        "session": true,
        "menu": true,
@@ -219,26 +229,24 @@ function setDisplay(displaysById){
 }
 
 
-function adminContent(){
-  if (window.location.hash == ("#situation-admin-filled")) {
-    document.getElementById('textarea').value =
-     'eriksen@gmail.com Eriksen\n' +
-     'josedasilva@blamail.com José Pereira da Costa e Silva\n' +
-     'josedasilva2@blamail.com José Pereira da Costa e Silva2\n' +
-     'josedasilva3@blamail.com José Pereira da Costa e Silva3\n' +
-     'josedasilva4@blamail.com José Pereira da Costa e Silva4\n' +
-     'josedasilva5@blamail.com José Pereira da Costa e Silva5\n' +
-     'josedasilva6@blamail.com José Pereira da Costa e Silva6\n' +
-     'josedasilva7@blamail.com José Pereira da Costa e Silva7\n' +
-     'josedasilva8@blamail.com José Pereira da Costa e Silva8\n' +
-     'josedasilva9@blamail.com José Pereira da Costa e Silva9\n' +
-     'josedasilva10@blamail.com José Pereira da Costa e Silva10\n' +
-     'josedasilva11@blamail.com José Pereira da Costa e Silva11\n' +
-     'josedasilva12@blamail.com José Pereira da Costa e Silva12\n' +
-     'josedasilva13@blamail.com José Pereira da Costa e Silva13\n' +
-     'josedasilva14@blamail.com José Pereira da Costa e Silva14\n' +
-     'josedasilva15@blamail.com José Pereira da Costa e Silva15\n';
-  }
+function adminContent() {
+  document.getElementById('textarea').value =
+    'eriksen@gmail.com Eriksen\n' +
+    'josedasilva@blamail.com José Pereira da Costa e Silva\n' +
+    'josedasilva2@blamail.com José Pereira da Costa e Silva2\n' +
+    'josedasilva3@blamail.com José Pereira da Costa e Silva3\n' +
+    'josedasilva4@blamail.com José Pereira da Costa e Silva4\n' +
+    'josedasilva5@blamail.com José Pereira da Costa e Silva5\n' +
+    'josedasilva6@blamail.com José Pereira da Costa e Silva6\n' +
+    'josedasilva7@blamail.com José Pereira da Costa e Silva7\n' +
+    'josedasilva8@blamail.com José Pereira da Costa e Silva8\n' +
+    'josedasilva9@blamail.com José Pereira da Costa e Silva9\n' +
+    'josedasilva10@blamail.com José Pereira da Costa e Silva10\n' +
+    'josedasilva11@blamail.com José Pereira da Costa e Silva11\n' +
+    'josedasilva12@blamail.com José Pereira da Costa e Silva12\n' +
+    'josedasilva13@blamail.com José Pereira da Costa e Silva13\n' +
+    'josedasilva14@blamail.com José Pereira da Costa e Silva14\n' +
+    'josedasilva15@blamail.com José Pereira da Costa e Silva15\n';
 }
 
 
