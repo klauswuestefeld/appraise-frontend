@@ -53,6 +53,10 @@ body {
   padding:12px;
 }
 
+.certainty-button > p{
+  float:left;
+  margin-top: 5px;
+}
 
 
 
