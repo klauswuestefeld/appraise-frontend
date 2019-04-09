@@ -58,6 +58,13 @@ body {
   margin-top: 5px;
 }
 
+.certainty-icon{
+ width:3px;
+ height:3px;
+ border: 1px solid; 
+ border-color: blue;
+ background-color: blue;
+ }
 
 
 
