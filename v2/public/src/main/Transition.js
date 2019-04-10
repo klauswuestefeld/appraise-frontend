@@ -1,8 +1,10 @@
 "use strict";
 
 window.addEventListener("load", function() {
-  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
-  document.getElementById("situation-magic-login").onclick = function() {reloadPage()};    
+  var idClicked = this.id;
+  console.log(idClicked);
+  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};  
+  document.getElementById("situation-magic-login").onclick = function() {reloadPage()};  
   displayBody();
   if (window.location.hash != ("#situation-certainty")){
     document.getElementById("certainty").classList.add('force-display-none');
@@ -20,6 +22,12 @@ window.addEventListener("load", function() {
   registerSituation("appraisals-filled", appraisalsFilledScreen);
   registerSituation("certainty", certaintyScreen);
 });
+
+var ev = window.onclick;
+window.addEventListener("click", function() {
+    console.log(ev.id);
+});
+
 
 function easterEgg(){
   /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol

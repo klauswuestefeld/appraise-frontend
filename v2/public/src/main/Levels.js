@@ -4,10 +4,19 @@ window.addEventListener("load", function() {
   if (window.location.hash == ("#situation-appraisals-empty")){
     addGhostCards();
   }
-  document.getElementById("situation-appraisals-empty").onclick = function() {rmvGhostCards()};
-  document.getElementById("situation-appraisals-filled").onclick = function() {addGhostCards()};
+  var appempty = document.getElementById("situation-appraisals-empty");
+  appempty.addEventListener("click", function() {
+    rmvGhostCards();
+  });
+    var appfilled = document.getElementById("situation-appraisals-filled");
+  appempty.addEventListener("click", function() {
+    addGhostCards();
+  });
 });
 
+
+
+  
 function otherLevels(){
 	var i = 1;
     var increasing = 10;

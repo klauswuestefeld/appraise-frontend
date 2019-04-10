@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
   document.getElementById("situation-appraisals-filled").onclick = function() {scrollToLevel()};
   });
 
-window.addEventListener("loadstart", function() {
+  window.addEventListener("loadstart", function() {
 	console.log("jcjc");
   scrollToLevel();
   document.getElementById("situation-appraisals-empty").onclick = function() {scrollToLevel()};
