@@ -2,9 +2,8 @@
 
 window.addEventListener("load", function() {
   document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
-
+  document.getElementById("situation-magic-login").onclick = function() {reloadPage()};    
   displayBody();
-
   if (window.location.hash != ("#situation-certainty")){
     document.getElementById("certainty").classList.add('force-display-none');
   } else {
@@ -25,7 +24,16 @@ window.addEventListener("load", function() {
 function easterEgg(){
   /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
   twice. It decreases the chance of someone figure out the easter-egg.*/
+  console.log("u");
   document.getElementById("situations").classList.remove('force-display-none');
+}
+
+function reloadPage(){
+  console.log('FUNC');
+    /*  if (! localStorage.justOnce) {
+        localStorage.setItem("justOnce", "true");
+        window.location.reload();
+    }*/
 }
 
 function displayBody() {
@@ -102,6 +110,7 @@ function adminEmptyScreen(){
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
   document.getElementById('textarea').value = '';
+
 }
 
 function adminFilledScreen() {
