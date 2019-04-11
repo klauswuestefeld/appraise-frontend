@@ -1,7 +1,7 @@
 Fazer appraisals-empty e filled funcionarem de novo.
   OK Niveis hard-coded no HTML
-  Scroll p o "Your Level" qdo abre a tela.
-    Isso tem que funcionar qdo clica nas situations de appraisals.
+  OK Scroll p o "Your Level" qdo abre a tela.
+    OK Isso tem que funcionar qdo clica nas situations de appraisals.
   OK Card: escalazinha da certeza.
 
 Tela de detalhe de Card

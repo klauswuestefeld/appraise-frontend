@@ -4,10 +4,15 @@ window.addEventListener("load", function() {
   //document.getElementById("situation-appf").onclick = function() {scrollToLevel()};
   });
 
-  window.addEventListener("unload", function() {
+  window.addEventListener("beforeload", function() {
 	console.log("jcjc");
   scrollToLevel();
   });
+
+  window.onbeforeunload = function(e) {
+  	scrollToLevel();
+  	console.log("EEBEB");
+};
 
   function scrollToLevel(){
   	console.log("vasco");

@@ -5,9 +5,6 @@ window.addEventListener("load", function() {
     noGhostCards();
   }
 });
-
-
-
   
 function otherLevels(){
 	var i = 1;
