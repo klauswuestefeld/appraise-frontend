@@ -2,16 +2,8 @@
 window.addEventListener("load", function() {
 	otherLevels();
   if (window.location.hash == ("#situation-appraisals-empty")){
-    addGhostCards();
+    noGhostCards();
   }
-  var appempty = document.getElementById("situation-appraisals-empty");
-  appempty.addEventListener("click", function() {
-    rmvGhostCards();
-  });
-    var appfilled = document.getElementById("situation-appraisals-filled");
-  appempty.addEventListener("click", function() {
-    addGhostCards();
-  });
 });
 
 
@@ -79,7 +71,7 @@ function otherLevels(){
 
 }
 
-function addGhostCards(){
+function noGhostCards(){
   console.log('s');
       for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.add('force-display-none');
@@ -87,7 +79,7 @@ function addGhostCards(){
       console.log('s');
 }
 
-function rmvGhostCards(){
+function yesGhostCards(){
   console.log('n');
       for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.remove('force-display-none');

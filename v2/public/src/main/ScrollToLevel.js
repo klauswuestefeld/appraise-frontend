@@ -1,13 +1,12 @@
 window.addEventListener("load", function() {
   scrollToLevel();
-  document.getElementById("situation-appraisals-empty").onclick = function() {scrollToLevel()};
-  document.getElementById("situation-appraisals-filled").onclick = function() {scrollToLevel()};
+  //document.getElementById("situation-appe").onclick = function() {scrollToLevel()};
+  //document.getElementById("situation-appf").onclick = function() {scrollToLevel()};
   });
 
-  window.addEventListener("loadstart", function() {
+  window.addEventListener("unload", function() {
 	console.log("jcjc");
   scrollToLevel();
-  document.getElementById("situation-appraisals-empty").onclick = function() {scrollToLevel()};
   });
 
   function scrollToLevel(){

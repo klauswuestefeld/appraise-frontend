@@ -18,15 +18,15 @@ window.addEventListener("load", function() {
   registerSituation("admin-filled", adminFilledScreen);
   registerSituation("admin-error", adminErrorScreen);
   registerSituation("admin-ok", adminOkScreen);
-  registerSituation("appraisals-empty", appraisalsEmptyScreen);
-  registerSituation("appraisals-filled", appraisalsFilledScreen);
+  registerSituation("appe", appeScreen);
+  registerSituation("appf", appfScreen);
   registerSituation("certainty", certaintyScreen);
 });
 
-var ev = window.onclick;
+/*var ev = window.onclick;
 window.addEventListener("click", function() {
-    console.log(ev.id);
-});
+    console.log(ev);
+});*/
 
 
 function easterEgg(){
@@ -69,6 +69,7 @@ function loginScreen() {
        "appraisals": false,
        "certainty": false
     });
+    window.location.hash = ("#situation-login");
 }
 
 
@@ -85,6 +86,7 @@ function magicLogScreen(){
        "appraisals": false,
        "certainty": false
     });
+  window.location.hash = ("#situation-magic-login");
 }
 
 function dropdownScreen() {
@@ -100,6 +102,7 @@ function dropdownScreen() {
        "appraisals": false,
        "certainty": false
     });
+  window.location.hash = ("#situation-logout");
 }
 
 function adminEmptyScreen(){
@@ -118,7 +121,7 @@ function adminEmptyScreen(){
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
   document.getElementById('textarea').value = '';
-
+  window.location.hash = ("#situation-admin-empty");
 }
 
 function adminFilledScreen() {
@@ -137,8 +140,8 @@ function adminFilledScreen() {
   });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
-
   adminContent();
+  window.location.hash = ("#situation-admin-filled");
 }
 
 function adminErrorScreen(){
@@ -156,6 +159,7 @@ function adminErrorScreen(){
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  window.location.hash = ("#situation-admin-error");
 }
 
 function adminOkScreen(){
@@ -174,9 +178,10 @@ function adminOkScreen(){
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  window.location.hash = ("#situation-admin-ok");
 }
 
-function appraisalsEmptyScreen(){
+function appeScreen(){
   console.log("gg");
   setDisplay({
        "session": true,
@@ -194,9 +199,15 @@ function appraisalsEmptyScreen(){
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
   console.log("gg");
+  var levelScroll = document.getElementById("id-your-level");
+  levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+  for (i = 2; i <= 29; i++){
+        document.getElementById("ghost-card"+i).classList.add('force-display-none');
+      }
+  window.location.hash = ("#situation-appe");
 }
 
-function appraisalsFilledScreen(){
+function appfScreen(){
   console.log("gg");
   setDisplay({
        "session": true,
@@ -214,6 +225,12 @@ function appraisalsFilledScreen(){
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
   console.log("gg");
+  var levelScroll = document.getElementById("id-your-level");
+  levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+  for (i = 2; i <= 29; i++){
+        document.getElementById("ghost-card"+i).classList.remove('force-display-none');
+      }
+  window.location.hash = ("#situation-appf");
 }
 
 function certaintyScreen(){
@@ -232,6 +249,7 @@ function certaintyScreen(){
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  window.location.hash = ("#situation-certainty");
 }
 
 function setDisplay(displaysById){
