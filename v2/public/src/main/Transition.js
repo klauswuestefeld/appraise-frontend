@@ -1,16 +1,10 @@
 "use strict";
 
 window.addEventListener("load", function() {
-  var idClicked = this.id;
-  console.log(idClicked);
-  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};  
-  document.getElementById("situation-magic-login").onclick = function() {reloadPage()};  
   displayBody();
   if (window.location.hash != ("#situation-certainty")){
     document.getElementById("certainty").classList.add('force-display-none');
-  } else {
-    document.getElementById("certainty").classList.remove('force-display-none');
-  }
+  } 
   registerSituation("login", loginScreen);
   registerSituation("magic-login", magicLogScreen);
   registerSituation("logout", dropdownScreen);
@@ -21,27 +15,13 @@ window.addEventListener("load", function() {
   registerSituation("appe", appeScreen);
   registerSituation("appf", appfScreen);
   registerSituation("certainty", certaintyScreen);
+  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
 });
-
-/*var ev = window.onclick;
-window.addEventListener("click", function() {
-    console.log(ev);
-});*/
-
 
 function easterEgg(){
   /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
   twice. It decreases the chance of someone figure out the easter-egg.*/
-  console.log("u");
   document.getElementById("situations").classList.remove('force-display-none');
-}
-
-function reloadPage(){
-  console.log('FUNC');
-    /*  if (! localStorage.justOnce) {
-        localStorage.setItem("justOnce", "true");
-        window.location.reload();
-    }*/
 }
 
 function displayBody() {
@@ -49,7 +29,6 @@ function displayBody() {
 }
 
 function registerSituation(name, handler) {
-  console.log(name);
     document.getElementById("situation-" + name).onclick = handler;
     if (window.location.hash == ("#situation-" + name)) {
       handler();
@@ -125,7 +104,6 @@ function adminEmptyScreen(){
 }
 
 function adminFilledScreen() {
-  console.log("hh");
   setDisplay({
     "session": true,
     "menu": true,
@@ -163,7 +141,6 @@ function adminErrorScreen(){
 }
 
 function adminOkScreen(){
-  console.log("mn");
 	setDisplay({
        "session": true,
        "menu": true,
@@ -182,7 +159,6 @@ function adminOkScreen(){
 }
 
 function appeScreen(){
-  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -195,20 +171,17 @@ function appeScreen(){
        "appraisals": true,
        "certainty": false
     });
-  console.log("gg");
+  window.location.hash = ("#situation-appe");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  console.log("gg");
   var levelScroll = document.getElementById("id-your-level");
   levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
   for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.add('force-display-none');
       }
-  window.location.hash = ("#situation-appe");
 }
 
 function appfScreen(){
-  console.log("gg");
   setDisplay({
        "session": true,
        "menu": true,
@@ -221,20 +194,17 @@ function appfScreen(){
        "appraisals": true,
        "certainty": false
     });
-  console.log("gg");
+  window.location.hash = ("#situation-appf");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  console.log("gg");
   var levelScroll = document.getElementById("id-your-level");
   levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
   for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.remove('force-display-none');
       }
-  window.location.hash = ("#situation-appf");
 }
 
 function certaintyScreen(){
-  console.log("ff");
   setDisplay({
        "session": true,
        "menu": true,

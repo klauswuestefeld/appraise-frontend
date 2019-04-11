@@ -31,6 +31,12 @@ function otherLevels(){
 	      }
     }*/
 
+    for (i=0; i<5;i++){
+      var certainty = document.getElementById("id-certainty-icon");
+      var newCertainty   = certainty.cloneNode(true);
+      document.getElementById("id-card").appendChild(newCertainty);
+    }
+
     for (i = 1; i <= 29; i++) {
       var card = document.getElementById('id-card');
       var newCard   = card.cloneNode(true);
@@ -69,17 +75,13 @@ function otherLevels(){
 }
 
 function noGhostCards(){
-  console.log('s');
       for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.add('force-display-none');
       }
-      console.log('s');
 }
 
 function yesGhostCards(){
-  console.log('n');
       for (i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.remove('force-display-none');
       }
-      console.log('n');
 }
