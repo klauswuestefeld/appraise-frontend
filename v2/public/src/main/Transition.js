@@ -12,8 +12,8 @@ window.addEventListener("load", function() {
   registerSituation("admin-filled", adminFilledScreen);
   registerSituation("admin-error", adminErrorScreen);
   registerSituation("admin-ok", adminOkScreen);
-  registerSituation("appe", appeScreen);
-  registerSituation("appf", appfScreen);
+  registerSituation("appraise-empty", appraiseEmptyScreen);
+  registerSituation("appraise-filled", appraiseFilledScreen);
   registerSituation("certainty", certaintyScreen);
   document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
 });
@@ -158,7 +158,7 @@ function adminOkScreen(){
   window.location.hash = ("#situation-admin-ok");
 }
 
-function appeScreen(){
+function appraiseEmptyScreen(){
   setDisplay({
        "session": true,
        "menu": true,
@@ -171,7 +171,7 @@ function appeScreen(){
        "appraisals": true,
        "certainty": false
     });
-  window.location.hash = ("#situation-appe");
+  window.location.hash = ("#situation-appraise-empty");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
   var levelScroll = document.getElementById("id-your-level");
@@ -181,7 +181,7 @@ function appeScreen(){
       }
 }
 
-function appfScreen(){
+function appraiseFilledScreen(){
   setDisplay({
        "session": true,
        "menu": true,
@@ -194,7 +194,7 @@ function appfScreen(){
        "appraisals": true,
        "certainty": false
     });
-  window.location.hash = ("#situation-appf");
+  window.location.hash = ("#situation-appraise-filled");
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
   var levelScroll = document.getElementById("id-your-level");
