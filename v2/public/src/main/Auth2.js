@@ -1,5 +1,4 @@
 "use strict";
-var i = 1;
 
 
 Percy.initAuth = function() {
