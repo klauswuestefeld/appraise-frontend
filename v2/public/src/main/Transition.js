@@ -228,7 +228,7 @@ function setDisplay(displaysById){
         if (displaysById[id]) {
  	        document.getElementById(id).classList.remove('force-display-none');
         } else {
-            document.getElementById(id).classList.add('force-display-none');
+          document.getElementById(id).classList.add('force-display-none');
         }
     }
 }
