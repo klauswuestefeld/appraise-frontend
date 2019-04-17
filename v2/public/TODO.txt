@@ -8,4 +8,6 @@ Começar a fazer as chamadas pro backend:
   Appraisal
 
 CSS:
-  Revisar pointer dos itens (setinha, maozinha, cursor de texto)
+  Appraisals
+    Ultima linha tracejada abaixo do ultimo nivel não deve existir
+  Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
