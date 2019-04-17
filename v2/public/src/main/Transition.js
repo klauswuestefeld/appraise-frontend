@@ -176,9 +176,11 @@ function appraiseEmptyScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
   var levelScroll = document.getElementById("id-your-level");
   levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-  for (i = 2; i <= 29; i++){
-        document.getElementById("ghost-card"+i).classList.add('force-display-none');
-      }
+  for (var i = 2; i <= 29; i++) {
+    var card = document.getElementById("ghost-card"+i);
+    if (card)
+      card.classList.add('force-display-none');
+  }
 }
 
 function appraiseFilledScreen(){
@@ -199,9 +201,11 @@ function appraiseFilledScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
   var levelScroll = document.getElementById("id-your-level");
   levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-  for (i = 2; i <= 29; i++){
-        document.getElementById("ghost-card"+i).classList.remove('force-display-none');
-      }
+  for (var i = 2; i <= 29; i++) {
+    var card = document.getElementById("ghost-card"+i);
+    if (card)
+      card.classList.remove('force-display-none');
+  }
 }
 
 function certaintyScreen(){

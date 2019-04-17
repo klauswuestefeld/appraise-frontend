@@ -45,7 +45,7 @@ function otherLevels(){
 	      }
 	      document.getElementById("keep-your").appendChild(newCard);
 	      if (i > 1){
-	 		document.getElementById("id-card").classList.remove("dragging-card");
+	 		document.getElementById("id-card").classList.remove("dragging-card"); //TODO: Is this really necessary?
 	      	newCard.id = "ghost-card"+i;
 	      }
     }
