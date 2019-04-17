@@ -1,34 +1,20 @@
 "use strict";
 
-function getUserProfile(token) {
+function backendAuth(token) {
   console.log('GET USER PROFILE');
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         console.log("USER PROFILE:", xhttp.responseText);
-      }
+  var req = new XMLHttpRequest();
+  req.open("GET", "http://api.appraise.live:8080/auth-google?google-id-token=" + token, true); //TODO: Make relative.
+  req.responseType = "json";
+  req.timeout = 5000;
+  req.onerror = req.ontimeout = function () {
+    console.log('Error on backend auth', req.status, req.statusText);
   };
-  xhttp.open("GET", "http://api.appraise.live:8080/auth-google?google-id-token=" + token, true);
-  xhttp.send();
+  req.onload = function () {
+    if (req.status === 200) console.log("USER PROFILE:", req.response);
+    else req.onerror();
+  };
+  req.send();
 }
-
-
-
-//    function backendAuth(token) {
-//        var req = new XMLHttpRequest();
-//        req.open("GET", 'auth-google?google-id-token=' + token);
-//        req.responseType = "json";
-//        req.timeout = 5000;
-//        req.onload = function () {
-//            if (req.status === 200) console.log(req.response);
-//            else req.onerror();
-//        };
-//        req.onerror = req.ontimeout = function () {
-//           console.log('Error', req.status, req.statusText);
-//        };
-//        req.send();
-//    }
-
 
 function getUserProfileOnSignIn(isSignedIn) {
   console.log("IS SIGNED IN:", isSignedIn);
@@ -37,7 +23,7 @@ function getUserProfileOnSignIn(isSignedIn) {
 
   var token = Percy.auth2.currentUser.get().getAuthResponse().id_token;
   console.log("TOKEN", token);
-  getUserProfile(token);
+  backendAuth(token);
 }
 
 function onUserChanged(user) {
