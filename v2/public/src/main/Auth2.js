@@ -49,7 +49,8 @@ Percy.initAuth = function() {
               document.getElementById('login-button').onclick = loginClicked;
               Percy.auth2.isSignedIn.listen(getUserProfileOnSignIn);
               Percy.auth2.currentUser.listen(onUserChanged);
-
+              if (Percy.auth2.isSignedIn.get())
+                onUserChanged(Percy.auth2.currentUser.get());
             });
         } catch (err) {
             console.log(err.message);
