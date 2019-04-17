@@ -34,8 +34,7 @@ body {
 /*Header*/
 
 .logo-percival{
-  height: 70px;
-  width: 100px;
+  height: 40px;
 }
 @media only screen and (max-width:400px){
   .logo-percival{
@@ -97,7 +96,6 @@ body {
  }
 
 #logo {
-  border: 1px solid var(--percival-dark);
   margin-left: 15px;
 }
 @media only screen and (max-width:504px), screen and (max-height:504px){
