@@ -28,15 +28,8 @@ function getUserProfileOnSignIn(isSignedIn) {
 
 function onUserChanged(user) {
   var profile = user.getBasicProfile();
-  console.log(
-    profile.getId(),
-    profile.getName(),
-    profile.getGivenName(),
-    profile.getFamilyName(),
-    profile.getImageUrl(),
-    profile.getEmail()
-  );
   document.getElementById('user-name').innerHTML = profile.getName();
+  document.getElementById('user-picture').src = profile.getImageUrl();
 }
 
 function loginClicked()  { Percy.auth2.signIn(); }
