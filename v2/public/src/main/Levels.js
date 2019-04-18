@@ -13,24 +13,11 @@ function otherLevels(){
     var myLevel = document.getElementById('id-level');
     var spanLevel = document.getElementById('span-level');
     var appraisal = document.getElementById("appraisals")
-    /*for (i = 10; i >= decreasing; i--) {
-      var levelClone   = myLevel.cloneNode(false);
-      levelClone.id = "id-extra+"+i;
-      var beforeLevel = document.getElementById('id-level');
-      appraisal.insertBefore(levelClone, beforeLevel);
-      var levelSpan   = spanLevel.cloneNode(true);
-      levelClone.appendChild(levelSpan);
-      levelSpan.innerHTML=i;*/
-	      
-	      var card = document.getElementById('id-card');
-	    	var newCard   = card.cloneNode(true);
-	    	document.getElementById("keep+2").appendChild(newCard);
-	      
-	      /*if (i == 2){
-	      	document.getElementById("id-level").classList.add("drag-target");
-	      }
-    }*/
 
+    var card = document.getElementById('id-card');
+  	var newCard = card.cloneNode(true);
+   	document.getElementById("keep+2").appendChild(newCard);
+	      
     for (i=0; i<5;i++){
       var certainty = document.getElementById("id-certainty-icon");
       var newCertainty   = certainty.cloneNode(true);
@@ -75,13 +62,13 @@ function otherLevels(){
 }
 
 function noGhostCards(){
-      for (i = 2; i <= 29; i++){
+      for (var i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.add('force-display-none');
       }
 }
 
 function yesGhostCards(){
-      for (i = 2; i <= 29; i++){
+      for (var i = 2; i <= 29; i++){
         document.getElementById("ghost-card"+i).classList.remove('force-display-none');
       }
 }

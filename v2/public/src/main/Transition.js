@@ -176,11 +176,7 @@ function appraiseEmptyScreen(){
   document.getElementById('admin-tab').classList.remove('selected');
   var levelScroll = document.getElementById("id-your-level");
   levelScroll.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-  for (var i = 2; i <= 29; i++) {
-    var card = document.getElementById("ghost-card"+i);
-    if (card)
-      card.classList.add('force-display-none');
-  }
+  noGhostCards();
 }
 
 function appraiseFilledScreen(){
