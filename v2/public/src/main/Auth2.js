@@ -12,7 +12,7 @@ function fetchAppraisals(sessionToken) {
   req.onload = function () {
     if (req.status === 200) {
       console.log("APPRAISALS:", req.response);
-      appraiseEmptyScreen();
+      showAppraisals(req.response);
     } else req.onerror();
   };
   req.send();
@@ -52,29 +52,36 @@ function onUserChanged(user) {
   startSession(googleToken);
 }
 
-function loginClicked()  { Percy.auth2.signIn(); }
-function logoutClicked() { Percy.auth2.signOut(); }
+function loginClicked()  { console.log("SIGN IN"); Percy.auth2.signIn(); }
+function logoutClicked() { console.log("SIGN OUT"); Percy.auth2.signOut(); }
 
 Percy.initAuth = function() {
 
-    gapi.load('auth2', function() {
-        try {
-            Percy.auth2 = gapi.auth2.init({
-                client_id: '902472309288-h34e3l0vo9e3bkr4dc29f4bco99q0t9s.apps.googleusercontent.com' //Appraise
-                //client_id: '696992508397-9pna2ebcfkt3olr2hukd9q95v21t1iud.apps.googleusercontent.com' //Percival
-            });
+  console.log("GOOGLE API LOAD");
 
-            Percy.auth2.then(function onInit() {
-              document.getElementById('logout').onclick = logoutClicked;
-              document.getElementById('login-button').onclick = loginClicked;
-              Percy.auth2.currentUser.listen(onUserChanged);
-              onUserChanged(Percy.auth2.currentUser.get());
-            });
-        } catch (err) {
-            console.log(err.message);
-            if (err.message.includes("cookiePolicy"))
-                console.log("Serve using http server to avoid this error.");
-        }
+  gapi.load('auth2', { callback: function() {
+      try {
+          Percy.auth2 = gapi.auth2.init({
+              client_id: '902472309288-h34e3l0vo9e3bkr4dc29f4bco99q0t9s.apps.googleusercontent.com' //Appraise
+              //client_id: '696992508397-9pna2ebcfkt3olr2hukd9q95v21t1iud.apps.googleusercontent.com' //Percival
+          });
 
-    });
+          Percy.auth2.then(function onInit() {
+            document.getElementById('logout').onclick = logoutClicked;
+            document.getElementById('login-button').onclick = loginClicked;
+            Percy.auth2.currentUser.listen(onUserChanged);
+            onUserChanged(Percy.auth2.currentUser.get());
+          });
+      } catch (err) {
+          console.log(err.message);
+          if (err.message.includes("cookiePolicy"))
+              console.log("Serve using http server to avoid this error.");
+      }
+
+  }, onerror: function() {
+    console.log('Error on Google API');
+  }, timeout: 5000
+  , ontimeout: function() {
+    console.log('Timeout on Google API');
+  }});
 };

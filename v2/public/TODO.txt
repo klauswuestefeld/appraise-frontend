@@ -1,3 +1,5 @@
+Resolver o TODO q coloquei no index.html
+
 Fazer appraisals-empty e filled funcionarem de novo.
 
 Começar a fazer as chamadas pro backend:
