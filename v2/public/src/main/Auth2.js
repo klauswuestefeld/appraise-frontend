@@ -1,35 +1,55 @@
 "use strict";
 
-function backendAuth(token) {
-  console.log('GET USER PROFILE');
+function fetchAppraisals(sessionToken) {
   var req = new XMLHttpRequest();
-  req.open("GET", "http://api.appraise.live:8080/auth-google?google-id-token=" + token, true); //TODO: Make relative.
+  req.open("GET", "http://api.appraise.live:8080/api/appraisals", true); //TODO: Make relative.
+  req.setRequestHeader('auth', sessionToken);
+  req.responseType = "json";
+  req.timeout = 5000;
+  req.onerror = req.ontimeout = function () {
+    console.log('Error on fetching appraisals', req.status, req.statusText);
+  };
+  req.onload = function () {
+    if (req.status === 200) {
+      console.log("APPRAISALS:", req.response);
+      appraiseEmptyScreen();
+    } else req.onerror();
+  };
+  req.send();
+}
+
+function startSession(googleToken) {
+  var req = new XMLHttpRequest();
+  req.open("GET", "http://api.appraise.live:8080/auth-google?google-id-token=" + googleToken, true); //TODO: Make relative.
   req.responseType = "json";
   req.timeout = 5000;
   req.onerror = req.ontimeout = function () {
     console.log('Error on backend auth', req.status, req.statusText);
   };
   req.onload = function () {
-    if (req.status === 200) console.log("USER PROFILE:", req.response);
-    else req.onerror();
+    if (req.status === 200) {
+      console.log("USER PROFILE:", req.response);
+      fetchAppraisals(req.response.token);
+    } else req.onerror();
   };
   req.send();
 }
 
-function getUserProfileOnSignIn(isSignedIn) {
+function onUserChanged(user) {
+  console.log("USER",user);
+
+  var isSignedIn = user.isSignedIn();
   console.log("IS SIGNED IN:", isSignedIn);
   if (!isSignedIn)
    return;
 
-  var token = Percy.auth2.currentUser.get().getAuthResponse().id_token;
-  console.log("TOKEN", token);
-  backendAuth(token);
-}
-
-function onUserChanged(user) {
   var profile = user.getBasicProfile();
   document.getElementById('user-name').innerHTML = profile.getName();
   document.getElementById('user-picture').src = profile.getImageUrl();
+
+  var googleToken = user.getAuthResponse().id_token;
+  console.log("GOOGLE AUTH TOKEN", googleToken);
+  startSession(googleToken);
 }
 
 function loginClicked()  { Percy.auth2.signIn(); }
@@ -47,10 +67,8 @@ Percy.initAuth = function() {
             Percy.auth2.then(function onInit() {
               document.getElementById('logout').onclick = logoutClicked;
               document.getElementById('login-button').onclick = loginClicked;
-              Percy.auth2.isSignedIn.listen(getUserProfileOnSignIn);
               Percy.auth2.currentUser.listen(onUserChanged);
-              if (Percy.auth2.isSignedIn.get())
-                onUserChanged(Percy.auth2.currentUser.get());
+              onUserChanged(Percy.auth2.currentUser.get());
             });
         } catch (err) {
             console.log(err.message);
