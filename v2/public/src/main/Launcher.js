@@ -1,5 +1,5 @@
-"use strict";
+'use strict';
 
-window.addEventListener("load", function() {
+window.addEventListener('load', function() {
     Percy.initAuth();
 });

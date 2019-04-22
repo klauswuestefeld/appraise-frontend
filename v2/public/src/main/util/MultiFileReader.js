@@ -1,7 +1,7 @@
 // Copyright 2015 by Paulo Augusto Peccin. See license.txt distributed with this file.
 
 percy.MultiFileReader = function (fileList, onAllSuccess, onFirstError, maxTotalSize) {
-"use strict";
+'use strict';
 
     this.start = function() {
         if (!fileList || fileList.length === 0)
@@ -13,7 +13,7 @@ percy.MultiFileReader = function (fileList, onAllSuccess, onFirstError, maxTotal
             // var totalSize = 0;
             // for (var i = 0; i < fileList.length; i++) totalSize += fileList[i].size;
             // if (maxTotalSize > 0 && totalSize > maxTotalSize) {
-            //     var error = "Maximum total size limit of " + (((maxTotalSize / 1024) | 0) + "KB") + " exceeded";
+            //     var error = 'Maximum total size limit of ' + (((maxTotalSize / 1024) | 0) + 'KB') + ' exceeded';
             //     if (onFirstError) onFirstError(files, error, true);     // known error
             //     return;
             // }
@@ -29,18 +29,18 @@ percy.MultiFileReader = function (fileList, onAllSuccess, onFirstError, maxTotal
     function load(file) {
         if (!file) return;
 
-        percy.Util.log("Reading file: " + file.name);
+        percy.Util.log('Reading file: ' + file.name);
         var reader = new FileReader();
         reader.onload = function (event) {
             file.wmsxSuccess = true;
             file.content = new Uint8Array(event.target.result);
-            // console.log("SUCCESS:", file.name);
+            // console.log('SUCCESS:', file.name);
             checkFinish();
         };
         reader.onerror = function (event) {
             file.wmsxSuccess = false;
             file.wmsxError = event.target.error.name;
-            console.log("ERROR:", file.name, file.wmsxError);
+            console.log('ERROR:', file.name, file.wmsxError);
             checkFinish();
         };
         reader.readAsArrayBuffer(file);

@@ -1,7 +1,7 @@
 // Copyright 2015 by Paulo Augusto Peccin. See license.txt distributed with this file.
 
 percy.MultiDownloader = function (urlSpecs, onAllSuccess, onAnyError, timeout) {
-"use strict";
+'use strict';
 
     this.start = function() {
         if (urlSpecs && urlSpecs.length !== 0) {
@@ -14,7 +14,7 @@ percy.MultiDownloader = function (urlSpecs, onAllSuccess, onAnyError, timeout) {
     function load(urlSpec) {
         if (!urlSpec) return;
 
-        var urls = urlSpec.url.trim().split(/\s*\|\s*/);              // Special "|" divider. TODO Find a better way since "|" is allowed in Linux file names
+        var urls = urlSpec.url.trim().split(/\s*\|\s*/);              // Special '|' divider. TODO Find a better way since '|' is allowed in Linux file names
         urlSpec.filesToLoad = urls.length;
         urlSpec.filesContent = new Array(urlSpec.filesToLoad);
 
@@ -29,27 +29,27 @@ percy.MultiDownloader = function (urlSpecs, onAllSuccess, onAnyError, timeout) {
     }
 
     function getEmbedded(urlSpec, f, url) {
-        //percy.Util.log("Reading Embedded file: " + url);
+        //percy.Util.log('Reading Embedded file: ' + url);
         var file = percy.EmbeddedFiles.get(url.substr(1));
         if (file !== undefined) loadSuccess(urlSpec, f, file.content);
-        else loadError(urlSpec, "Embedded file not found!");
+        else loadError(urlSpec, 'Embedded file not found!');
     }
 
     function getHTTP(urlSpec, f, url) {
         var finalUrl = isRemote(url) ? proxyze(url) : url;      // May use a proxy downloader if configured
 
         var req = new XMLHttpRequest();
-        req.open("GET", finalUrl, true);
-        req.responseType = "arraybuffer";
+        req.open('GET', finalUrl, true);
+        req.responseType = 'arraybuffer';
         req.timeout = timeout !== undefined ? timeout : DEFAULT_TIMEOUT;
         req.onload = function () {
             if (req.status === 200) loadSuccess(urlSpec, f, new Uint8Array(req.response));
             else req.onerror();
         };
         req.onerror = req.ontimeout = function () {
-            loadError(urlSpec, "" + req.status + " " + req.statusText);
+            loadError(urlSpec, '' + req.status + ' ' + req.statusText);
         };
-        percy.Util.log("Reading file from: " + url);
+        percy.Util.log('Reading file from: ' + url);
         req.send();
     }
 
@@ -66,7 +66,7 @@ percy.MultiDownloader = function (urlSpecs, onAllSuccess, onAnyError, timeout) {
     function loadError(urlSpec, error) {
         urlSpec.success = false;
         urlSpec.error = error;
-        var mes = "Could not load file: " + urlSpec.url + "\nError: " + error;
+        var mes = 'Could not load file: ' + urlSpec.url + '\nError: ' + error;
         if (urlSpec.onError) {
             percy.Util.error(mes);
             urlSpec.onError(urlSpec);
@@ -96,11 +96,11 @@ percy.MultiDownloader = function (urlSpecs, onAllSuccess, onAnyError, timeout) {
     }
 
     function isRemote(url) {
-        return url && (url.indexOf("http:") === 0 || url.indexOf("https:") === 0);
+        return url && (url.indexOf('http:') === 0 || url.indexOf('https:') === 0);
     }
 
     function proxyze(url) {
-        return Percy.WEB_EXTENSIONS_PROXY_SERVER ? "http://" + Percy.WEB_EXTENSIONS_PROXY_SERVER + "/proxy-remote-download?url=" + url : url;
+        return Percy.WEB_EXTENSIONS_PROXY_SERVER ? 'http://' + Percy.WEB_EXTENSIONS_PROXY_SERVER + '/proxy-remote-download?url=' + url : url;
     }
 
     function scheduleLoadingIcon() {

@@ -52,7 +52,7 @@ body {
 }
 
 #session::after{
-  content: "";
+  content: '';
   color: red;
   width: 0;
   height: 0;
@@ -652,7 +652,7 @@ div#certainty strong{
 
 html { height: 100%; }
 body { min-height: 100%; padding:0; margin:0; position:relative; }
-body::after { content: ""; display:block; height: var(--footer-height); }
+body::after { content: ''; display:block; height: var(--footer-height); }
 footer {
   position: absolute;
   bottom: 0;
