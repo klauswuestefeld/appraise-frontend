@@ -2,7 +2,12 @@
 
 console.log('CARREGOU');
 
+function showAppraisal(appraisal) {
+	console.log(appraisal);
+}
+
 function showAppraisals(appraisals) {
   appraiseEmptyScreen();
-  appraisals.forEach((appraisal) => console.log(appraisal));
+  appraisals.forEach(showAppraisal);
 }
+

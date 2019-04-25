@@ -36,6 +36,7 @@ function registerSituation(name, handler) {
 }
 
 function loginScreen() {
+  console.log('login');
     setDisplay({
        'session': false,
        'menu': false,

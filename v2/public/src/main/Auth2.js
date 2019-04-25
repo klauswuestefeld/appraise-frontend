@@ -39,7 +39,7 @@ function onUserChanged(user) {
   console.log('USER',user);
 
   var isSignedIn = user.isSignedIn();
-  console.log('IS SIGNED IN:', isSignedIn);
+  console.log('IS SIGNED IN:', isSignedIn); 
   if (!isSignedIn)
    return;
 
@@ -53,7 +53,7 @@ function onUserChanged(user) {
 }
 
 function loginClicked()  { console.log('SIGN IN'); Percy.auth2.signIn(); }
-function logoutClicked() { console.log('SIGN OUT'); Percy.auth2.signOut(); }
+function logoutClicked() { console.log('SIGN OUT'); Percy.auth2.signOut(); loginScreen(); }
 
 Percy.initAuth = function() {
 
@@ -85,6 +85,7 @@ Percy.initAuth = function() {
     console.log('Timeout on Google API');
   }});
 };
+
 // This sample assumes a client object has been created.
 // To learn more about creating a client, check out the starter:
 //  https://developers.google.com/+/quickstart/javascript
