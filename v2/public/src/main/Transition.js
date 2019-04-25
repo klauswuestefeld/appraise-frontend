@@ -157,9 +157,9 @@ function appraiseEmptyScreen(){
   window.location.hash = ('#situation-appraise-empty');
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  var levelScroll = document.getElementById('id-your-level');
-  levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
-  noGhostCards();
+  document.getElementById('id-card').classList.add('force-display-none');
+  hideGhostsCards();
+  scrollToLevel();
 }
 
 function appraiseFilledScreen(){
@@ -178,13 +178,8 @@ function appraiseFilledScreen(){
   window.location.hash = ('#situation-appraise-filled');
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  var levelScroll = document.getElementById('id-your-level');
-  levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
-  for (var i = 2; i <= 29; i++) {
-    var card = document.getElementById('ghost-card'+i);
-    if (card)
-      card.classList.remove('force-display-none');
-  }
+  showGhostsCards();
+  scrollToLevel();
 }
 
 function certaintyScreen(){
