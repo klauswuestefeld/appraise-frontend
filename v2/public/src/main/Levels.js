@@ -1,11 +1,4 @@
 'use strict';
-window.addEventListener('load', function() {
-	otherLevels();
-  if (window.location.hash == ('#situation-appraisals-empty')){
-    noGhostCards();
-  }
-});
-  
 function otherLevels(){
 	var i = 1;
     var increasing = 10;
