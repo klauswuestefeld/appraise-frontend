@@ -1,31 +1,27 @@
-"use strict";
+'use strict';
 
-window.addEventListener("load", function() {
-  document.getElementById("easter-egg").ondblclick = function() {easterEgg()};
-
+window.addEventListener('load', function() {
   displayBody();
-
-  if (window.location.hash != ("#situation-certainty")){
-    document.getElementById("certainty").classList.add('force-display-none');
-  } else {
-    document.getElementById("certainty").classList.remove('force-display-none');
-  }
-  registerSituation("login", loginScreen);
-  registerSituation("magic-login", magicLogScreen);
-  registerSituation("logout", dropdownScreen);
-  registerSituation("admin-empty", adminEmptyScreen);
-  registerSituation("admin-filled", adminFilledScreen);
-  registerSituation("admin-error", adminErrorScreen);
-  registerSituation("admin-ok", adminOkScreen);
-  registerSituation("appraisals-empty", appraisalsEmptyScreen);
-  registerSituation("appraisals-filled", appraisalsFilledScreen);
-  registerSituation("certainty", certaintyScreen);
+  if (window.location.hash != ('#situation-certainty')){
+    document.getElementById('certainty').classList.add('force-display-none');
+  } 
+  registerSituation('login', loginScreen);
+  registerSituation('magic-login', magicLogScreen);
+  registerSituation('logout', dropdownScreen);
+  registerSituation('admin-empty', adminEmptyScreen);
+  registerSituation('admin-filled', adminFilledScreen);
+  registerSituation('admin-error', adminErrorScreen);
+  registerSituation('admin-ok', adminOkScreen);
+  registerSituation('appraise-empty', appraiseEmptyScreen);
+  registerSituation('appraise-filled', appraiseFilledScreen);
+  registerSituation('certainty', certaintyScreen);
+  document.getElementById('easter-egg').ondblclick = function() {easterEgg()};
 });
 
 function easterEgg(){
-  /*This function is being pulled with "ondblclcick" when clicking on the copyright symbol
+  /*This function is being pulled with 'ondblclcick' when clicking on the copyright symbol
   twice. It decreases the chance of someone figure out the easter-egg.*/
-  document.getElementById("situations").classList.remove('force-display-none');
+  document.getElementById('situations').classList.remove('force-display-none');
 }
 
 function displayBody() {
@@ -33,188 +29,198 @@ function displayBody() {
 }
 
 function registerSituation(name, handler) {
-  console.log(name);
-    document.getElementById("situation-" + name).onclick = handler;
-    if (window.location.hash == ("#situation-" + name)) {
+    document.getElementById('situation-' + name).onclick = handler;
+    if (window.location.hash == ('#situation-' + name)) {
       handler();
     }
 }
 
 function loginScreen() {
+  console.log('login');
     setDisplay({
-       "session": false,
-       "menu": false,
-       "login": true,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
+       'session': false,
+       'menu': false,
+       'login': true,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': false,
+       'certainty': false
     });
+    window.location.hash = ('#situation-login');
 }
 
 
 function magicLogScreen(){
   setDisplay({
-       "session": false,
-       "menu": false,
-       "login": false,
-       "magic-login": true,
-       "session-dropdown": false,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
+       'session': false,
+       'menu': false,
+       'login': false,
+       'magic-login': true,
+       'session-dropdown': false,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': false,
+       'certainty': false
     });
+  window.location.hash = ('#situation-magic-login');
 }
 
 function dropdownScreen() {
   setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": true,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': true,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': false,
+       'certainty': false
     });
+  window.location.hash = ('#situation-logout');
 }
 
 function adminEmptyScreen(){
   setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": true,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': true,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': false,
+       'certainty': false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
   document.getElementById('textarea').value = '';
+  window.location.hash = ('#situation-admin-empty');
 }
 
 function adminFilledScreen() {
-  console.log("hh");
   setDisplay({
-    "session": true,
-    "menu": true,
-    "login": false,
-    "magic-login": false,
-    "session-dropdown": false,
-    "admin": true,
-    "error-text": false,
-    "ok-text": false,
-    "appraisals": false,
-    "certainty": false
+    'session': true,
+    'menu': true,
+    'login': false,
+    'magic-login': false,
+    'session-dropdown': false,
+    'admin': true,
+    'error-text': false,
+    'ok-text': false,
+    'appraisals': false,
+    'certainty': false
   });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
-
   adminContent();
+  window.location.hash = ('#situation-admin-filled');
 }
 
 function adminErrorScreen(){
 	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": true,
-       "error-text": true,
-       "ok-text": false,
-       "appraisals": false,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': true,
+       'error-text': true,
+       'ok-text': false,
+       'appraisals': false,
+       'certainty': false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  window.location.hash = ('#situation-admin-error');
 }
 
 function adminOkScreen(){
-  console.log("mn");
 	setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": true,
-       "error-text": false,
-       "ok-text": true,
-       "appraisals": false,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': true,
+       'error-text': false,
+       'ok-text': true,
+       'appraisals': false,
+       'certainty': false
     });
   document.getElementById('appraisals-tab').classList.remove('selected');
   document.getElementById('admin-tab').classList.add('selected');
+  window.location.hash = ('#situation-admin-ok');
 }
 
-function appraisalsEmptyScreen(){
-  console.log("gg");
+function appraiseEmptyScreen(){
   setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": true,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': true,
+       'certainty': false
     });
-  console.log("gg");
+  window.location.hash = ('#situation-appraise-empty');
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  console.log("gg");
+  var levelScroll = document.getElementById('id-your-level');
+  levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  noGhostCards();
 }
 
-function appraisalsFilledScreen(){
-  console.log("gg");
+function appraiseFilledScreen(){
   setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": true,
-       "certainty": false
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': true,
+       'certainty': false
     });
-  console.log("gg");
+  window.location.hash = ('#situation-appraise-filled');
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
-  console.log("gg");
+  var levelScroll = document.getElementById('id-your-level');
+  levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  for (var i = 2; i <= 29; i++) {
+    var card = document.getElementById('ghost-card'+i);
+    if (card)
+      card.classList.remove('force-display-none');
+  }
 }
 
 function certaintyScreen(){
-  console.log("ff");
   setDisplay({
-       "session": true,
-       "menu": true,
-       "login": false,
-       "magic-login": false,
-       "session-dropdown": false,
-       "admin": false,
-       "error-text": false,
-       "ok-text": false,
-       "appraisals": true,
-       "certainty": true
+       'session': true,
+       'menu': true,
+       'login': false,
+       'magic-login': false,
+       'session-dropdown': false,
+       'admin': false,
+       'error-text': false,
+       'ok-text': false,
+       'appraisals': true,
+       'certainty': true
     });
   document.getElementById('appraisals-tab').classList.add('selected');
   document.getElementById('admin-tab').classList.remove('selected');
+  window.location.hash = ('#situation-certainty');
 }
 
 function setDisplay(displaysById){
@@ -223,7 +229,7 @@ function setDisplay(displaysById){
         if (displaysById[id]) {
  	        document.getElementById(id).classList.remove('force-display-none');
         } else {
-            document.getElementById(id).classList.add('force-display-none');
+          document.getElementById(id).classList.add('force-display-none');
         }
     }
 }

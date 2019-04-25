@@ -29,7 +29,7 @@ percy.EmbeddedFiles = {
     },
 
     isEmbeddedURL: function(url) {
-        return url && url[0] === "@";
+        return url && url[0] === '@';
     },
 
     compressedContent: {},

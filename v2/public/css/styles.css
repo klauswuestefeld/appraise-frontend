@@ -31,8 +31,7 @@ body {
 /*Header*/
 
 .logo-percival{
-  height: 70px;
-  width: 100px;
+  height: 40px;
 }
 @media only screen and (max-width:400px){
   .logo-percival{
@@ -50,7 +49,7 @@ body {
 }
 
 #session::after{
-  content: "";
+  content: '';
   color: red;
   width: 0;
   height: 0;
@@ -94,7 +93,6 @@ body {
  }
 
 #logo {
-  border: 1px solid var(--percival-dark);
   margin-left: 15px;
 }
 @media only screen and (max-width:504px), screen and (max-height:504px){
@@ -409,6 +407,7 @@ textarea {
   height:100%;
   width:5%;
   float: left;
+  margin-left: 10px;
 }
 
 .card{
@@ -564,7 +563,7 @@ div#certainty strong{
   margin-left: 5px;
   border: 2px solid #aaa;
   border-radius:6px;
-  padding: 50px;
+  padding: 60px;
 }
 @media only screen and (max-width:499px){
   .certainty-button {
@@ -659,7 +658,7 @@ div#certainty strong{
 
 html { height: 100%; }
 body { min-height: 100%; padding:0; margin:0; position:relative; }
-body::after { content: ""; display:block; height: var(--footer-height); }
+body::after { content: ''; display:block; height: var(--footer-height); }
 footer {
   position: absolute;
   bottom: 0;

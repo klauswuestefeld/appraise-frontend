@@ -1,24 +1,24 @@
 // Copyright 2015 by Paulo Augusto Peccin. See license.txt distributed with this file.
 
 percy.Util = new function() {
-"use strict";
+'use strict';
 
     this.log = function(str) {
-        var args = [ ">> percy:" ];
+        var args = [ '>> percy:' ];
         Array.prototype.push.apply(args, arguments);
         console.log.apply(console, args);
         //console.log(str);
         // this.logs.push(str);
     };
     this.warning = function(str) {
-        var args = [ ">> percy Warning:" ];
+        var args = [ '>> percy Warning:' ];
         Array.prototype.push.apply(args, arguments);
         console.warn.apply(console, args);
         //console.warn(str);
         // this.logs.push(str);
     };
     this.error = function(str) {
-        var args = [ ">> percy Error:" ];
+        var args = [ '>> percy Error:' ];
         Array.prototype.push.apply(args, arguments);
         console.error.apply(console, args);
         //console.error(str);
@@ -81,7 +81,7 @@ percy.Util = new function() {
         if (ints === null || ints == undefined) return ints;
         if (start === undefined) start = 0;
         if (length === undefined) length = ints.length - start;
-        var str = "";
+        var str = '';
         for(var i = start, finish = start + length; i < finish; i = i + 1)
             str += String.fromCharCode(ints[i] & 0xff);
         return str;
@@ -89,7 +89,7 @@ percy.Util = new function() {
 
     this.byteStringToInt8BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
         var len = str.length;
         var ints = (dest && dest.length === len) ? dest : new (dest ? dest.constructor : Array)(len);      // Preserve dest type
         for(var i = 0; i < len; i = i + 1)
@@ -99,7 +99,7 @@ percy.Util = new function() {
 
     this.byteStringToSignedInt8BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
         var len = str.length;
         var ints = (dest && dest.length === len) ? dest : new (dest ? dest.constructor : Array)(len);       //  Preserve dest type
         for(var i = 0; i < len; i = i + 1) {
@@ -114,7 +114,7 @@ percy.Util = new function() {
         if (ints === null || ints == undefined) return ints;
         if (start === undefined) start = 0;
         if (length === undefined) length = ints.length - start;
-        var str = "";
+        var str = '';
         for(var i = start, finish = start + length; i < finish; i = i + 1)
             str += String.fromCharCode(ints[i] & 0xff) + String.fromCharCode((ints[i] >> 8) & 0xff);
         return str;
@@ -122,7 +122,7 @@ percy.Util = new function() {
 
     this.byteStringToInt16BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
         var len = (str.length / 2) | 0;
         var ints = (dest && dest.length === len) ? dest : new (dest ? dest.constructor : Array)(len);      // Preserve dest type
         for(var i = 0, s = 0; i < len; i = i + 1, s = s + 2)
@@ -132,7 +132,7 @@ percy.Util = new function() {
 
     this.byteStringToSignedInt16BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
         var len = (str.length / 2) | 0;
         var ints = (dest && dest.length === len) ? dest : new (dest ? dest.constructor : Array)(len);      // Preserve dest type
         for(var i = 0, s = 0; i < len; i = i + 1, s = s + 2) {
@@ -147,7 +147,7 @@ percy.Util = new function() {
         if (ints === null || ints == undefined) return ints;
         if (start === undefined) start = 0;
         if (length === undefined) length = ints.length - start;
-        var str = "";
+        var str = '';
         for(var i = start, finish = start + length; i < finish; i = i + 1)
             str += String.fromCharCode(ints[i] & 0xff) + String.fromCharCode((ints[i] >> 8) & 0xff) + String.fromCharCode((ints[i] >> 16) & 0xff) + String.fromCharCode((ints[i] >> 24) & 0xff);
         return str;
@@ -155,7 +155,7 @@ percy.Util = new function() {
 
     this.byteStringToInt32BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
         var len = (str.length / 4) | 0;
         var ints = (dest && dest.length === len) ? dest : new (dest ? dest.constructor : Array)(len);      // Preserve dest type
         for(var i = 0, s = 0; i < len; i = i + 1, s = s + 4)
@@ -165,27 +165,27 @@ percy.Util = new function() {
 
     this.storeInt8BitArrayToStringBase64 = function(arr) {
         if (arr === null || arr === undefined) return arr;
-        if (arr.length === 0) return "";
+        if (arr.length === 0) return '';
         return btoa(this.int8BitArrayToByteString(arr));
     };
 
     this.restoreStringBase64ToInt8BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         return this.byteStringToInt8BitArray(atob(str), dest);
     };
 
     this.restoreStringBase64ToSignedInt8BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         return this.byteStringToSignedInt8BitArray(atob(str), dest);
     };
 
     this.compressInt8BitArrayToStringBase64 = function(arr, length) {
         if (arr === null || arr === undefined) return arr;
-        if (arr.length === 0) return "";
+        if (arr.length === 0) return '';
         if (length < arr.length)
             return btoa(this.int8BitArrayToByteString(JSZip.compressions.DEFLATE.compress(arr.slice(0, length))));
         else
@@ -194,8 +194,8 @@ percy.Util = new function() {
 
     this.uncompressStringBase64ToInt8BitArray = function(str, dest, diffSize, constr) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         var res = JSZip.compressions.DEFLATE.uncompress(atob(str));
         if (dest && (diffSize || dest.length === res.length))
             return this.arrayCopy(res, 0, dest);                                                                    // Preserve dest
@@ -205,34 +205,34 @@ percy.Util = new function() {
 
     this.storeInt16BitArrayToStringBase64 = function(arr) {
         if (arr === null || arr === undefined) return arr;
-        if (arr.length === 0) return "";
+        if (arr.length === 0) return '';
         return btoa(this.int16BitArrayToByteString(arr));
     };
 
     this.restoreStringBase64ToInt16BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         return this.byteStringToInt16BitArray(atob(str), dest);
     };
 
     this.restoreStringBase64ToSignedInt16BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         return this.byteStringToSignedInt16BitArray(atob(str), dest);
     };
 
     this.storeInt32BitArrayToStringBase64 = function(arr) {
         if (arr === null || arr === undefined) return arr;
-        if (arr.length === 0) return "";
+        if (arr.length === 0) return '';
         return btoa(this.int32BitArrayToByteString(arr));
     };
 
     this.restoreStringBase64ToInt32BitArray = function(str, dest) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return [];
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return [];
         return this.byteStringToInt32BitArray(atob(str), dest);
     };
 
@@ -244,15 +244,15 @@ percy.Util = new function() {
 
     this.uncompressStringBase64ToString = function(str) {
         if (str === null || str === undefined) return str;
-        if (str == "null") return null; if (str == "undefined") return undefined;
-        if (str == "") return str;
+        if (str == 'null') return null; if (str == 'undefined') return undefined;
+        if (str == '') return str;
         return this.int8BitArrayToByteString(JSZip.compressions.DEFLATE.uncompress(atob(str)));
     };
 
     this.toHex2 = function(num) {
         if (num === null || num === undefined) return num;
         var res = num.toString(16).toUpperCase();
-        if (num >= 0 && (res.length % 2)) return "0" + res;
+        if (num >= 0 && (res.length % 2)) return '0' + res;
         else return res;
     };
 
@@ -264,11 +264,11 @@ percy.Util = new function() {
             case 4:
                 return res;
             case 3:
-                return "0" + res;
+                return '0' + res;
             case 2:
-                return "00" + res;
+                return '00' + res;
             case 1:
-                return "000" + res;
+                return '000' + res;
             default:
                 return res;
         }
@@ -276,15 +276,15 @@ percy.Util = new function() {
 
     this.escapeHtml = function(html) {
         return html
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;")
-            .replace(/\//g,"&#047;")
-            .replace(/\?/g,"&#063;")
-            .replace(/\-/g, "&#045;")
-            .replace(/\|/g, "&#0124;");
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/'/g, '&quot;')
+            .replace(/'/g, '&#039;')
+            .replace(/\//g,'&#047;')
+            .replace(/\?/g,'&#063;')
+            .replace(/\-/g, '&#045;')
+            .replace(/\|/g, '&#0124;');
     };
 
     this.arrayFind = function(arr, pred) {
@@ -376,19 +376,19 @@ percy.Util = new function() {
     };
 
     this.leafFilename = function(fileName) {
-        return (((fileName && fileName.indexOf("/") >= 0) ? fileName.split("/").pop() : fileName) || "").trim();
+        return (((fileName && fileName.indexOf('/') >= 0) ? fileName.split('/').pop() : fileName) || '').trim();
     };
 
     this.leafFilenameNoExtension = function(fileName) {
         var name = this.leafFilename(fileName);
-        var period = name.lastIndexOf(".");
+        var period = name.lastIndexOf('.');
         return period <= 0 ? name : name.substr(0, period).trim();
     };
 
     this.leafFilenameOnlyExtension = function(fileName) {
         var name = this.leafFilename(fileName);
-        var period = name.lastIndexOf(".");
-        return period <= 0 ? "" : name.substr(period + 1).trim();
+        var period = name.lastIndexOf('.');
+        return period <= 0 ? '' : name.substr(period + 1).trim();
     };
 
     function sortByName(a, b) {
@@ -396,30 +396,30 @@ percy.Util = new function() {
     }
 
     this.dump = function(arr, from, chunk, quant) {
-        var res = "";
+        var res = '';
         var p = from || 0;
         quant = quant || 1;
         for(var i = 0; i < quant; i++) {
             for(var c = 0; c < chunk; c++) {
                 var val = arr[p++];
-                res = res + (val != undefined ? val.toString(16, 2) + " " : "? ");
+                res = res + (val != undefined ? val.toString(16, 2) + ' ' : '? ');
             }
-            res = res + "   ";
+            res = res + '   ';
         }
 
         console.log(res);
     };
 
     this.dumpSlot = function(slot, from, chunk, quant) {
-        var res = "";
+        var res = '';
         var p = from || 0;
         quant = quant || 1;
         for(var i = 0; i < quant; i++) {
             for(var c = 0; c < chunk; c++) {
                 var val = slot.read(p++);
-                res = res + (val != undefined ? val.toString(16, 2) + " " : "? ");
+                res = res + (val != undefined ? val.toString(16, 2) + ' ' : '? ');
             }
-            res = res + "   ";
+            res = res + '   ';
         }
 
         console.log(res);
@@ -443,13 +443,13 @@ percy.Util = new function() {
         if ((temp = ua.match(/version\/(\d+)/i)) != null) m.splice(1, 1, temp[1]);
         var name = m[0].toUpperCase();
         return this.browserInfoAvailable = {
-            name: this.isIOSDevice() || name === "NETSCAPE" ? "SAFARI" : name,
+            name: this.isIOSDevice() || name === 'NETSCAPE' ? 'SAFARI' : name,
             version: m[1]
         };
     };
 
     this.userLanguage = function() {
-        return ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || "en-US").trim();
+        return ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en-US').trim();
     };
 
     this.browserCurrentURL = function () {
@@ -459,8 +459,8 @@ percy.Util = new function() {
     this.isOfficialHomepage = function () {
         var loc = window.location;
         return loc
-            && (loc.hostname.toLowerCase() === "webmsx.org")
-            && (loc.port === "" || loc.port === "80");
+            && (loc.hostname.toLowerCase() === 'webmsx.org')
+            && (loc.port === '' || loc.port === '80');
     };
 
     this.isTouchDevice = function() {
@@ -476,11 +476,11 @@ percy.Util = new function() {
     };
 
     this.isBrowserStandaloneMode = function() {
-        return navigator.standalone || window.matchMedia("(display-mode: standalone)").matches;
+        return navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
     };
 
     this.onTapOrMouseDown = function(element, handler) {
-        this.addEventsListener(element, this.isTouchDevice() ? "touchstart mousedown" : "mousedown", handler);
+        this.addEventsListener(element, this.isTouchDevice() ? 'touchstart mousedown' : 'mousedown', handler);
     };
 
     this.onTapOrMouseDownWithBlock = function(element, handler) {
@@ -488,7 +488,7 @@ percy.Util = new function() {
             handler(e);
             return blockEvent(e);
         }
-        this.addEventsListener(element, this.isTouchDevice() ? "touchstart mousedown" : "mousedown", onTapOrMouseDown);
+        this.addEventsListener(element, this.isTouchDevice() ? 'touchstart mousedown' : 'mousedown', onTapOrMouseDown);
     };
 
     this.onTapOrMouseUpWithBlock = function(element, handler) {
@@ -496,21 +496,21 @@ percy.Util = new function() {
             handler(e);
             return blockEvent(e);
         }
-        this.addEventsListener(element, this.isTouchDevice() ? "touchstart mouseup" : "mouseup", onTapOrMouseUp);
+        this.addEventsListener(element, this.isTouchDevice() ? 'touchstart mouseup' : 'mouseup', onTapOrMouseUp);
     };
 
     // Will fire event 2 times (at touch start and end) for needsUIG targets
     this.onTapOrMouseDownWithBlockUIG = function(element, handler) {
         function onTapOrMouseDownUIG(e) {
-            if (e.type === "touchend" && !e.target.wmsxNeedsUIG) return blockEvent(e);
+            if (e.type === 'touchend' && !e.target.wmsxNeedsUIG) return blockEvent(e);
             // If User Initiated Gesture needed on TARGET, signal if starting or ending touch
-            var uigStart = e.type === "touchstart" && e.target.wmsxNeedsUIG;
-            var uigEnd = e.type === "touchend";
+            var uigStart = e.type === 'touchstart' && e.target.wmsxNeedsUIG;
+            var uigEnd = e.type === 'touchend';
             // Fire original event and block
             handler(e, uigStart, uigEnd);
             return blockEvent(e);
         }
-        this.addEventsListener(element, this.isTouchDevice() ? "touchstart touchend mousedown" : "mousedown", onTapOrMouseDownUIG);
+        this.addEventsListener(element, this.isTouchDevice() ? 'touchstart touchend mousedown' : 'mousedown', onTapOrMouseDownUIG);
     };
 
     function blockEvent(e) {
@@ -521,13 +521,13 @@ percy.Util = new function() {
     this.blockEvent = blockEvent;
 
     this.addEventsListener = function(element, events, handler, capture) {
-        events = events.split(" ");
+        events = events.split(' ');
         for (var i = 0; i < events.length; ++i)
             if (events[i]) element.addEventListener(events[i], handler, capture);
     };
 
     this.removeEventsListener = function(element, events, handler, capture) {
-        events = events.split(" ");
+        events = events.split(' ');
         for (var i = 0; i < events.length; ++i)
             if (events[i]) element.removeEventListener(events[i], handler, capture);
     };
@@ -543,9 +543,9 @@ percy.Util = new function() {
         var availHeight = parent.clientHeight - bottomOffset - 20;      //  bar - tolerance
         var height = element.clientHeight;
         var scale = height < availHeight ? 1 : availHeight / height;
-        element.style.transform = "translateY(-" + ((bottomOffset / 2) | 0) + "px) scale(" + scale.toFixed(4) + ")";
+        element.style.transform = 'translateY(-' + ((bottomOffset / 2) | 0) + 'px) scale(' + scale.toFixed(4) + ')';
 
-        // console.log("SCALE availHeight: " + availHeight + ", height: " + height + ", final: " + height * scale);
+        // console.log('SCALE availHeight: ' + availHeight + ', height: ' + height + ', final: ' + height * scale);
     };
 
     this.scaleToFitParentWidth = function(element, parent, horizMargin) {
@@ -554,11 +554,11 @@ percy.Util = new function() {
         var scale = width < availWidth ? 1 : availWidth / width;
         var finaWidth = (width * scale) | 0;
         var left = Math.floor((availWidth - finaWidth) / 2 + horizMargin);
-        element.style.left = "" + left + "px";
-        element.style.right = "initial";
-        element.style.transform = "scale(" + scale.toFixed(4) + ")";
+        element.style.left = '' + left + 'px';
+        element.style.right = 'initial';
+        element.style.transform = 'scale(' + scale.toFixed(4) + ')';
 
-        // console.log("SCALE availWidth: " + availWidth + ", width: " + width + ", final: " + width * scale + ", left: " + left);
+        // console.log('SCALE availWidth: ' + availWidth + ', width: ' + width + ', final: ' + width * scale + ', left: ' + left);
     };
 
     this.log2 = function(x) {

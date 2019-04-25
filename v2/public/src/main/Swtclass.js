@@ -1,4 +1,4 @@
-/*"use strict";
+/*'use strict';
 function change(el) {
 if (el == 'appraisals-tab'){
    document.getElementById('appraisals-tab').classList.add('selected');
@@ -10,8 +10,8 @@ else{
 }
 }
 
-window.addEventListener("load", function() {
-   document.getElementById("admin-tab").onclick = function() {change("admin-tab")};
-   document.getElementById("appraisals-tab").onclick = function() {change("appraisals-tab")};
+window.addEventListener('load', function() {
+   document.getElementById('admin-tab').onclick = function() {change('admin-tab')};
+   document.getElementById('appraisals-tab').onclick = function() {change('appraisals-tab')};
 });
 */

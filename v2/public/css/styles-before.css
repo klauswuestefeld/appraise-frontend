@@ -5,10 +5,10 @@ body {
   font-style: normal;
   line-height: 0;
   font-size: 14px;
-  -webkit-user-select: none;
+  /*-webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+  user-select: none;*/
 }
 * {
   padding: 0;
@@ -47,13 +47,32 @@ body {
   border-bottom-width: 1px;
 }
 
-#situations > a{
+#situations > button{
   color: grey;
   font-size: 12px;
   padding:12px;
 }
 
+.certainty-button > p{
+  float:left;
+  margin-top: 5px;
+}
 
+.certainty-icon{
+ width:3px;
+ height:3px;
+ border: 1px solid; 
+ border-color: blue;
+ background-color: blue;
+ margin: 1px;
+ }
+
+ .keep-cards{
+  width: calc(100% - 100px);
+  line-height: 25px;
+  min-height: 90px;
+  float: left;
+ }
 
 
 
