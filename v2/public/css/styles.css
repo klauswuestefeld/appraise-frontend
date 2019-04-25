@@ -25,11 +25,8 @@
 body {
   background-color: var(--percival-background);
 }
-@media only screen and (max-height:500px), screen and (max-width:500px){
-  #situations{
-    display:none;
-  }
-}
+
+
 
 /*Header*/
 
@@ -379,7 +376,7 @@ textarea {
 }
 .your-level{
   color:black;
-  width:40px;
+  width:10px;
   font-size:20px;
   margin-top:60px;
 }
@@ -393,10 +390,13 @@ textarea {
 
 #id-your-level{
   color: var(--percival-secondary);
-  width:40px;
+  width:50px;
+  /*height:350px;*/
   font-size:15px;
-  margin-bottom:45px;
+  margin-top: auto;
+  margin-bottom:auto;
   margin-left: 5px;
+
 }
 @media only screen and (max-width:400px){
   #id-your-level{
@@ -412,13 +412,16 @@ textarea {
 }
 
 .card{
+  display:flex;
+  justify-content:wrap;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 6px;
   margin: 15px;
   margin-top:10px;
-  margin-left: 30px;
-  width: 180px;
+  margin-right: 10px;
+  margin-left: 20px;
+  width:180px;
   float: left;
   height:60px;
   text-align: left;
@@ -446,19 +449,7 @@ textarea {
 }
 
 .dragging-card {
-  background-color: rgb(75, 71, 71);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 6px;
-  margin: 15px;
-  margin-top:10px;
-  margin-left: 30px;
-  width: 180px;
-  float: left;
-  margin-right: 5px;
-  padding-bottom:10px;
-  text-align: left;
-  line-height: 25px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 @media only screen and (max-width:502px){
   .dragging-card {
@@ -491,7 +482,7 @@ textarea {
   }
  }
 
- .modal {
+.modal {
   /*display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -509,7 +500,6 @@ textarea {
     z-index:0;
   }
 }
-
 
 .modal-content{
    background-color: var(--percival-background);
@@ -585,6 +575,22 @@ div#certainty strong{
     margin-right: 1px;
     margin-top: 20%;
   }
+}
+
+.certainty-button-active{
+  display:flex;
+  justify-content: wrap;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  float: left;
+  margin-right: 5px;
+  margin-top: 90px;
+  margin-left: 5px;
+  border: 2px solid #aaa;
+  border-radius:6px;
+  padding: 50px;
+
+  text-align: center;
 }
 
 .zero-percent{
