@@ -85,20 +85,3 @@ Percy.initAuth = function() {
     console.log('Timeout on Google API');
   }});
 };
-
-// This sample assumes a client object has been created.
-// To learn more about creating a client, check out the starter:
-//  https://developers.google.com/+/quickstart/javascript
-var request = gapi.client.plus.people.get({
-  'userId' : 'me'
-});
-
-request.execute(function(resp) {
-  console.log('ID: ' + resp.id);
-  console.log('Display Name: ' + resp.displayName);
-  console.log('Image URL: ' + resp.image.url);
-  console.log('Profile URL: ' + resp.url);
-    var profile = user.getBasicProfile();
-  document.getElementById('user-name').innerHTML = profile.getName();
-  document.getElementById('user-picture').src = profile.getImageUrl();
-});
