@@ -8,7 +8,7 @@ function cloneTemplateAsGhostCardOnLevel(cardIndex, level) {
 }
 
 function setCertaintyOnGhostCard(expectedCertaintyIndex, cardIndex){
-  var certainty = document.getElementById('id-certainty-icon'); 
+  var certainty = document.getElementsByClassName('certainty-icon').item(0);
   for (var certaintyIndex = 2; certaintyIndex <= expectedCertaintyIndex; certaintyIndex++){
     var newCertainty = certainty.cloneNode(true);
     document.getElementById('ghost-card' + cardIndex).appendChild(newCertainty);
