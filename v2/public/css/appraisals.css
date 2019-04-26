@@ -1,0 +1,153 @@
+/*Appraisals*/
+
+#appraisals{
+  padding-top:50px;
+  padding-bottom:50px;
+ }
+
+.level {
+  margin-left:50px;
+  width: calc(100% - 100px);
+  line-height: 25px;
+  display: block;
+  overflow:hidden;
+  padding: auto;
+  border-bottom:2px dashed #aaa;
+  color:#aaa;
+ }
+  @media only screen and (max-width:500px){
+    .level {
+      width:95%;
+      margin-left:10px;
+      height: 75px;
+    }
+  }
+
+.your-level{
+  color:var(--percival-secondary);
+  width:10px;
+  font-size:15px;
+  margin-top:10px;
+  margin-bottom: 10px;
+ }
+  @media only screen and (max-width:500px){
+    .your-level {
+      width:20px;
+      margin-left: 20px;
+      margin-top:25px;
+    }
+  }
+
+.level-label{
+  display:flex;
+  justify-content:center;
+  margin-top: 30px;
+  width:5%;
+  float: left;
+ }
+
+.card{
+  display:flex;
+  justify-content:wrap;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 6px;
+  margin: 15px;
+  margin-top:10px;
+  margin-right: 10px;
+  margin-left: 20px;
+  width:180px;
+  float: left;
+  height:60px;
+  text-align: left;
+  line-height: 25px;
+ }
+  @media only screen and (max-width:502px){
+    .card {
+     width:25%;
+     margin-left: 40px;
+     margin-top: 10px;
+     height: 50px;
+     text-align: center;
+    }
+  }
+  @media only screen and (max-height:500px){
+    .card {
+     width:25%;
+     margin-left: 15%;
+    }
+  }
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dragging-card {
+  opacity: 0.4;
+}
+  @media only screen and (max-width:502px){
+    .dragging-card {
+     width:20%;
+     margin-top: 5px;
+    }
+  }
+  @media only screen and (max-height:500px){
+    .dragging-card {
+     width:25%;
+     margin-left: 20%;
+    }
+  }
+
+.drag-target{
+  margin-left:50px;
+  width: calc(100% - 100px);
+  line-height: 25px;
+  display: block;
+  overflow: hidden;
+  padding: auto;
+  border-bottom:2px dashed #aaa;
+  color:#aaa;
+ }
+  @media only screen and (max-width:499px){
+    .drag-target {
+     width:95%;
+     margin-left:10px;
+     height: 75px;
+    }
+  }
+
+.modal {
+    /*display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ }
+  @media only screen and (max-width:499px){
+    .modal {
+      z-index:0;
+    }
+  }
+
+.modal-content{
+  background-color: var(--percival-background);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+ }
+  @media only screen and (max-width:499px){
+    .modal-content {
+      height: 35%;
+      width:100%;
+      margin-top: 90%;
+      border:none;
+    }
+  }

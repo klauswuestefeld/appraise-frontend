@@ -1,0 +1,150 @@
+/*Certainty*/
+
+div#certainty strong{
+    font: 20px sans-serif;
+  }
+ @media only screen and (max-width:499px){
+   div#certainty strong {
+     font-size: 16px;
+    }
+  }
+
+.certainty-text{
+    color: var(--percival-dark);
+    font-size: 18px;
+    margin-top: 25px;
+ }
+  @media only screen and (max-width:499px){
+   .certainty-text {
+     font-size: 16px;
+     margin-top: 14px;
+   }
+ }
+
+.circle-certainty{
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+   float: left;
+   margin: 8px 10px 0px 8px;
+   margin-left: 40px;
+   margin-top: 20px;
+ }
+  @media only screen and (max-width:499px){
+   .circle-certainty {
+     display:none;
+   }
+ }
+
+.certainty-button > p{
+   margin-top: 15px;
+   display:flex;
+   flex-wrap: wrap;
+ }
+
+.certainty-button{
+   background-color: white;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   float: left;
+   margin-right: 5px;
+   margin-top: 80px;
+   margin-left: 5px;
+   border: 2px solid #aaa;
+   border-radius:6px;
+   padding: 45px;
+ }
+  @media only screen and (max-width:499px){
+   .certainty-button {
+     display:flex;
+     justify-content: row;
+     padding: 9px;
+     margin-left: 1px;
+     margin-right: 1px;
+     margin-top: 20%;
+   }
+ }
+
+.certainty-icon{
+  width:3px;
+  height:3px;
+  border: 1px solid;
+  border-radius:2px;
+  background-color: white;
+  margin: 1px;
+  margin-top: 46px;
+  padding: 5px;
+  }
+
+.certainty-icon.active {
+   background-color: #aaa;
+  }
+
+ /*.certainty-button-active{
+   display:flex;
+   justify-content:column;
+   background-color: white;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   float: left;
+   margin-right: 5px;
+   margin-top: 90px;
+   margin-left: 5px;
+   border: 2px solid #aaa;
+   border-radius:6px;
+   padding: 50px;
+   text-align: center;
+ }*/
+
+.zero-percent{
+  background-color: pink;
+ }
+
+.twenty-percent{
+  background-color: pink;
+ }
+
+.forty-percent{
+  background-color: pink;
+ }
+
+.sixty-percent{
+  background-color: pink;
+ }
+
+.eigthy-percent{
+  background-color: pink;
+ }
+
+.hundred-percent{
+  background-color: pink;
+ }
+
+.modal-doing-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #aaa;
+  width: 80%;
+  padding: 15px;
+  height: 25px;
+  margin: auto;
+  border: 1px solid gray;
+  color:white;
+ }
+ @media only screen and (max-width:499px){
+   .modal-doing-content {
+     display:none;
+   }
+ }
+
+.modal-doing-buttons-{
+  width: 8%;
+  padding: 15px;
+  margin-top: -15px;
+  border-radius:3px;
+  background-color: blue;
+ }
+ @media only screen and (max-width:499px){
+   .modal-doing-buttons-{
+     display:none;
+   }
+ }
