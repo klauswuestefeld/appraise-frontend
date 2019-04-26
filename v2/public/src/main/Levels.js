@@ -17,21 +17,21 @@ function setCertaintyOnGhostCard(expectedCertaintyIndex, cardIndex){
 
 function createGhostCards() {
 	var cardIndex = 0;
-  cloneTemplateAsGhostCardOnLevel(cardIndex, 'keep+2');
+  cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level2');
 	setCertaintyOnGhostCard(5, cardIndex);
 
   for (cardIndex = 1; cardIndex <= 29; cardIndex++) {
-    cloneTemplateAsGhostCardOnLevel(cardIndex, 'keep-your');
+    cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level0');
     setCertaintyOnGhostCard(3, cardIndex);
   }
 
   for (cardIndex=30; cardIndex <= 36; cardIndex++) {
-    cloneTemplateAsGhostCardOnLevel(cardIndex, 'keep-1');
+    cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level-1');
     setCertaintyOnGhostCard(1, cardIndex);
   }
 
   for (cardIndex = 37; cardIndex <= 39; cardIndex++) {
-    cloneTemplateAsGhostCardOnLevel(cardIndex, 'keep-2');
+    cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level-2');
     setCertaintyOnGhostCard(4, cardIndex);
   }
 

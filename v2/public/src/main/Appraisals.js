@@ -1,16 +1,29 @@
 'use strict';
 
-function cloneTemplateAsCardOnLevel(cardName, level,picture) {
+function cloneTemplateAsCardOnLevel(appraisal) {
+
+
   var card = document.getElementById('id-card');
   var newCard = card.cloneNode(true);
+
+  newCard.id = 'card-' + appraisal.email;
+  newCard.childNodes[1].src = appraisal.picture;
+  newCard.childNodes[3].innerHTML = appraisal.name;
+
+  var certaintyElementIndex = 5;
+  for(var certainty = 0.2; certainty <= appraisal.certainty; certainty += 0.2) {
+		newCard.childNodes[certaintyElementIndex].classList.add('active');
+		certaintyElementIndex+=2;
+  }
+
+  document.getElementById('cards-level' + appraisal.level).appendChild(newCard);
+
   newCard.classList.remove('force-display-none');
-  newCard.id = 'card-' + cardName;
-  document.getElementById(level).appendChild(newCard);
 }
 
 function showAppraisal(appraisal) {
 	console.log(appraisal);
-	cloneTemplateAsCardOnLevel(appraisal.name,'keep-your',appraisal.picture);
+	cloneTemplateAsCardOnLevel(appraisal);
 }
 
 function showAppraisals(appraisals) {
