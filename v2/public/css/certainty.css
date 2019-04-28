@@ -77,7 +77,8 @@ div#certainty strong{
   }
 
 .certainty-icon.active {
-   background-color: #aaa;
+   background-color: var(--percival-primary);
+   border-color: var(--percival-primary);
   }
 
  /*.certainty-button-active{
