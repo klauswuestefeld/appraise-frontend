@@ -7,32 +7,20 @@ function cloneTemplateAsGhostCardOnLevel(cardIndex, level) {
   document.getElementById(level).appendChild(newCard);
 }
 
-function setCertaintyOnGhostCard(expectedCertaintyIndex, cardIndex){
-  var certainty = document.getElementsByClassName('certainty-icon').item(0);
-  for (var certaintyIndex = 2; certaintyIndex <= expectedCertaintyIndex; certaintyIndex++){
-    var newCertainty = certainty.cloneNode(true);
-    document.getElementById('ghost-card' + cardIndex).appendChild(newCertainty);
-  }
-}
-
 function createGhostCards() {
 	var cardIndex = 0;
   cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level2');
-	setCertaintyOnGhostCard(5, cardIndex);
 
   for (cardIndex = 1; cardIndex <= 29; cardIndex++) {
     cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level0');
-    setCertaintyOnGhostCard(3, cardIndex);
   }
 
   for (cardIndex=30; cardIndex <= 36; cardIndex++) {
     cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level-1');
-    setCertaintyOnGhostCard(1, cardIndex);
   }
 
   for (cardIndex = 37; cardIndex <= 39; cardIndex++) {
     cloneTemplateAsGhostCardOnLevel(cardIndex, 'cards-level-2');
-    setCertaintyOnGhostCard(4, cardIndex);
   }
 
   document.getElementById('ghost-card7').classList.add('dragging-card');
