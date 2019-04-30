@@ -56,17 +56,13 @@ function initSituations() {
   findSituations(situations, document.body);
 
   document.onkeydown = checkKey;
-  console.log('HASH: ', window.location.hash);
-  if (window.location.hash.startsWith('#sit-')) {
+  if (window.location.hash.startsWith('#sit-'))
     displaySituation(window.location.hash);
-  }
 
   displayBody();
 
-
-  if (window.location.hash != ('#situation-certainty')){
+  if (window.location.hash != ('#situation-certainty'))
     document.getElementById('certainty').classList.add('force-display-none');
-  }
   registerSituation('login', loginScreen);
   registerSituation('magic-login', magicLogScreen);
   registerSituation('logout', dropdownScreen);
