@@ -1,9 +1,6 @@
 'use strict';
 
-window.addEventListener('load', function() {
-  initSituations();
-
+initSituations(function() {
   Percy.initAuth();
-
   scrollToLevel();
 });
