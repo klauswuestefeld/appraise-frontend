@@ -61,25 +61,25 @@ window.addEventListener('load', function() {
 
   findSituations(Situations.all, document.body);
 
-    document.onkeydown = checkKey;
-    if (window.location.hash.startsWith('#sit-'))
-      displaySituation(window.location.hash);
+  document.onkeydown = checkKey;
+  if (window.location.hash.startsWith('#sit-'))
+    displaySituation(window.location.hash);
 
-    displayBody();
+  displayBody();
 
-    if (window.location.hash != ('#situation-certainty'))
-      document.getElementById('certainty').classList.add('force-display-none');
-    registerSituation('login', loginScreen);
-    registerSituation('magic-login', magicLogScreen);
-    registerSituation('logout', dropdownScreen);
-    registerSituation('admin-empty', adminEmptyScreen);
-    registerSituation('admin-filled', adminFilledScreen);
-    registerSituation('admin-error', adminErrorScreen);
-    registerSituation('admin-ok', adminOkScreen);
-    registerSituation('appraise-empty', appraiseEmptyScreen);
-    registerSituation('appraise-filled', appraiseFilledScreen);
-    registerSituation('certainty', certaintyScreen);
-    document.getElementById('easter-egg').ondblclick = function() {easterEgg()};
+  if (window.location.hash != ('#situation-certainty'))
+    document.getElementById('certainty').classList.add('force-display-none');
+  registerSituation('login', loginScreen);
+  registerSituation('magic-login', magicLogScreen);
+  registerSituation('logout', dropdownScreen);
+  registerSituation('admin-empty', adminEmptyScreen);
+  registerSituation('admin-filled', adminFilledScreen);
+  registerSituation('admin-error', adminErrorScreen);
+  registerSituation('admin-ok', adminOkScreen);
+  registerSituation('appraise-empty', appraiseEmptyScreen);
+  registerSituation('appraise-filled', appraiseFilledScreen);
+  registerSituation('certainty', certaintyScreen);
+  document.getElementById('easter-egg').ondblclick = function() {easterEgg()};
 
-    Situations.onLoadWithoutSituationHash();
+  Situations.onLoadWithoutSituationHash();
 });
