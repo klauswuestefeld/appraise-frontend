@@ -48,14 +48,20 @@ function displaySituation(situation) {
 
 }
 
+function displayBody() {
+    document.getElementsByTagName('body')[0].classList.remove('force-display-none');
+}
+
 function initSituations() {
-  findSituations(situations, document.getElementById('situation-template'));
+  findSituations(situations, document.body);
 
   document.onkeydown = checkKey;
   console.log('HASH: ', window.location.hash);
   if (window.location.hash.startsWith('#sit-')) {
     displaySituation(window.location.hash);
   }
+
+  displayBody();
 
 
   if (window.location.hash != ('#situation-certainty')){

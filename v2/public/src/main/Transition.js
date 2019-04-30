@@ -6,9 +6,6 @@ function easterEgg(){
   document.getElementById('situations').classList.remove('force-display-none');
 }
 
-function displayBody() {
-    document.getElementsByTagName('body')[0].classList.remove('force-display-none');
-}
 
 function registerSituation(name, handler) {
     document.getElementById('situation-' + name).onclick = handler;
