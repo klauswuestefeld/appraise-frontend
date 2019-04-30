@@ -12,16 +12,19 @@
   display: block;
   overflow:hidden;
   padding: auto;
-  border-bottom:2px dashed #aaa;
   color:#aaa;
- }
-  @media only screen and (max-width:500px){
-    .level {
-      width:95%;
-      margin-left:10px;
-      height: 75px;
-    }
+}
+@media only screen and (max-width:500px){
+  .level {
+    width:95%;
+    margin-left:10px;
+    height: 75px;
   }
+}
+.level + .level {
+  border-top:2px dashed #aaa;
+ }
+
 
 .your-level{
   color:var(--percival-secondary);
