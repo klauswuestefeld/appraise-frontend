@@ -27,13 +27,13 @@ function createGhostCards() {
 }
 
 function hideGhostsCards(){
-  for (var i = 0; i <= 39; i++){
+  /*for (var i = 0; i <= 39; i++){
     document.getElementById('ghost-card'+i).classList.add('force-display-none');
-  }
+  }*/
 }
 
 function showGhostsCards(){
-  for (var i = 0; i <= 39; i++){
+  /*for (var i = 0; i <= 39; i++){
     document.getElementById('ghost-card'+i).classList.remove('force-display-none');
-  }
+  }*/
 }

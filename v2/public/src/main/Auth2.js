@@ -29,7 +29,7 @@ function startSession(googleToken) {
   req.onload = function () {
     if (req.status === 200) {
       console.log('USER PROFILE:', req.response);
-      fetchAppraisals(req.response.token);
+      //fetchAppraisals(req.response.token);
     } else req.onerror();
   };
   req.send();
