@@ -1,8 +1,6 @@
 'use strict';
 
 window.addEventListener('load', function() {
-  initSituations(function() {
+  if (!Situations.isActive())
     Percy.initAuth();
-  });
 });
-

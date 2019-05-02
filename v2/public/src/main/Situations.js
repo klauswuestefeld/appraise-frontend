@@ -1,7 +1,7 @@
 'use strict';
 
 var Situations = {};
-Situations.all = [];
+Situations.names = [];
 Situations.index = -1;
 
 function clearBody() {
@@ -37,10 +37,10 @@ function displaySituation(situation) {
 }
 
 function nextSituation(direction) {
-  Situations.index = (Situations.index + direction) % Situations.all.length;
+  Situations.index = (Situations.index + direction) % Situations.names.length;
   if (Situations.index == -1)
-    Situations.index = Situations.all.length -1;
-  var situation = Situations.all[Situations.index];
+    Situations.index = Situations.names.length -1;
+  var situation = Situations.names[Situations.index];
   window.location.hash = situation;
   displaySituation(situation);
 }
@@ -69,24 +69,20 @@ function findSituations(result, element) {
   });
 }
 
-function displayBody() {
-    document.getElementsByTagName('body')[0].classList.remove('force-display-none');
+Situations.isActive = function () {
+  return window.location.hash.startsWith('#sit-')
 }
 
-function initSituations(onLoadWithoutSituationHash) {
-  Situations.onLoadWithoutSituationHash = onLoadWithoutSituationHash;
-  findSituations(Situations.all, document.body);
+function initSituations() {
+  findSituations(Situations.names, document.body);
 
-    Situations.templates = Array.from(document.body.childNodes);
-    clearBody();
-    displayBody();
+  Situations.templates = Array.from(document.body.childNodes);
+  clearBody();
 
-    document.onkeydown = onSituationKey;
+  document.onkeydown = onSituationKey;
 
-    if (window.location.hash.startsWith('#sit-'))
-      displaySituation(window.location.hash.substr(1));
-    else
-      Situations.onLoadWithoutSituationHash();
+  if (Situations.isActive())
+    displaySituation(window.location.hash.substr(1));
 }
 
-
+initSituations();
