@@ -58,14 +58,14 @@ function onSituationKey(e) {
   }
 }
 
-function findSituations(result, element) {
+function findSituationNames(result, element) {
   var classes = element.classList || [];
   classes.forEach(function (clazz) {
     if (clazz.startsWith('sit-') && !result.includes(clazz))
       result.push(clazz);
   });
   element.childNodes.forEach(function (child) {
-    findSituations(result, child);
+    findSituationNames(result, child);
   });
 }
 
@@ -74,7 +74,7 @@ Situations.isActive = function () {
 }
 
 function initSituations() {
-  findSituations(Situations.names, document.body);
+  findSituationNames(Situations.names, document.body);
 
   Situations.bodyElements = Array.from(document.body.childNodes);
   clearBody();
