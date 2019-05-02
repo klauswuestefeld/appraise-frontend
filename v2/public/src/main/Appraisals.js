@@ -1,8 +1,6 @@
 'use strict';
 
 function cloneTemplateAsCardOnLevel(appraisal) {
-
-
   var card = document.getElementById('id-card');
   var newCard = card.cloneNode(true);
 
@@ -29,5 +27,6 @@ function showAppraisal(appraisal) {
 function showAppraisals(appraisals) {
   appraiseEmptyScreen();
   appraisals.forEach(showAppraisal);
+  scrollToLevel();
 }
 

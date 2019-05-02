@@ -15,7 +15,12 @@ function displaySituation(situation) {
   console.log(situation);
   clearBody();
   Situations.templates.forEach(function (element) {
-    if (element.classList && element.classList.contains(situation))
+    var hasNoClass = !element.classList;
+    var hasCurrentSitClass = element.classList && element.classList.contains(situation);
+    var hasNoSitClass = !(element.classList && Array.from(element.classList).find(function (clazz) {
+      return clazz.startsWith("sit-");
+    }));
+    if (hasNoClass || hasCurrentSitClass || hasNoSitClass)
       document.body.appendChild(element);
   });
 }
