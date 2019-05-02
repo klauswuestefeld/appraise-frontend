@@ -12,7 +12,6 @@ function clearBody() {
 }
 
 function displaySituation(situation) {
-  situation = situation;
   console.log(situation);
   clearBody();
   Situations.templates.forEach(function (element) {
@@ -32,7 +31,6 @@ function nextSituation(direction) {
 
 function onSituationKey(e) {
     e = e || window.event;
-    if (!e.ctrlKey) return;
     if (!e.altKey)  return;
     if (e.keyCode == '188') { // ',' key
       if (Situations.index == -1)
@@ -59,25 +57,20 @@ function displayBody() {
     document.getElementsByTagName('body')[0].classList.remove('force-display-none');
 }
 
-function startSituations() {
-  findSituations(Situations.all, document.body);
-
-  Situations.templates = Array.from(document.body.childNodes);
-  clearBody();
-  displayBody();
-
-  document.onkeydown = onSituationKey;
-
-  if (window.location.hash.startsWith('#sit-'))
-    displaySituation(window.location.hash.substr(1));
-  else
-    Situations.onLoadWithoutSituationHash();
-
-}
-
 function initSituations(onLoadWithoutSituationHash) {
   Situations.onLoadWithoutSituationHash = onLoadWithoutSituationHash;
-  window.addEventListener('load', startSituations);
+  findSituations(Situations.all, document.body);
+
+    Situations.templates = Array.from(document.body.childNodes);
+    clearBody();
+    displayBody();
+
+    document.onkeydown = onSituationKey;
+
+    if (window.location.hash.startsWith('#sit-'))
+      displaySituation(window.location.hash.substr(1));
+    else
+      Situations.onLoadWithoutSituationHash();
 }
 
 
