@@ -11,17 +11,28 @@ function clearBody() {
   });
 }
 
-function displaySituation(situation) {
-  console.log(situation);
-  clearBody();
-  Situations.templates.forEach(function (element) {
+function displaySituationForChildren(situation, element){
     var hasNoClass = !element.classList;
     var hasCurrentSitClass = element.classList && element.classList.contains(situation);
     var hasNoSitClass = !(element.classList && Array.from(element.classList).find(function (clazz) {
       return clazz.startsWith("sit-");
     }));
-    if (hasNoClass || hasCurrentSitClass || hasNoSitClass)
-      document.body.appendChild(element);
+    if (!(hasNoClass || hasCurrentSitClass || hasNoSitClass)) {
+      element.parentElement.removeChild(element);
+    } else {
+      element.childNodes.forEach(function (child) {
+        displaySituationForChildren(situation, child);
+      });
+    }
+}
+
+function displaySituation(situation) {
+  console.log(situation);
+  clearBody();
+  Situations.templates.forEach(function (element) {
+    var clonedElement = element.cloneNode(true);
+    document.body.appendChild(clonedElement);
+    displaySituationForChildren(situation, clonedElement);
   });
 }
 
