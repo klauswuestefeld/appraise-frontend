@@ -50,7 +50,7 @@ function onSituationKey(e) {
 function findSituations(result, element) {
   var classes = element.classList || [];
   classes.forEach(function (clazz) {
-    if (clazz.startsWith('sit-'))
+    if (clazz.startsWith('sit-') && !result.includes(clazz))
       result.push(clazz);
   });
   element.childNodes.forEach(function (child) {
