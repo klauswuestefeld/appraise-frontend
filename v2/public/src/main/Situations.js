@@ -1,6 +1,6 @@
 'use strict';
 
-var Situations = {};
+const Situations = {};
 Situations.names = [];
 Situations.index = -1;
 
@@ -11,28 +11,28 @@ function clearBody() {
   });
 }
 
-function displaySituationForChildren(situation, element){
-    var hasNoClass = !element.classList;
-    var hasCurrentSitClass = element.classList && element.classList.contains(situation);
-    var hasNoSitClass = !(element.classList && Array.from(element.classList).find(function (clazz) {
-      return clazz.startsWith("sit-");
-    }));
-    if (!(hasNoClass || hasCurrentSitClass || hasNoSitClass)) {
-      element.parentElement.removeChild(element);
-    } else {
-      element.childNodes.forEach(function (child) {
-        displaySituationForChildren(situation, child);
-      });
-    }
+// https://dictionary.cambridge.org/dictionary/english/prune TODO Delete this line.
+function prune(situation, element) {
+  var hasNoClass = !element.classList;
+  var hasCurrentSitClass = element.classList && element.classList.contains(situation);
+  var hasNoSitClass = !(element.classList && Array.from(element.classList).find(function (clazz) {
+    return clazz.startsWith("sit-");
+  }));
+  if (!(hasNoClass || hasCurrentSitClass || hasNoSitClass)) {
+    element.parentElement.removeChild(element);
+  } else {
+    element.childNodes.forEach(function (child) {
+      prune(situation, child);
+    });
+  }
 }
 
 function displaySituation(situation) {
-  console.log(situation);
   clearBody();
-  Situations.templates.forEach(function (element) {
-    var clonedElement = element.cloneNode(true);
-    document.body.appendChild(clonedElement);
-    displaySituationForChildren(situation, clonedElement);
+  Situations.bodyElements.forEach(function (element) {
+    const clone = element.cloneNode(true);
+    document.body.appendChild(clone);
+    prune(situation, clone);
   });
 }
 
@@ -40,7 +40,7 @@ function nextSituation(direction) {
   Situations.index = (Situations.index + direction) % Situations.names.length;
   if (Situations.index == -1)
     Situations.index = Situations.names.length -1;
-  var situation = Situations.names[Situations.index];
+  const situation = Situations.names[Situations.index];
   window.location.hash = situation;
   displaySituation(situation);
 }
@@ -76,7 +76,7 @@ Situations.isActive = function () {
 function initSituations() {
   findSituations(Situations.names, document.body);
 
-  Situations.templates = Array.from(document.body.childNodes);
+  Situations.bodyElements = Array.from(document.body.childNodes);
   clearBody();
 
   document.onkeydown = onSituationKey;
