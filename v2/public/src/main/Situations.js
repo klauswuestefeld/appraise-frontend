@@ -86,6 +86,7 @@ function initSituations() {
   if (Situations.isActive()) {
     document.onkeydown = onSituationKey;
     displaySituation(window.location.hash.substr(1));
+  }
 }
 
 initSituations();
