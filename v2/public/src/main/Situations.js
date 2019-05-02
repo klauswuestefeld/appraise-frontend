@@ -11,20 +11,24 @@ function clearBody() {
   });
 }
 
+function isIncluded(situation, element) {
+  if (!element.classList) return true;
+  const classes = Array.from(element.classList).filter(function (clazz) {
+    return clazz.startsWith('sit-');
+  });
+  if (classes.length == 0) return true;
+  return (classes.find(function (clazz) {
+    return situation.startsWith(clazz);
+  }));
+}
+
+
 // https://dictionary.cambridge.org/dictionary/english/prune TODO Delete this line.
 function prune(situation, element) {
-  var hasNoClass = !element.classList;
-  var hasCurrentSitClass = element.classList && element.classList.contains(situation);
-  var hasNoSitClass = !(element.classList && Array.from(element.classList).find(function (clazz) {
-    return clazz.startsWith("sit-");
-  }));
-  if (!(hasNoClass || hasCurrentSitClass || hasNoSitClass)) {
+  if (isIncluded(situation, element))
+    element.childNodes.forEach(function (child) { prune(situation, child); });
+  else
     element.parentElement.removeChild(element);
-  } else {
-    element.childNodes.forEach(function (child) {
-      prune(situation, child);
-    });
-  }
 }
 
 function displaySituation(situation) {
