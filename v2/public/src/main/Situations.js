@@ -46,17 +46,17 @@ function nextSituation(direction) {
 }
 
 function onSituationKey(e) {
-    e = e || window.event;
-    if (!e.altKey)  return;
-    if (e.keyCode == '188') { // ',' key
-      if (Situations.index == -1)
-        Situations.index = 0;
-      nextSituation(-1);
-    }
-    if (e.keyCode == '190') { // '.' key
-      nextSituation(1);
-    }
+  e = e || window.event;
+  if (!e.altKey)  return;
+  if (e.keyCode == '188') { // ',' key
+    if (Situations.index == -1)
+      Situations.index = 0;
+    nextSituation(-1);
   }
+  if (e.keyCode == '190') { // '.' key
+    nextSituation(1);
+  }
+}
 
 function findSituations(result, element) {
   var classes = element.classList || [];
