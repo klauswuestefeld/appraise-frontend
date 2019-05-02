@@ -2,7 +2,6 @@
 
 const Situations = {};
 Situations.names = [];
-Situations.index = -1;
 
 function clearBody() {
   const elementsCopy = Array.from(document.body.childNodes);
@@ -40,26 +39,23 @@ function displaySituation(situation) {
   });
 }
 
-function nextSituation(direction) {
-  Situations.index = (Situations.index + direction) % Situations.names.length;
-  if (Situations.index == -1)
-    Situations.index = Situations.names.length -1;
+function refreshSituation() {
   const situation = Situations.names[Situations.index];
   window.location.hash = situation;
   displaySituation(situation);
 }
 
+function nextSituation(direction) {
+  Situations.index = (Situations.index + Situations.names.length + direction) % Situations.names.length;
+  refreshSituation();
+}
+
+// Alt+< and Alt+> keys
 function onSituationKey(e) {
   e = e || window.event;
   if (!e.altKey)  return;
-  if (e.keyCode == '188') { // ',' key
-    if (Situations.index == -1)
-      Situations.index = 0;
-    nextSituation(-1);
-  }
-  if (e.keyCode == '190') { // '.' key
-    nextSituation(1);
-  }
+  if (e.keyCode == '188') nextSituation(-1);
+  if (e.keyCode == '190') nextSituation( 1);
 }
 
 function findSituationNames(result, element) {
@@ -85,7 +81,9 @@ function initSituations() {
 
   if (Situations.isActive()) {
     document.onkeydown = onSituationKey;
-    displaySituation(window.location.hash.substr(1));
+    const name = window.location.hash.substr(1);
+    Situations.index = Situations.names.indexOf(name);
+    refreshSituation();
   }
 }
 
