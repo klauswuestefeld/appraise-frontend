@@ -1,13 +1,10 @@
-Resolver o TODO q coloquei no index.html
+CSS
+  Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
+  Criar situations (appraisals-empty, filled, etc)
 
-Fazer appraisals-empty e filled funcionarem de novo.
-
-Começar a fazer as chamadas pro backend:
+Business
   Login
   Logout
   Admin
   Appraisals
   Appraisal
-
-CSS:
-  Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
