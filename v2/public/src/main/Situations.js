@@ -79,9 +79,8 @@ function initSituations() {
   Situations.bodyElements = Array.from(document.body.childNodes);
   clearBody();
 
-  document.onkeydown = onSituationKey;
-
-  if (Situations.isActive())
+  if (Situations.isActive()) {
+    document.onkeydown = onSituationKey;
     displaySituation(window.location.hash.substr(1));
 }
 
