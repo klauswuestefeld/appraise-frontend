@@ -1,7 +1,7 @@
 'use strict';
 
 function cloneTemplateAsCardOnLevel(appraisal) {
-  var card = document.getElementById('id-card');
+  var card = document.getElementById('card-template');
   var newCard = card.cloneNode(true);
 
   newCard.id = 'card-' + appraisal.email;
@@ -10,6 +10,7 @@ function cloneTemplateAsCardOnLevel(appraisal) {
 
   var certaintyElementIndex = 5;
   for(var certainty = 0.2; certainty <= appraisal.certainty; certainty += 0.2) {
+    if (certainty == 1) break;
 		newCard.childNodes[certaintyElementIndex].classList.add('active');
 		certaintyElementIndex+=2;
   }
@@ -25,7 +26,7 @@ function showAppraisal(appraisal) {
 }
 
 function showAppraisals(appraisals) {
-  appraiseEmptyScreen();
+  displaySituation('sit-appraisals');
   appraisals.forEach(showAppraisal);
   scrollToLevel();
 }
@@ -51,6 +52,8 @@ function dragOver(event) {
 
 function drop(event) {
   event.preventDefault();
+  //{"certainty":0.2,"appraised":"cdmnkg@gmail.com","level":5}
   var id = event.dataTransfer.getData("card-id");
   event.target.appendChild(document.getElementById(id));
+  event.target.classList.remove('drag-target');
 }

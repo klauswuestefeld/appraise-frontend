@@ -29,7 +29,7 @@ function startSession(googleToken) {
   req.onload = function () {
     if (req.status === 200) {
       console.log('USER PROFILE:', req.response);
-      //fetchAppraisals(req.response.token);
+      fetchAppraisals(req.response.token);
     } else req.onerror();
   };
   req.send();
@@ -39,9 +39,13 @@ function onUserChanged(user) {
   console.log('USER',user);
 
   var isSignedIn = user.isSignedIn();
-  console.log('IS SIGNED IN:', isSignedIn); 
-  if (!isSignedIn)
-   return;
+  console.log('IS SIGNED IN:', isSignedIn);
+  if (!isSignedIn) {
+    displaySituation('sit-login');
+    return;
+  }
+
+  displaySituation('sit-appraisals');
 
   var profile = user.getBasicProfile();
   document.getElementById('user-name').innerHTML = profile.getName();
@@ -67,8 +71,6 @@ Percy.initAuth = function() {
           });
 
           Percy.auth2.then(function onInit() {
-            document.getElementById('logout').onclick = logoutClicked;
-            document.getElementById('login-button').onclick = loginClicked;
             Percy.auth2.currentUser.listen(onUserChanged);
             onUserChanged(Percy.auth2.currentUser.get());
           });

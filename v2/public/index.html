@@ -53,7 +53,7 @@
       Person's Name
     </button>
     <ul id='session-dropdown' class='dropdown-list sit-session-menu'>
-      <li id='logout'>Logout</li>
+      <li id='logout' onclick="logoutClicked()">Logout</li>
     </ul>
   </div>
 </div>
@@ -65,7 +65,7 @@
     <button id='send-magic'>SEND</button>
   </div>
   <p>or</p>
-  <button id='login-button'>
+  <button id='login-button' onclick='loginClicked()'>
     <img id='google-logo' src='static/googleLogo.png' alt='Avatar'>
     <span id='google-label'>Sign in with Google</span>
   </button>
