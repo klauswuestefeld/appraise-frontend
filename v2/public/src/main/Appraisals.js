@@ -30,3 +30,27 @@ function showAppraisals(appraisals) {
   scrollToLevel();
 }
 
+function dragStart(event) {
+  event.dataTransfer.setData("card-id", event.target.id);
+}
+
+function levelChanged(previousLevel, currentLevel) {
+  if (previousLevel)
+    previousLevel.classList.remove('drag-target');
+  currentLevel.classList.add('drag-target');
+}
+
+var previousDragTarget;
+function dragOver(event) {
+  event.preventDefault();
+  if (previousDragTarget == event.target)
+    return;
+  levelChanged(previousDragTarget, event.target);
+  previousDragTarget = event.target;
+}
+
+function drop(event) {
+  event.preventDefault();
+  var id = event.dataTransfer.getData("card-id");
+  event.target.appendChild(document.getElementById(id));
+}
