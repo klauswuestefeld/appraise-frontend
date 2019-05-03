@@ -86,4 +86,9 @@ function initSituations() {
   }
 }
 
-initSituations();
+function defaultSituation(situation) {
+  if (!Situations.isActive())
+    window.location.hash = situation;
+
+  initSituations();
+}
