@@ -21,8 +21,6 @@ function isIncluded(situation, element) {
   }));
 }
 
-
-// https://dictionary.cambridge.org/dictionary/english/prune TODO Delete this line.
 function prune(situation, element) {
   if (isIncluded(situation, element))
     element.childNodes.forEach(function (child) { prune(situation, child); });
@@ -83,6 +81,7 @@ function initSituations() {
     document.onkeydown = onSituationKey;
     const name = window.location.hash.substr(1);
     Situations.index = Situations.names.indexOf(name);
+    if (Situations.index == -1) Situations.index = 0;
     refreshSituation();
   }
 }
