@@ -9,7 +9,7 @@ div#certainty strong{
     }
   }
 
-.certainty-text {
+.certainty-text  {
     color: var(--percival-dark);
     font-size: 18px;
     margin-top: 25px;
