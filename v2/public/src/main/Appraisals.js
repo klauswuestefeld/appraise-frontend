@@ -45,16 +45,18 @@ function levelChanged(previousLevel, currentLevel) {
 
 var previousDragTarget;
 function dragOver(event) {
-  event.preventDefault();
-  if (previousDragTarget == event.target)
-    return;
-  levelChanged(previousDragTarget, event.target);
-  previousDragTarget = event.target;
+  var evTarget = event.target.id;
+  if (evTarget.startsWith('cards-level')){
+    event.preventDefault();
+    if (previousDragTarget == event.target)
+      return;
+    levelChanged(previousDragTarget, event.target);
+    previousDragTarget = event.target;
+  }
 }
 
 function drop(event) {
   event.preventDefault();
-  //{"certainty":0.2,"appraised":"cdmnkg@gmail.com","level":5}
   var id = event.dataTransfer.getData("card-id");
   event.target.appendChild(document.getElementById(id));
   event.target.classList.remove('drag-target');
