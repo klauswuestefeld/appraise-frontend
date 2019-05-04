@@ -34,7 +34,7 @@ function showAppraisals(appraisals) {
 }
 
 function dragStart(event) {
-  event.dataTransfer.setData("card-id", event.target.id);
+  event.dataTransfer.setData('card-id', event.target.id);
 }
 
 function levelChanged(previousLevel, currentLevel) {
@@ -57,7 +57,7 @@ function dragOver(event) {
 
 function drop(event) {
   event.preventDefault();
-  var id = event.dataTransfer.getData("card-id");
+  var id = event.dataTransfer.getData('card-id');
   event.target.appendChild(document.getElementById(id));
   event.target.classList.remove('drag-target');
 }
