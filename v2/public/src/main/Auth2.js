@@ -56,34 +56,41 @@ function onUserChanged(user) {
   startSession(googleToken);
 }
 
-function loginClicked()  { console.log('SIGN IN'); Percy.auth2.signIn(); }
-function logoutClicked() { console.log('SIGN OUT'); Percy.auth2.signOut(); loginScreen(); }
+function authFailure(error) {
+  if (error && error.error == 'popup_closed_by_user')
+    return;
+  console.log('ERROR', error);
+  alert('Google Authentication is not working at the moment. Please try again in a few minutes.');
+}
+
+function logoutClicked() { console.log('SIGN OUT'); Percy.auth2.signOut(); }
+function loginClicked()  { console.log('SIGN IN' ); Percy.auth2.signIn().catch(authFailure); }
+
+function initAuthClient() {
+  try {
+      Percy.auth2 = gapi.auth2.init({
+          client_id: '902472309288-h34e3l0vo9e3bkr4dc29f4bco99q0t9s.apps.googleusercontent.com' //Appraise
+          //client_id: '696992508397-9pna2ebcfkt3olr2hukd9q95v21t1iud.apps.googleusercontent.com' //Percival
+      });
+
+      Percy.auth2.then(function onInit() {
+        Percy.auth2.currentUser.listen(onUserChanged);
+        onUserChanged(Percy.auth2.currentUser.get());
+      }, authFailure);
+  } catch (error) {
+      if (error.message.includes('cookiePolicy'))
+        alert('To use Google Auth you must serve the page using http(s), not file://');
+      else
+        authFailure(error);
+  }
+}
+
 
 Percy.initAuth = function() {
-
-  console.log('GOOGLE API LOAD');
-
-  gapi.load('auth2', { callback: function() {
-      try {
-          Percy.auth2 = gapi.auth2.init({
-              client_id: '902472309288-h34e3l0vo9e3bkr4dc29f4bco99q0t9s.apps.googleusercontent.com' //Appraise
-              //client_id: '696992508397-9pna2ebcfkt3olr2hukd9q95v21t1iud.apps.googleusercontent.com' //Percival
-          });
-
-          Percy.auth2.then(function onInit() {
-            Percy.auth2.currentUser.listen(onUserChanged);
-            onUserChanged(Percy.auth2.currentUser.get());
-          });
-      } catch (err) {
-          console.log(err.message);
-          if (err.message.includes('cookiePolicy'))
-              console.log('Serve using http server to avoid this error.');
-      }
-
-  }, onerror: function() {
-    console.log('Error on Google API');
-  }, timeout: 5000
-  , ontimeout: function() {
-    console.log('Timeout on Google API');
-  }});
+  gapi.load('auth2', {
+    callback: initAuthClient,
+    onerror: authFailure,
+    timeout: 5000,
+    ontimeout: authFailure
+  });
 };
