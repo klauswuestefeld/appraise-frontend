@@ -56,6 +56,10 @@ function onUserChanged(user) {
   startSession(googleToken);
 }
 
+function getAuth() {
+  return gapi.auth2.getAuthInstance();
+}
+
 function authFailure(error) {
   if (error && error.error == 'popup_closed_by_user')
     return;
@@ -63,19 +67,14 @@ function authFailure(error) {
   alert('Google Authentication is not working at the moment. Please try again in a few minutes.');
 }
 
-function logoutClicked() { console.log('SIGN OUT'); Percy.auth2.signOut(); }
-function loginClicked()  { console.log('SIGN IN' ); Percy.auth2.signIn().catch(authFailure); }
+function logoutClicked() { console.log('SIGN OUT'); getAuth().signOut(); }
+function loginClicked()  { console.log('SIGN IN' ); getAuth().signIn().catch(authFailure); }
 
-function initAuthClient() {
+function initAuthClient(clientId) {
   try {
-      Percy.auth2 = gapi.auth2.init({
-          client_id: '902472309288-h34e3l0vo9e3bkr4dc29f4bco99q0t9s.apps.googleusercontent.com' //Appraise
-          //client_id: '696992508397-9pna2ebcfkt3olr2hukd9q95v21t1iud.apps.googleusercontent.com' //Percival
-      });
-
-      Percy.auth2.then(function onInit() {
-        Percy.auth2.currentUser.listen(onUserChanged);
-        onUserChanged(Percy.auth2.currentUser.get());
+      gapi.auth2.init({ client_id: clientId }).then(function onInit() {
+        getAuth().currentUser.listen(onUserChanged);
+        onUserChanged(getAuth().currentUser.get());
       }, authFailure);
   } catch (error) {
       if (error.message.includes('cookiePolicy'))
@@ -85,10 +84,9 @@ function initAuthClient() {
   }
 }
 
-
-Percy.initAuth = function() {
+function initAuth(clientId) {
   gapi.load('auth2', {
-    callback: initAuthClient,
+    callback: function() { initAuthClient(clientId) },
     onerror: authFailure,
     timeout: 5000,
     ontimeout: authFailure
