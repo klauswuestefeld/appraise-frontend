@@ -1,59 +1,24 @@
 'use strict';
 
-function fetchAppraisals(sessionToken) {
-  var req = new XMLHttpRequest();
-  req.open('GET', 'http://api.appraise.live:8080/api/appraisals', true); //TODO: Make relative.
-  req.setRequestHeader('auth', sessionToken);
-  req.responseType = 'json';
-  req.timeout = 5000;
-  req.onerror = req.ontimeout = function () {
-    console.log('Error on fetching appraisals', req.status, req.statusText);
+var onAuthUserChanged;
+
+function highLevelUser(gUser) {
+  const profile = gUser.getBasicProfile();
+  return {
+    name:         profile.getName(),
+    email:        profile.getEmail(),
+    picture:      profile.getImageUrl(),
+    googletoken:  gUser.getAuthResponse().id_token
   };
-  req.onload = function () {
-    if (req.status === 200) {
-      console.log('APPRAISALS:', req.response);
-      showAppraisals(req.response);
-    } else req.onerror();
-  };
-  req.send();
 }
 
-function startSession(googleToken) {
-  var req = new XMLHttpRequest();
-  req.open('GET', 'http://api.appraise.live:8080/auth-google?google-id-token=' + googleToken, true); //TODO: Make relative.
-  req.responseType = 'json';
-  req.timeout = 5000;
-  req.onerror = req.ontimeout = function () {
-    console.log('Error on backend auth', req.status, req.statusText);
-  };
-  req.onload = function () {
-    if (req.status === 200) {
-      console.log('USER PROFILE:', req.response);
-      fetchAppraisals(req.response.token);
-    } else req.onerror();
-  };
-  req.send();
-}
+function onGoogleUserChanged(gUser) {
+  console.log('GOOGLE USER', gUser);
+  console.log('IS SIGNED IN:', gUser.isSignedIn());
 
-function onUserChanged(user) {
-  console.log('USER',user);
-
-  var isSignedIn = user.isSignedIn();
-  console.log('IS SIGNED IN:', isSignedIn);
-  if (!isSignedIn) {
-    displaySituation('sit-login');
-    return;
-  }
-
-  displaySituation('sit-appraisals');
-
-  var profile = user.getBasicProfile();
-  document.getElementById('user-name').innerHTML = profile.getName();
-  document.getElementById('user-picture').src = profile.getImageUrl();
-
-  var googleToken = user.getAuthResponse().id_token;
-  console.log('GOOGLE AUTH TOKEN', googleToken);
-  startSession(googleToken);
+  onAuthUserChanged(gUser.isSignedIn()
+    ? highLevelUser(gUser)
+    : null);
 }
 
 function getAuth() {
@@ -67,26 +32,32 @@ function authFailure(error) {
   alert('Google Authentication is not working at the moment. Please try again in a few minutes.');
 }
 
-function logoutClicked() { console.log('SIGN OUT'); getAuth().signOut(); }
-function loginClicked()  { console.log('SIGN IN' ); getAuth().signIn().catch(authFailure); }
+function loginClicked() { getAuth().signIn().catch(authFailure); }
+function logoutClicked() {
+  getAuth().signOut().then(function () {
+    location.reload(); // Removes any remaining session info.
+  });
+}
 
-function initAuthClient(clientId) {
+
+function initAuthClient(clientId, onUserChanged) {
   try {
-      gapi.auth2.init({ client_id: clientId }).then(function onInit() {
-        getAuth().currentUser.listen(onUserChanged);
-        onUserChanged(getAuth().currentUser.get());
-      }, authFailure);
+    gapi.auth2.init({ client_id: clientId }).then(function onInit() {
+      onAuthUserChanged = onUserChanged;
+      getAuth().currentUser.listen(onGoogleUserChanged);
+      onGoogleUserChanged(getAuth().currentUser.get());
+    }, authFailure);
   } catch (error) {
-      if (error.message.includes('cookiePolicy'))
-        alert('To use Google Auth you must serve the page using http(s), not file://');
-      else
-        authFailure(error);
+    if (error.message.includes('cookiePolicy'))
+      alert('To use Google Auth you must serve the page using http(s), not file://');
+    else
+      authFailure(error);
   }
 }
 
-function initAuth(clientId) {
+function initAuth(clientId, onUserChanged) {
   gapi.load('auth2', {
-    callback: function() { initAuthClient(clientId) },
+    callback: function() { initAuthClient(clientId, onUserChanged) },
     onerror: authFailure,
     timeout: 5000,
     ontimeout: authFailure
