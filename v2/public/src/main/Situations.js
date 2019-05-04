@@ -6,6 +6,8 @@ Situations.names = [];
 function clearBody() {
   const elementsCopy = Array.from(document.body.childNodes);
   elementsCopy.forEach(function (element) {
+    if (element.tagName == 'IFRAME')  //GoogleAuth uses an iframe to control signin and signout.
+      return;
     document.body.removeChild(element);
   });
 }
