@@ -37,14 +37,17 @@ div#certainty strong{
    }
  }
 
+#certainty-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20vh;
+}
+
 .certainty-button{
    background-color: var(--percival-primary);
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    color:white;
    font-size: 16px;
-   float: left;
-   margin-right: 5px;
-   margin-top: 80px;
    border-radius:6px;
    padding: 50px;
  }
@@ -89,30 +92,6 @@ div#certainty strong{
    padding: 50px;
    text-align: center;
  }*/
-
-.zero-percent{
-  background-color: pink;
- }
-
-.twenty-percent{
-  background-color: pink;
- }
-
-.forty-percent{
-  background-color: pink;
- }
-
-.sixty-percent{
-  background-color: pink;
- }
-
-.eigthy-percent{
-  background-color: pink;
- }
-
-.hundred-percent{
-  background-color: pink;
- }
 
 .modal-doing-content {
   background-color: #aaa;
