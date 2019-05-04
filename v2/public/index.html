@@ -16,18 +16,19 @@
   <link rel='stylesheet' href='css/appraisals.css'>
   <link rel='stylesheet' href='css/certainty.css'>
 
-  <script src='https://apis.google.com/js/platform.js?onload=init' async defer></script>
+  <script defer src='https://apis.google.com/js/platform.js'></script>
 
-  <script src='src/main/Percy.js'></script>
-  <script src='src/main/Appraisals.js'></script>
-  <script src='src/main/Auth2.js'></script>
-  <script src='src/main/Transition.js'></script>
-  <script src='src/main/GhostCards.js'></script>
-  <script src='src/main/Swtclass.js'></script>
-  <script src='src/main/DisabledButton.js'></script>
-  <script src='src/main/Dropdown.js'></script>
-  <script src='src/main/ScrollToLevel.js'></script>
-  <script src='src/main/Launcher.js'></script>
+  <script defer src='src/main/Situations.js' onload="initSituations()"></script>
+  <script defer src='src/main/Percy.js'></script>
+  <script defer src='src/main/Appraisals.js'></script>
+  <script defer src='src/main/Auth2.js'></script>
+  <script defer src='src/main/Transition.js'></script>
+  <script defer src='src/main/GhostCards.js'></script>
+  <script defer src='src/main/Swtclass.js'></script>
+  <script defer src='src/main/DisabledButton.js'></script>
+  <script defer src='src/main/Dropdown.js'></script>
+  <script defer src='src/main/ScrollToLevel.js'></script>
+  <script defer src='src/main/Launcher.js' onload="initLauncher()"></script>
 
 </head>
 
@@ -246,7 +247,5 @@ marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
 </footer>
 
 </body>
-
-<script src='src/main/Situations.js'></script>
 
 </html>
