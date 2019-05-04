@@ -6,7 +6,7 @@ function cloneTemplateAsCardOnLevel(appraisal) {
 
   newCard.id = 'card-' + appraisal.email;
   if (appraisal.picture === undefined)
-    appraisal.picture = 'http://www.banzeiros.com.br/data/uploads/2018/04/perfil_usuario_vazio.jpg';
+    appraisal.picture = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
   newCard.childNodes[1].src = appraisal.picture;
   newCard.childNodes[3].innerHTML = appraisal.name;
 
