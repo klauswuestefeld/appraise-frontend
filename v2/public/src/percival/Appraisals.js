@@ -56,9 +56,14 @@ function dragOver(event) {
 }
 
 function drop(event) {
+  var cardId = event.dataTransfer.getData('card-id');
+  var card = document.getElementById(cardId);
+  var appraiseId = cardId.substring(5);
+  var appraiseCertainty = card.getElementsByClassName('active').length * 0.2;
+  var appraiseLevel =   event.target.id.substring(11);
+  backendPost('appraise', '{"certainty":'+appraiseCertainty+',"appraised":"'+appraiseId+'","level":'+appraiseLevel+'}');
   event.preventDefault();
-  var id = event.dataTransfer.getData('card-id');
-  event.target.appendChild(document.getElementById(id));
+  event.target.appendChild(card);
   event.target.classList.remove('drag-target');
 }
 

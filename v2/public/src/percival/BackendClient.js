@@ -21,6 +21,23 @@ function backendGet(endpoint, onJsonResponse) {
   req.send();
 }
 
+function backendPost(endpoint, postContent) {
+  var req = new XMLHttpRequest();
+  req.open('POST', 'http://api.appraise.live:8080/api/' + endpoint, true);
+  req.setRequestHeader('auth', backendToken);
+  req.setRequestHeader("Content-Type", "application/json");
+  req.timeout = 5000;
+  req.onerror = req.ontimeout = function () {
+    console.log('Error on endpoint ' + endpoint, req.status, req.statusText);
+    alert('Something went wrong. Check your internet connection and retry in a few minutes.');
+  };
+  req.onload = function () {
+    if (req.status === 200) {
+      console.log(endpoint, req.response);
+    } else req.onerror();
+  };
+  req.send(postContent);
+}
 
 function openBackendSession(googleToken, onSuccess) {
   console.log('GOOGLE USER TOKEN', googleToken);
