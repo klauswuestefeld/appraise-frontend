@@ -1,6 +1,9 @@
 CSS
+  Usar porcentagens mesmo nos labels dos levels.
+    O label do nivel central é:
+          100%
+      (YOUR LEVEL)
   Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
-  Criar situations (appraisals-empty, filled, etc)
 
 Business
   Logout
