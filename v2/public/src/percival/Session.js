@@ -43,8 +43,6 @@ function onUserChanged(user) {
     return;
   }
 
-  displaySituation('sit-appraisals');
-
   document.getElementById('user-name').innerHTML = user.name;
   document.getElementById('user-picture').src = user.picture;
 
