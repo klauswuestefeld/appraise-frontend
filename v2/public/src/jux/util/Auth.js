@@ -32,13 +32,8 @@ function authFailure(error) {
   alert('Google Authentication is not working at the moment. Please try again in a few minutes.');
 }
 
-function loginClicked() { getAuth().signIn().catch(authFailure); }
-function logoutClicked() {
-  getAuth().signOut().then(function () {
-    location.reload(); // Removes any remaining session info.
-  });
-}
-
+function loginClicked()  { getAuth().signIn().catch(authFailure); }
+function logoutClicked() { getAuth().signOut(); }
 
 function initAuthClient(clientId, onUserChanged) {
   try {

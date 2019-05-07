@@ -3,8 +3,13 @@ CSS
   Criar situations (appraisals-empty, filled, etc)
 
 Business
-  Login
   Logout
+    Implementar o dropdown de logout logoutClicked().
+  BackendClient
+    Dar uma olhada na arquitetura: https://docs.google.com/drawings/d/1ORYaCSWUx-hHsqL32xdvJB7Oxa9o8Pq6B0b9djQRbow/edit?usp=sharing
+    Ver na implementacao do fetchAppraisals como ficou facil usar o BackendClient.
+    Implementar o backendPost, similar ao backendGet, qdo necessario. Acho que salvar o appraisal vai usar um POST.
+    Eliminar a duplicação que tem entre as funcoes do BackendClient.
   Admin
   Appraisals
   Appraisal

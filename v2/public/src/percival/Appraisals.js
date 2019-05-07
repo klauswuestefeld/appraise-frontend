@@ -61,3 +61,7 @@ function drop(event) {
   event.target.appendChild(document.getElementById(id));
   event.target.classList.remove('drag-target');
 }
+
+function fetchAppraisals() {
+  backendGet('appraisals', showAppraisals);
+}
