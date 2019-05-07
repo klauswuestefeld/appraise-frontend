@@ -16,3 +16,10 @@ Business
   Admin
   Appraisals
   Appraisal
+    Manter os numeros do backend antigo:
+      None      = Mesma logica do antigo delete
+      Very Low  = 0.2
+      Low       = 0.4
+      High      = 0.6
+      Very High = 0.8 (Na hora de salvar de volta, vira 1.0 mesmo, nao precisamos nos preocupar em manter o 0.8)
+      Very High = 1.0
