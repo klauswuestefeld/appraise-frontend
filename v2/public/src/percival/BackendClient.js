@@ -25,7 +25,7 @@ function backendPost(endpoint, postContent) {
   var req = new XMLHttpRequest();
   req.open('POST', 'http://api.appraise.live:8080/api/' + endpoint, true);
   req.setRequestHeader('auth', backendToken);
-  req.setRequestHeader("Content-Type", "application/json");
+  req.setRequestHeader('Content-Type', 'application/json');
   req.timeout = 5000;
   req.onerror = req.ontimeout = function () {
     console.log('Error on endpoint ' + endpoint, req.status, req.statusText);

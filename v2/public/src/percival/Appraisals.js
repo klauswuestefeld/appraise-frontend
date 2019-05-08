@@ -61,7 +61,7 @@ function drop(event) {
   var appraiseId = cardId.substring(5);
   var appraiseCertainty = card.getElementsByClassName('active').length * 0.2;
   var appraiseLevel =   event.target.id.substring(11);
-  backendPost('appraise', '{"certainty":'+appraiseCertainty+',"appraised":"'+appraiseId+'","level":'+appraiseLevel+'}');
+  backendPost('appraise', '{'certainty':'+appraiseCertainty+','appraised':''+appraiseId+'','level':'+appraiseLevel+'}');
   event.preventDefault();
   event.target.appendChild(card);
   event.target.classList.remove('drag-target');
