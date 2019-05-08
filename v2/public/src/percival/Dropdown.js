@@ -1,11 +1,8 @@
-/*'use strict';
-window.addEventListener('load', function() {
-  document.getElementById('situation-dropdown').onclick = function() {myFunction()};
-});
+'use strict';
 
-
-function myFunction() {
-  document.getElementById('session-dropdown').classList.toggle('show');
+function dropdownProfile() {
+  console.log('DROPDOWN', document.getElementById('profile-dropdown'));
+  document.getElementById('profile-dropdown').classList.toggle('show');
 }
 
 window.onclick = function(event) {
@@ -20,6 +17,3 @@ window.onclick = function(event) {
     }
   }
 }
-*/
-
-//document.getElementById('session-dropdown').classList.toggle('show');
