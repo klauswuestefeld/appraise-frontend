@@ -5,7 +5,7 @@ function cloneTemplateAsCardOnLevel(appraisal) {
   var newCard = card.cloneNode(true);
 
   newCard.id = 'card-' + appraisal.email;
-  if (appraisal.picture === undefined)
+  if (appraisal.picture == undefined)
     appraisal.picture = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
   newCard.childNodes[1].src = appraisal.picture;
   newCard.childNodes[3].innerHTML = appraisal.name;
@@ -46,7 +46,7 @@ function levelChanged(previousLevel, currentLevel) {
 var previousDragTarget;
 function dragOver(event) {
   var evTarget = event.target.id;
-  if (evTarget.startsWith('cards-level')){
+  if (evTarget.startsWith('cards-level')) {
     event.preventDefault();
     if (previousDragTarget == event.target)
       return;
@@ -61,10 +61,14 @@ function drop(event) {
   var appraiseId = cardId.substring(5);
   var appraiseCertainty = card.getElementsByClassName('active').length * 0.2;
   var appraiseLevel =   event.target.id.substring(11);
-  backendPost('appraise', '{'certainty':'+appraiseCertainty+','appraised':''+appraiseId+'','level':'+appraiseLevel+'}');
-  event.preventDefault();
-  event.target.appendChild(card);
-  event.target.classList.remove('drag-target');
+  backendPost(
+    'appraise', 
+    '{"certainty":' + appraiseCertainty + ',"appraised":"' + appraiseId + '","level":' + appraiseLevel + '}', 
+    function(response) {
+      event.preventDefault();
+      event.target.appendChild(card);
+      event.target.classList.remove('drag-target');
+    });
 }
 
 function fetchAppraisals() {

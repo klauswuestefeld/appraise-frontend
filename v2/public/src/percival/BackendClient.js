@@ -21,7 +21,7 @@ function backendGet(endpoint, onJsonResponse) {
   req.send();
 }
 
-function backendPost(endpoint, postContent) {
+function backendPost(endpoint, postContent, onJsonResponse) {
   var req = new XMLHttpRequest();
   req.open('POST', 'http://api.appraise.live:8080/api/' + endpoint, true);
   req.setRequestHeader('auth', backendToken);
@@ -34,6 +34,7 @@ function backendPost(endpoint, postContent) {
   req.onload = function () {
     if (req.status === 200) {
       console.log(endpoint, req.response);
+      onJsonResponse(req.response);
     } else req.onerror();
   };
   req.send(postContent);
