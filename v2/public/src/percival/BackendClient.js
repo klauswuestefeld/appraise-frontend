@@ -2,10 +2,11 @@
 
 var backendToken;
 
-function backendGet(endpoint, onJsonResponse) {
+function backendRequest(requestType, endpoint, postContent, onJsonResponse) {
   var req = new XMLHttpRequest();
-  req.open('GET', 'http://api.appraise.live:8080/api/' + endpoint, true);
+  req.open(requestType, 'http://api.appraise.live:8080/api/' + endpoint, true);
   req.setRequestHeader('auth', backendToken);
+  req.setRequestHeader('Content-Type', 'application/json');
   req.responseType = 'json';
   req.timeout = 5000;
   req.onerror = req.ontimeout = function () {
@@ -18,26 +19,15 @@ function backendGet(endpoint, onJsonResponse) {
       onJsonResponse(req.response);
     } else req.onerror();
   };
-  req.send();
+  req.send(postContent);
+}
+
+function backendGet(endpoint, onJsonResponse) {
+  backendRequest('GET', endpoint, undefined, onJsonResponse);
 }
 
 function backendPost(endpoint, postContent, onJsonResponse) {
-  var req = new XMLHttpRequest();
-  req.open('POST', 'http://api.appraise.live:8080/api/' + endpoint, true);
-  req.setRequestHeader('auth', backendToken);
-  req.setRequestHeader('Content-Type', 'application/json');
-  req.timeout = 5000;
-  req.onerror = req.ontimeout = function () {
-    console.log('Error on endpoint ' + endpoint, req.status, req.statusText);
-    alert('Something went wrong. Check your internet connection and retry in a few minutes.');
-  };
-  req.onload = function () {
-    if (req.status === 200) {
-      console.log(endpoint, req.response);
-      onJsonResponse(req.response);
-    } else req.onerror();
-  };
-  req.send(postContent);
+  backendRequest('POST', endpoint, postContent, onJsonResponse);
 }
 
 function openBackendSession(googleToken, onSuccess) {
