@@ -34,13 +34,5 @@ body {
 .force-display-none {display: none !important;}
 
 
- .keep-cards{
-  width: calc(100% - 100px);
-  line-height: 25px;
-  min-height: 90px;
-  float: left;
- }
-
-
 
 
