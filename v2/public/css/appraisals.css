@@ -3,7 +3,7 @@
 #appraisals{
   padding-top:50px;
   padding-bottom:50px;
- }
+}
 
 .level {
   margin-left:50px;
@@ -16,15 +16,15 @@
 }
 @media only screen and (max-width:500px){
   .level {
-    width:95%;
-    margin-left:10px;
-    height: 75px;
+     width:95%;
+     margin-left:10px;
+     height: 75px;
   }
 }
+
 .level + .level {
   border-top:2px dashed #aaa;
- }
-
+}
 
 .your-level{
   color:var(--percival-secondary);
@@ -32,14 +32,14 @@
   font-size:15px;
   margin-bottom: 10px;
   margin-right: 25px;
- }
-  @media only screen and (max-width:500px){
-    .your-level {
-      width:20px;
-      margin-left: 20px;
-      margin-top:25px;
-    }
+}
+@media only screen and (max-width:500px) {
+  .your-level {
+    width:20px;
+    margin-left: 20px;
+    margin-top:25px;
   }
+}
 
 .level-label{
   display:flex;
@@ -47,7 +47,14 @@
   margin-top: 30px;
   width:5%;
   float: left;
- }
+}
+
+.keep-cards{
+  width: calc(100% - 100px);
+  line-height: 25px;
+  min-height: 90px;
+  float: left;
+}
 
 .card{
   display:flex;
@@ -64,22 +71,22 @@
   height:60px;
   text-align: left;
   line-height: 25px;
- }
-  @media only screen and (max-width:502px){
-    .card {
-     width:25%;
-     margin-left: 40px;
-     margin-top: 10px;
-     height: 50px;
-     text-align: center;
-    }
+}
+@media only screen and (max-width:502px){
+  .card {
+    width:25%;
+    margin-left: 40px;
+    margin-top: 10px;
+    height: 50px;
+    text-align: center;
   }
-  @media only screen and (max-height:500px){
-    .card {
-     width:25%;
-     margin-left: 15%;
-    }
+}
+@media only screen and (max-height:500px){
+  .card {
+    width:25%;
+    margin-left: 15%;
   }
+}
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -104,12 +111,12 @@
 
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
- }
-  @media only screen and (max-width:499px){
-    .modal {
-      z-index:0;
-    }
+}
+@media only screen and (max-width:499px){
+  .modal {
+    z-index:0;
   }
+}
 
 .modal-content{
   width: 80%;
@@ -119,12 +126,12 @@
   background-color: var(--percival-background);
   padding: 5vh;
   border: 1px solid #888;
- }
-  @media only screen and (max-width:499px){
-    .modal-content {
-      height: 35%;
-      width:100%;
-      margin-top: 90%;
-      border:none;
-    }
+}
+@media only screen and (max-width:499px){
+  .modal-content {
+    height: 35%;
+    width:100%;
+    margin-top: 90%;
+    border:none;
   }
+}
