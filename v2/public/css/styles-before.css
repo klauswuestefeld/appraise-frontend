@@ -33,25 +33,6 @@ body {
 /**** Scenario Control */
 .force-display-none {display: none !important;}
 
-#situations {
-
-  background: #F0F0F0;
-
-  line-height: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  border-bottom-color: gray;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-}
-
-#situations > button{
-  color: grey;
-  font-size: 12px;
-  padding:12px;
-}
 
  .keep-cards{
   width: calc(100% - 100px);
