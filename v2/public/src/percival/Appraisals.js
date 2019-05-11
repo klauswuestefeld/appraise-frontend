@@ -6,8 +6,11 @@ function cloneTemplateAsCardOnLevel(appraisal) {
 
   newCard.id = 'card-' + appraisal.email;
 
-  if (appraisal.picture != undefined) newCard.childNodes[1].src = appraisal.picture;
-  else newCard.childNodes[1].src = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
+  //TODO Usar operador ternario aqui
+  if (appraisal.picture != undefined)
+    newCard.childNodes[1].src = appraisal.picture;
+  else
+    newCard.childNodes[1].src = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
 
   newCard.childNodes[3].innerHTML = appraisal.name;
 
