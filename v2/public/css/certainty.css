@@ -1,41 +1,39 @@
-/*Certainty*/
-
-div#certainty strong{
-    font: 20px sans-serif;
+div#certainty strong {
+  font: 20px sans-serif;
+}
+@media only screen and (max-width:499px){
+  div#certainty strong {
+    font-size: 16px;
   }
- @media only screen and (max-width:499px){
-   div#certainty strong {
-     font-size: 16px;
-    }
-  }
+}
 
 .certainty-text  {
-    color: var(--percival-dark);
-    font-size: 20px;
-    margin-top: 30px;
- }
-  @media only screen and (max-width:499px){
-   .certainty-text {
-     font-size: 16px;
-     margin-top: 14px;
-   }
- }
+  color: var(--percival-dark);
+  font-size: 20px;
+  margin-top: 30px;
+}
+@media only screen and (max-width:499px){
+  .certainty-text {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+}
 
 .circle-certainty{
-   border-radius: 50%;
-   width: 60px;
-   height: 60px;
-   overflow: hidden;
-   float: left;
-   margin: 8px 10px 0px 8px;
-   margin-left: 40px;
-   margin-top: 35px;
- }
-  @media only screen and (max-width:499px){
-   .circle-certainty {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  float: left;
+  margin: 8px 10px 0px 8px;
+  margin-left: 40px;
+  margin-top: 35px;
+}
+@media only screen and (max-width:499px){
+  .circle-certainty {
      display:none;
-   }
- }
+  }
+}
 
 #certainty-buttons {
   display: flex;
@@ -44,23 +42,23 @@ div#certainty strong{
 }
 
 .certainty-button{
-   background-color: var(--percival-primary);
-   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-   color:white;
-   font-size: 16px;
-   border-radius:6px;
-   padding: 50px;
- }
-  @media only screen and (max-width:499px){
-   .certainty-button {
-     display:flex;
-     justify-content: row;
-     padding: 9px;
-     margin-left: 1px;
-     margin-right: 1px;
-     margin-top: 20%;
-   }
- }
+  background-color: var(--percival-primary);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color:white;
+  font-size: 16px;
+  border-radius:6px;
+  padding: 50px;
+}
+@media only screen and (max-width:499px){
+  .certainty-button {
+    display:flex;
+    justify-content: row;
+    padding: 9px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 20%;
+  }
+}
 
 .certainty-icon{
   width:3px;
@@ -71,12 +69,12 @@ div#certainty strong{
   margin: 1px;
   margin-top: 46px;
   padding: 5px;
-  }
+}
 
 .certainty-icon.active {
-   background-color: var(--percival-primary);
-   border-color: var(--percival-primary);
-  }
+  background-color: var(--percival-primary);
+  border-color: var(--percival-primary);
+}
 
  /*.certainty-button-active{
    display:flex;
@@ -101,12 +99,12 @@ div#certainty strong{
   margin: auto;
   border: 1px solid gray;
   color:white;
- }
- @media only screen and (max-width:499px){
-   .modal-doing-content {
-     display:none;
-   }
- }
+}
+@media only screen and (max-width:499px){
+  .modal-doing-content {
+    display:none;
+  }
+}
 
 /*.modal-doing-buttons-{
   width: 8%;
