@@ -3,6 +3,7 @@ CSS
     O label do nivel central é:
           100%
       (YOUR LEVEL)
+  Tirar todas as media queries e fazermos responsividade depois, para a proxima versao.
   Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
 
 Business
