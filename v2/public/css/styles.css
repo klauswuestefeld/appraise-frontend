@@ -12,6 +12,12 @@ body {
   background-color: var(--percival-background);
 }
 
+h2  {
+  color: var(--percival-primary);
+  font-size:   28px;
+  line-height: 28px;
+  font-weight: bold;
+}
 
 /**** Footer */
 
