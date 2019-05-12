@@ -7,22 +7,15 @@ CSS
   Revisar pointer de todos os itens (setinha, maozinha, cursor de texto)
 
 Business
-  URGENTE: < < < < < < <
-    Bug
-      Nao pode haver aspas simples dentro de string c aspas simples: <script defer src='src/jux/util/Situations.js' onload='defaultSituation('sit-appraisals')'></script>
-        (Manter o index-test sempre funcionando)
-    Refactoring:
-      Session e BackendClient foram juntadas, criando ciclos de dependencia entre Appraisals e BackendClient e fazendo BackendClient saber de situations e elementos de tela (user name and pic).
-        Extrair Session de novo. O conceito dela é um controle total da sessao no alto nivel, incluindo elementos de tela, nao usa sessao de baixo nivel só de conexao com o backend.
+  Refactoring:
+    Session e BackendClient foram juntadas, criando ciclos de dependencia entre Appraisals e BackendClient e fazendo BackendClient saber de situations e elementos de tela (user name and pic).
+      Extrair Session de novo. O conceito dela é um controle total da sessao no alto nivel, incluindo elementos de tela. Ela nao é uma sessao de baixo nivel só de conexao com o backend.
+      Ver arquitetura: https://docs.google.com/drawings/d/1ORYaCSWUx-hHsqL32xdvJB7Oxa9o8Pq6B0b9djQRbow/edit?usp=sharing
   Logout
     Implementar o dropdown de logout logoutClicked().
       Ver o TODO no index.html
       Fazer aparecer na sit-session-menu (sempre fazer as coisas aparecerem em alguma situation no index-test.html antes de implementar, senao fica lento o ciclo de dev do CSS e nao consigo testar offline sem acesso ao GoogleAuth, como estou agora no aviao :)
   BackendClient
-    Dar uma olhada na arquitetura: https://docs.google.com/drawings/d/1ORYaCSWUx-hHsqL32xdvJB7Oxa9o8Pq6B0b9djQRbow/edit?usp=sharing
-    Ver na implementacao do fetchAppraisals como ficou facil usar o BackendClient.
-    Implementar o backendPost, similar ao backendGet, qdo necessario. Acho que salvar o appraisal vai usar um POST.
-    Eliminar a duplicação que tem entre as funcoes do BackendClient.
   Admin
   Appraisals
   Appraisal
