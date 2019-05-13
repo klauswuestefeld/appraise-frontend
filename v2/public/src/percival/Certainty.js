@@ -1,4 +1,4 @@
-'use  strict'
+'use  strict';
 
 function showModal(){
 	var notModalContent = document.getElementById('certainty');

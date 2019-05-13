@@ -64,7 +64,7 @@ function drop(event) {
   var card = document.getElementById(cardId);
   var appraiseId = cardId.substring(5);
   var appraiseCertainty = card.getElementsByClassName('active').length * 0.2;
-  var appraiseLevel =   event.target.id.substring(11);
+  var appraiseLevel = event.target.id.substring(11);
   backendPost(
     'appraise', 
     '{"certainty":' + appraiseCertainty + ',"appraised":"' + appraiseId + '","level":' + appraiseLevel + '}', 
