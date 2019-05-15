@@ -25,7 +25,7 @@
   padding: 40px;
 }
 
-#certainty p {
+#certainty-modal p {
   color: var(--percival-primary);
   font-size: 14px;
 }
@@ -39,7 +39,7 @@
   margin: 0px 35px 45px 30px;
 }
 
-#certainty #certainty-persons-name {
+#certainty-modal #certainty-person-name {
   color: var(--percival-secondary);
   font-size: 24px;
   line-height: 24px;

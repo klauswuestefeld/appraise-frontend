@@ -160,7 +160,7 @@ marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
     <div id='id-your-level' class='your-level'>YOUR LEVEL</div>
   </div>
   <div id='cards-level0' ondragover='dragOver(event)' ondrop='drop(event)' class='keep-cards'>
-    <div id='card-template' onclick='showModal(this.id)' draggable='true' ondragstart='dragStart(event)' class='card'>
+    <div id='card-template' onclick='showModal(this.id)' draggable='true' ondragstart='dragStart(event)' class='card force-display-none'>
       <img class='circle' src='https://image.shutterstock.com/image-vector/thinking-head-sign-vector-icon-450w-1165460371.jpg' alt='Avatar'>
       <p id='name-person'>Person's Name</p>
       <div class='certainty-icon'></div>
@@ -231,19 +231,26 @@ marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
     <div id='cards-level-10' ondragover='dragOver(event)' ondrop='drop(event)' class='keep-cards'></div>
   </div>
  <!-- sit-appraisals-certainty -->
-  <div id='certainty' class='modal force-display-none'>
+  <div id='certainty-modal' class='modal force-display-none'>
     <div class='modal-content'>
-      <img class='circle-certainty' src='https://image.shutterstock.com/image-vector/thinking-head-sign-vector-icon-450w-1165460371.jpg' alt='Avatar'><strong>Person's Name</strong>
-      <br><p class='certainty-text'>Certainty</p><br>
-      <p class='certainty-text'>Level: 0</p>
-      <button class='certainty-button'>None</button>
-      <button class='certainty-button'>Low</button>
-      <button class='certainty-button'>Medium</button>
-      <button class='certainty-button'>High</button>
-      <button class='certainty-button'>Absolute</button>
+      <img id='certainty-person-picture' class='circle-certainty' src='https://image.shutterstock.com/image-vector/thinking-head-sign-vector-icon-450w-1165460371.jpg' alt='Avatar'>
+      <p id='certainty-person-name'>Person's Name<p>
+      <p>How high is your certainty when appraising this person?</p>
+      <div id='certainty-buttons'>
+        <div class='certainty-button-with-explanation'>
+          <button id='certainty-0' class='certainty-button' onclick='certaintyClicked(this.id)'>None</button>
+          <p>You know almost nothing about this person's work</p>
+        </div>
+        <button id='certainty-0.2' class='certainty-button' onclick='certaintyClicked(this.id)'>Low</button>
+        <button id='certainty-0.4' class='certainty-button' onclick='certaintyClicked(this.id)'>Medium</button>
+        <button id='certainty-0.6'class='certainty-button' onclick='certaintyClicked(this.id)'>High</button>
+        <div class='certainty-button-with-explanation'>
+          <button id='certainty-0.8'class='certainty-button' onclick='certaintyClicked(this.id)'>Very High</button>
+          <p>You collaborate with this person almost every day and understand their work well</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 <footer>
   &#9400 Copyright 2019 Klaus Wuestefeld

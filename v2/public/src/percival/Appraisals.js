@@ -1,16 +1,18 @@
 'use strict';
 
+var allAppraisals;
+var currentAppraisal;
+
 function cloneTemplateAsCardOnLevel(appraisal) {
   var card = document.getElementById('card-template');
   var newCard = card.cloneNode(true);
 
   newCard.id = 'card-' + appraisal.email;
 
-  //TODO Usar operador ternario aqui
-  if (appraisal.picture != undefined)
-    newCard.childNodes[1].src = appraisal.picture;
-  else
-    newCard.childNodes[1].src = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
+  if (appraisal.picture == undefined)
+    appraisal.picture = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
+
+  newCard.childNodes[1].src = appraisal.picture;
 
   newCard.childNodes[3].innerHTML = appraisal.name;
 
@@ -32,6 +34,7 @@ function showAppraisal(appraisal) {
 }
 
 function showAppraisals(appraisals) {
+  allAppraisals = appraisals;
   displaySituation('sit-appraisals');
   appraisals.forEach(showAppraisal);
   scrollToLevel();
@@ -39,6 +42,7 @@ function showAppraisals(appraisals) {
 
 function dragStart(event) {
   event.dataTransfer.setData('card-id', event.target.id);
+  console.log(event.target.id);
 }
 
 function levelChanged(previousLevel, currentLevel) {
