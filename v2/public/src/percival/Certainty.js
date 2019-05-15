@@ -34,12 +34,15 @@ window.addEventListener("click", function (){
 });
 
 function certaintyClicked(certaintyId){
-	var appraiseCertainty = certaintyId.substring(10);
-	console.log(appraiseCertainty);
-	// backendPost(
- //    'appraise', 
- //    '{"certainty":' + appraiseCertainty + ',"appraised":"' + appraiseId + '","level":' + appraiseLevel + '}', 
- //    function(response) {
- //      document.getElementById('certainty').classList.add('force-display-none');
- //    });
+  currentAppraisal.certainty = certaintyId.substring(10);
+
+  var appraiseId = currentAppraisal.email;
+  var appraiseLevel = currentAppraisal.level;
+	var appraiseCertainty = currentAppraisal.certainty;
+	backendPost(
+		'appraise', 
+		'{"certainty":' + appraiseCertainty + ',"appraised":"' + appraiseId + '","level":' + appraiseLevel + '}', 
+		function(response) {
+			document.getElementById('certainty-modal').classList.add('force-display-none');
+		});
 }
