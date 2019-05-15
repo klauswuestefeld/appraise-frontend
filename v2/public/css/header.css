@@ -13,11 +13,6 @@
   height: 40px;
   margin-left: 15px;
 }
-@media only screen and (max-width:504px) {
-  #logo-img {
-    display:none;
-  }
-}
 
 
 #menu {
@@ -29,12 +24,6 @@
   color: white;
   padding: 0px 20px;
 }
-@media only screen and (max-width:504px) {
-  .tab{
-    font-size:12px;
-  }
-}
-
 .tab.selected {
   border-top-color: transparent;
   border-top-style: solid;
@@ -51,23 +40,18 @@
   align-items: center;
 }
 
-#user-name{
-  font-size: 15px;
-  color:var(--percival-secondary);
+#user-name {
+  font-size: 16px;
+  color:var(--percival-secondary-light);
   margin-right: 7px;
-}
-@media only screen and (max-width:504px), screen and (max-height:504px){
-  #user-name{
-    font-size:12px;
-  }
 }
 
 .drop-button {
-    border: none;
-    cursor: pointer;
-    font-size: 10px;
-    color: black;
-  }
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: black;
+}
 
 .dropdown {
   float: right;
