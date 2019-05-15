@@ -23,41 +23,29 @@
 
   border: 1px solid #888;
   background-color: var(--percival-background);
-  padding: 30px;
+  padding: 40px;
 }
 
-#certainty strong{
-  margin: 250px;
-}
-
-.certainty-text{
-  margin: 25px;
+#certainty p {
+  color: var(--percival-primary);
+  font-size: 14px;
 }
 
 .circle-certainty{
   border-radius: 50%;
-  width:  90px;
-  height: 90px;
+  width:  100px;
+  height: 100px;
   overflow: hidden;
   float: left;
-  margin: 0px 20px 30px 30px;
+  margin: 0px 35px 45px 30px;
 }
 
-/*BELOW THIS COMMENT ONLY TEST'S CSS*/
-
-#certainty h2  {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 30px;
-  margin: 5px;
-}
-
-#certainty-persons-name {
-  margin-top: 40px;
+#certainty #certainty-persons-name {
   color: var(--percival-secondary);
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 24px;
+  line-height: 24px;
   font-weight: bold;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 
@@ -65,7 +53,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 .certainty-button-with-explanation {
@@ -97,7 +84,6 @@
   color: var(--percival-primary);
   text-align: center;
   line-height: 16px;
-  font-size: 14px;
 }
 
 .certainty-icon{
