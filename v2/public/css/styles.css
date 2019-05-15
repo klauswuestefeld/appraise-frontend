@@ -1,7 +1,8 @@
 :root {
   /* Palette */
   --percival-primary: #2b4588;
-  --percival-secondary: rgb(194, 194, 110);
+  --percival-secondary:       rgb(144, 144, 90);
+  --percival-secondary-light: rgb(204, 204, 130);
   --percival-background: #e9ebed;
   --percival-dark: rgb(40,40,40);
   --percival-alert: rgb(192, 28, 28);
