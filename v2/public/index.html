@@ -163,10 +163,10 @@ marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
     <div id='card-template' onclick='showModal(this.id)' draggable='true' ondragstart='dragStart(event)' class='card force-display-none'>
       <img class='circle' src='https://image.shutterstock.com/image-vector/thinking-head-sign-vector-icon-450w-1165460371.jpg' alt='Avatar'>
       <p id='name-person'>Person's Name</p>
-      <div class='certainty-icon'></div>
-      <div class='certainty-icon'></div>
-      <div class='certainty-icon'></div>
-      <div class='certainty-icon'></div>
+      <div id='card-certainty-1' class='certainty-icon'></div>
+      <div id='card-certainty-3' class='certainty-icon'></div>
+      <div id='card-certainty-6' class='certainty-icon'></div>
+      <div id='card-certainty-10' class='certainty-icon'></div>
     </div>
   </div>
 </div>
@@ -241,11 +241,11 @@ marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
           <button id='certainty-0' class='certainty-button' onclick='certaintyClicked(this.id)'>None</button>
           <p>You know almost nothing about this person's work</p>
         </div>
-        <button id='certainty-0.2' class='certainty-button' onclick='certaintyClicked(this.id)'>Low</button>
-        <button id='certainty-0.4' class='certainty-button' onclick='certaintyClicked(this.id)'>Medium</button>
-        <button id='certainty-0.6'class='certainty-button' onclick='certaintyClicked(this.id)'>High</button>
+        <button id='certainty-1' class='certainty-button' onclick='certaintyClicked(this.id)'>Low</button>
+        <button id='certainty-3' class='certainty-button' onclick='certaintyClicked(this.id)'>Medium</button>
+        <button id='certainty-6' class='certainty-button' onclick='certaintyClicked(this.id)'>High</button>
         <div class='certainty-button-with-explanation'>
-          <button id='certainty-0.8'class='certainty-button' onclick='certaintyClicked(this.id)'>Very High</button>
+          <button id='certainty-10' class='certainty-button' onclick='certaintyClicked(this.id)'>Very High</button>
           <p>You collaborate with this person almost every day and understand their work well</p>
         </div>
       </div>

@@ -3,7 +3,28 @@
 var allAppraisals;
 var currentAppraisal;
 
-function cloneTemplateAsCardOnLevel(appraisal) {
+function refreshAppraisalCertainty() {
+  var card = document.getElementById('card-' + currentAppraisal.email);
+
+  var certaintyLevel;
+  var certaintyIndex;
+
+  certaintyLevel = 0;
+  for (certaintyIndex = 1; certaintyIndex <= 4; certaintyIndex ++) {
+    certaintyLevel += certaintyIndex;
+    card.querySelector('#card-certainty-' + certaintyLevel).classList.remove('active');
+  }
+
+  certaintyIndex = 1;
+  for (certaintyLevel = 1; certaintyLevel <= currentAppraisal.certainty; certaintyLevel += certaintyIndex) {
+    card.querySelector('#card-certainty-' + certaintyLevel).classList.add('active');
+    certaintyIndex ++;
+  }
+}
+
+function showAppraisal(appraisal) {
+  currentAppraisal = appraisal;
+
   var card = document.getElementById('card-template');
   var newCard = card.cloneNode(true);
 
@@ -16,21 +37,11 @@ function cloneTemplateAsCardOnLevel(appraisal) {
 
   newCard.childNodes[3].innerHTML = appraisal.name;
 
-  var certaintyElementIndex = 5;
-  for(var certainty = 0.2; certainty <= appraisal.certainty; certainty += 0.2) {
-    if (certainty == 1) break;
-		newCard.childNodes[certaintyElementIndex].classList.add('active');
-		certaintyElementIndex+=2;
-  }
-
   document.getElementById('cards-level' + appraisal.level).appendChild(newCard);
 
-  newCard.classList.remove('force-display-none');
-}
+  refreshAppraisalCertainty();
 
-function showAppraisal(appraisal) {
-	console.log(appraisal);
-	cloneTemplateAsCardOnLevel(appraisal);
+  newCard.classList.remove('force-display-none');
 }
 
 function showAppraisals(appraisals) {

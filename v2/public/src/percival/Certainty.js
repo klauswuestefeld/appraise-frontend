@@ -6,7 +6,7 @@ function showModal(clickedCardId) {
 
 	var appraiseId = clickedCardId.substring(5); //email
   currentAppraisal = allAppraisals.find(function(eachAppraisal) {
-  	return eachAppraisal.email == appraiseId 
+  	return eachAppraisal.email == appraiseId;
   });
 
   var appraiseName = currentAppraisal.name;
@@ -19,21 +19,26 @@ function showModal(clickedCardId) {
   document.getElementById('certainty-' + appraiseCertainty).classList.add('active');
 }
 
-window.addEventListener("click", function (){
+function closeAndClearModal() {
+	document.getElementById('certainty-modal').classList.add('force-display-none');
+  document.getElementById('certainty-person-name').innerHTML = 'Person\'s Name';
+  document.getElementById('certainty-person-picture').src = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
+	document.getElementById('certainty-0').classList.remove('active');
+	document.getElementById('certainty-1').classList.remove('active');
+	document.getElementById('certainty-3').classList.remove('active');
+	document.getElementById('certainty-6').classList.remove('active');
+	document.getElementById('certainty-10').classList.remove('active');
+}
+
+window.addEventListener("click", function () {
 	var certaintyModal = document.getElementById('certainty-modal');
 	if (event.target == certaintyModal) {
-    document.getElementById('certainty-modal').classList.add('force-display-none');
-    document.getElementById('certainty-person-name').innerHTML = 'Person\'s Name';
-    document.getElementById('certainty-person-picture').src = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
-  	document.getElementById('certainty-0').classList.remove('active');
-  	document.getElementById('certainty-0.2').classList.remove('active');
-  	document.getElementById('certainty-0.4').classList.remove('active');
-  	document.getElementById('certainty-0.6').classList.remove('active');
-  	document.getElementById('certainty-0.8').classList.remove('active');
+    closeAndClearModal();
   }
 });
 
-function certaintyClicked(certaintyId){
+function certaintyClicked(certaintyId) {
+	var previousCertainty = currentAppraisal.certainty;
   currentAppraisal.certainty = certaintyId.substring(10);
 
   var appraiseId = currentAppraisal.email;
@@ -43,6 +48,9 @@ function certaintyClicked(certaintyId){
 		'appraise', 
 		'{"certainty":' + appraiseCertainty + ',"appraised":"' + appraiseId + '","level":' + appraiseLevel + '}', 
 		function(response) {
-			document.getElementById('certainty-modal').classList.add('force-display-none');
+			document.getElementById('certainty-' + previousCertainty).classList.remove('active');
+			document.getElementById('certainty-' + appraiseCertainty).classList.add('active');
+			closeAndClearModal();
+			refreshAppraisalCertainty();
 		});
 }
