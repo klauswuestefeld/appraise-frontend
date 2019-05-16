@@ -3,7 +3,7 @@
 var allAppraisals;
 var currentAppraisal;
 
-function refreshAppraisalCertainty() {
+function refreshCurrentAppraisalCertainty() {
   var card = document.getElementById('card-' + currentAppraisal.email);
 
   var certaintyLevel;
@@ -22,26 +22,29 @@ function refreshAppraisalCertainty() {
   }
 }
 
-function showAppraisal(appraisal) {
-  currentAppraisal = appraisal;
-
+function refreshCurrentAppraisal() {
   var card = document.getElementById('card-template');
   var newCard = card.cloneNode(true);
 
-  newCard.id = 'card-' + appraisal.email;
+  newCard.id = 'card-' + currentAppraisal.email;
 
-  if (appraisal.picture == undefined)
-    appraisal.picture = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
+  if (currentAppraisal.picture == undefined)
+    currentAppraisal.picture = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png';
 
-  newCard.childNodes[1].src = appraisal.picture;
+  newCard.childNodes[1].src = currentAppraisal.picture;
 
-  newCard.childNodes[3].innerHTML = appraisal.name;
+  newCard.childNodes[3].innerHTML = currentAppraisal.name;
 
-  document.getElementById('cards-level' + appraisal.level).appendChild(newCard);
+  document.getElementById('cards-level' + currentAppraisal.level).appendChild(newCard);
 
-  refreshAppraisalCertainty();
+  refreshCurrentAppraisalCertainty();
 
   newCard.classList.remove('force-display-none');
+}
+
+function showAppraisal(appraisal) {
+  currentAppraisal = appraisal;
+  refreshCurrentAppraisal();
 }
 
 function scrollToLevel(){
@@ -49,11 +52,15 @@ function scrollToLevel(){
   levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
 }
 
+function refreshAllAppraisals() {
+  displaySituation('sit-appraisals');
+  allAppraisals.forEach(showAppraisal);
+  scrollToLevel();
+}
+
 function showAppraisals(appraisals) {
   allAppraisals = appraisals;
-  displaySituation('sit-appraisals');
-  appraisals.forEach(showAppraisal);
-  scrollToLevel();
+  refreshAllAppraisals();
 }
 
 function dragStart(event) {

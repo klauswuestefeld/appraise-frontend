@@ -4,7 +4,7 @@ function changeTab(tabId) {
 	if (tabId == 'appraisals-tab'){
 	   document.getElementById('appraisals-tab').classList.add('selected');
 	   document.getElementById('admin-tab').classList.remove('selected');
-	   displaySituation('sit-appraisals');
+	   refreshAllAppraisals();
 	}
 	else{
 	   document.getElementById('appraisals-tab').classList.remove('selected');

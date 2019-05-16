@@ -51,6 +51,6 @@ function certaintyClicked(certaintyId) {
 			document.getElementById('certainty-' + previousCertainty).classList.remove('active');
 			document.getElementById('certainty-' + appraiseCertainty).classList.add('active');
 			closeAndClearModal();
-			refreshAppraisalCertainty();
+			refreshCurrentAppraisalCertainty();
 		});
 }
