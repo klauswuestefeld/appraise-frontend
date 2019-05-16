@@ -25,12 +25,11 @@
   <script defer src='src/percival/BackendClient.js'></script>
   <script defer src='src/percival/Appraisals.js'></script>
   <script defer src='src/percival/Certainty.js'></script>
+  <script defer src='src/percival/Admin.js'></script>
+  <script defer src='src/percival/Dropdown.js'></script>
   <script defer src='src/percival/Transition.js'></script>
   <script defer src='src/percival/GhostCards.js'></script>
-  <script defer src='src/percival/Swtclass.js'></script>
   <script defer src='src/percival/DisabledButton.js'></script>
-  <script defer src='src/percival/Dropdown.js'></script>
-  <script defer src='src/percival/ScrollToLevel.js'></script>
   <script defer src='src/percival/Launcher.js' onload='initLauncher()'></script>
 
 </head>
@@ -43,10 +42,10 @@
   </button>
 
   <div id='menu' class='sit-appraisals sit-admin sit-session-menu'>
-    <button id='appraisals-tab' class='tab selected'>
+    <button id='appraisals-tab' class='tab selected' onclick='changeTab(this.id)'>
       Appraisals
     </button>
-    <button id='admin-tab' class='tab'>
+    <button id='admin-tab' class='tab' onclick='changeTab(this.id)'>
       Admin
     </button>
   </div>

@@ -44,6 +44,11 @@ function showAppraisal(appraisal) {
   newCard.classList.remove('force-display-none');
 }
 
+function scrollToLevel(){
+  var levelScroll = document.getElementById('id-your-level')
+  levelScroll.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+}
+
 function showAppraisals(appraisals) {
   allAppraisals = appraisals;
   displaySituation('sit-appraisals');

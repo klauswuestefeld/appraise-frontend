@@ -30,7 +30,7 @@ function closeAndClearModal() {
 	document.getElementById('certainty-10').classList.remove('active');
 }
 
-window.addEventListener("click", function () {
+window.addEventListener('click', function () {
 	var certaintyModal = document.getElementById('certainty-modal');
 	if (event.target == certaintyModal) {
     closeAndClearModal();
