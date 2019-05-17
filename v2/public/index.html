@@ -41,7 +41,7 @@
     <img id='logo-img' src='static/white_logo_transparent_background.png' alt='Percival'>
   </button>
 
-  <div id='menu' class='sit-appraisals sit-admin sit-session-menu'>
+  <div id='menu' class='sit-appraisals sit-admin sit-session-menu sit-not-admin'>
     <button id='appraisals-tab' class='tab selected' onclick='changeTab(this.id)'>
       Appraisals
     </button>
@@ -50,7 +50,7 @@
     </button>
   </div>
 
-  <div id='session' class='sit-appraisals sit-admin sit-session-menu'>
+  <div id='session' class='sit-appraisals sit-admin sit-session-menu sit-not-admin'>
     <img id='user-picture' src='https://image.shutterstock.com/image-vector/thinking-head-sign-vector-icon-450w-1165460371.jpg' alt='user picture' class='circle'>
     <button id='user-name' class='drop-button' onclick='dropdownProfile()'>
       Person's Name
@@ -80,17 +80,17 @@
   <p>If you did not receive the email after a few minutes, please let us know.</p>
   <p> Look in your spam folder too.</p>
 </div>
-<div id='admin' class='sit-admin'>
+<div id='admin' class='sit-admin sit-not-admin'>
 
-  <h6>Team Members</h6>
-  <p id='email1'>Email &lt;tab&gt; Name</p>
+  <h6 class='sit-admin'>Team Members</h6>
+  <p id='email1' class='sit-admin'>Email &lt;tab&gt; Name</p>
 
-  <textarea id='textarea' class='caixa-texto' placeholder='johndoe@acme.com &lt;tab&gt; John Doe
+  <textarea id='textarea' class='caixa-texto sit-admin' placeholder='johndoe@acme.com &lt;tab&gt; John Doe
 marydoe@acme.com &lt;tab&gt; Mary Doe'></textarea>
   <p id='error-text'>Texto erro</p>
-  <p id='ok-text'>Texto ok</p>
-  <p id='copy1'>(Copy-and-paste from a spreadsheet works too)</p>
-  <button id='save-button1' class='save-button'>Save</button>
+  <p id='ok-text' class='sit-admin'>Texto ok</p>
+  <p id='copy1' class='sit-admin'>(Copy-and-paste from a spreadsheet works too)</p>
+  <button id='save-button1' class='save-button sit-admin'>Save</button>
 </div>
 
 <div id='appraisals' class='sit-appraisals'>
